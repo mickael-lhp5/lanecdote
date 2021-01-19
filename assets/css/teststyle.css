@@ -4,30 +4,38 @@
   box-sizing: border-box
 }
 
-
 button:focus {
   outline: unset !important;
 }
 
+nav,
+footer {
+  flex: 0 0 auto;
+}
 
-#test {
+#contentFullHomePage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#bgHomePage {
   /* height: 100%; */
   margin: 0px;
   padding: 0px;
   /* background-image: url(../img/IMG_20200809_135623.jpg); */
-  background: linear-gradient(70deg, black, whitesmoke, black);;
+  background: linear-gradient(70deg, black, whitesmoke, black);
   background-repeat: no-repeat;
   background-size: cover;
   backdrop-filter: contrast(1);
-
+  flex: 1;
 }
 
 .navbar {
   background-color: black !important;
   font-family: 'poppins', sans-serif;
   color: white;
-  min-height: 20vh !important;
-  border-bottom: 8px solid #D4514A;
+  border-bottom: 6px solid #D4514A;
 }
 
 .navbar-toggler-collapsed {
@@ -40,227 +48,32 @@ button:focus {
 span.navbar-toggler-icon {
   color: white !important;
   background-image: unset;
-
 }
 
-.homeImg {
+.homeImg a:hover {
   height: 100%;
   object-fit: contain;
-}
+  transform: scale(1.2);
+	}
 
+.map{
+
+max-width: 100%;
+
+}
 
 footer {
   width: 100%;
   background-color: black !important;
-  border-top: 8px solid #D4514A;
+  border-top: 6px solid #D4514A;
   line-height: 1;
   color: white;
+}
+
+#myFooter {
+  width: 100%;
 }
 
 .footerContainer {
   justify-content: space-around;
 }
-
-
-/* barre de navigation */
-/* .myNav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 8vh;
-  color: white;
-  background-color: black;
-  font-family: 'poppins', sans-serif;
-  border-bottom: 8px solid #D4514A;
-}
-
-.logo {
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  font-size: 20px;
-}
-
-/* lien de navigation */
-/* .navLinks {
-  display: flex;
-  justify-content: space-around;
-  width: 60%;
-} */
-
-/* Pour ne pas qu'il y ait de puces */
-/* .navLinks li {
-  list-style: none;
-} */
-
-/* Enlever les liens soulignés et embellir la police */
-/* .navLinks a {
-  text-decoration: none;
-  letter-spacing: 3px;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-
-
-
-/* logo menu Burger */
-/* .burger span {
-  width: 100%;
-  height: 4px;
-  background-color: white;
-  display: block;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%);
-  transition: background-color 0.5s ease-in-out;
-
-} */
-
-/* animation barre du haut et du bas du menu burger */
-/* .burger span::before, .burger span::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 4px;
-  background-color: white;
-  transition: tranform 0.5s ease-in-out;
-}
-
-.burger span::before {
-  transform: translateY(-10px);
-}
-
-.burger span::after {
-  transform: translateY(10px);
-} */
-
-/* quand la classe burger est active ont vient cibléee la span, on met opacity 0 = faire disparaitre la barre du milieu*/
-/* .burger.active span {
-  background-color: transparent;
-} */
-
-/* transformer les barres haute et basse du burger en croix */
-/* .burger.active span::before{
-transform: translateY(0px) rotateZ(45deg);
-}
-
-.burger.active span::after{
-  transform: translateY(0px) rotateZ(-45deg);
-  } */
-
-/* Responsive */
-
-/* @media screen and (max-width:1024px) {
-  .navLinks {
-    width: 60px;
-  }
-}
-
-@media screen and (max-width:768px) {
-  body {
-    overflow-x: hidden;
-  }
-
-  .navLinks {
-    position: absolute;
-    right: 0px;
-    height: 92vh;
-    top: 8vh;
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-    transform: translateX(100%);
-    transition: transform 0.5s ease-in;
-  }
-
-  .navLinks li {
-    opacity: 0;
-  }
-
-  .burger {
-    display: block;
-  }
-
-
-  .nav-active {
-    transform: translateX(0%);
-  }
-
-  @keyframes navLinkfade {
-    from {
-      opacity: 0;
-      transform: translateX(50px);
-      margin-top: 15px;
-    }
-
-    to {
-      opacity: 1;
-      transform: translateX(0px);
-      margin-top: 15px;
-    }
-  }
-} */
-
-/* pour que la barre 1 et 3 forme la croix */
-/* .toggle .line1 {
-  transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.toggle .line2 {
-  opacity: 0;
-}
-
-.toggle .line3 {
-  transform: rotate(45deg) translate(-5px, -6px);
-} */
-
-/* carousel */
-/* .sliderFrame {
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
-  margin-left: 200px;
-  margin-top: 20px;
-} */
-
-
-/* .imgContainer {
-  height: 100%;
-  width: 80vh;
-  position: fixed;
-  float: left;
-}
-
-
-.myFooter {
-  display: flex;
-  position: absolute;
-  width: 100%;
-  justify-content: space-between;
-  min-height: 8vh;
-  bottom: 0px;
-  color: white;
-  background-color: black;
-  font-family: 'poppins', sans-serif;
-  border-top: 8px solid #D4514A;
-
-}
-
-.footerLeft {
-  display: flex;
-  margin: 0px;
-  font-size: 0.9rem;
-}
-
-.footerMiddle {
-  display: flex;
-  font-size: 0.9rem;
-}
-
-.footerRight {
-  display: flex;
-  font-size: 1rem;
-}  */
