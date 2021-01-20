@@ -1,9 +1,7 @@
 <?php
 require_once 'controller/controller-admin.php';
+
 ?>
-
-
-
 <!doctype html>
 <html lang="fr">
 
@@ -49,7 +47,7 @@ require_once 'controller/controller-admin.php';
                                 <label for="password"></label>
                                 <input class="form-control w-100 mb-5" type="password" name="password" placeholder="mot de passe" id="password" required>
                             </div>
-                            <button type="submit" class="btn btn-warning justify-content-center mb-3" name="connexion">connection</button>
+                            <button type="submit" class="btn myAdminButton" name="connexion">connection</button>
                         </form>
                     </div>
                 </div>

@@ -29,6 +29,8 @@ footer {
   background-size: cover;
   backdrop-filter: contrast(1);
   flex: 1;
+  display: flex;
+  align-items: center;
 }
 
 .navbar {
@@ -43,6 +45,23 @@ footer {
   color: white;
 }
 
+.nav-link {
+  color: white !important;
+}
+
+.nav-link:hover {
+  color: #D4514A !important;
+}
+
+.connectionIcon {
+  color: white;
+}
+
+.connectionIcon:hover {
+  color: #D4514A;
+  transform: scale(1.4);
+}
+
 /* le burger */
 
 span.navbar-toggler-icon {
@@ -50,16 +69,18 @@ span.navbar-toggler-icon {
   background-image: unset;
 }
 
-.homeImg a:hover {
+.homeImg {
   height: 100%;
   object-fit: contain;
-  transform: scale(1.2);
-	}
+}
 
-.map{
+.map {
+  max-width: 100%;
+}
 
-max-width: 100%;
-
+.myAdminButton {
+  background-color: #D4514A;
+  font-weight: bold;
 }
 
 footer {
@@ -72,6 +93,54 @@ footer {
 
 #myFooter {
   width: 100%;
+}
+
+.mailFooter {
+  color: white !important;
+}
+
+.adresseFooter {
+  color: white !important;
+}
+
+.adresseFooter:hover {
+  color: #D4514A !important;
+  text-decoration: none;
+}
+
+
+.mailFooter:hover {
+  color: #D4514A !important;
+  text-decoration: none;
+}
+
+.phoneFooter {
+  color: white !important;
+}
+
+.phoneFooter:hover {
+  color: #D4514A !important;
+  text-decoration: none;
+}
+
+.mentionsFooter{
+  color: white!important;
+}
+
+.mentionsFooter:hover{
+  color: #D4514A!important;
+  text-decoration: none;
+}
+
+.socialNetworks {
+  color: white !important;
+  font-size: 20px;
+}
+
+.socialNetworksHover :hover {
+
+  color: #D4514A !important;
+  transform: scale(1.2);
 }
 
 .footerContainer {

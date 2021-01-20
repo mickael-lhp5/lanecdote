@@ -7,10 +7,12 @@ $errorMessage = [];
 if (isset($_POST['connexion'])) {
     if ($_POST['identification'] == $identifiant && $_POST['password'] == $password) {
 
-        // echo 'connexion réussie';
+        
     } else {
 
         $errorMessages['identification'] = 'vos identifiants sont incorrects';
+        // require("http://lanecdote/admin.php");
+
 
         //$errorMessages['password'] = 'veuillez saisir votre mot de passe';
 
