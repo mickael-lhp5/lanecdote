@@ -2,31 +2,43 @@
 <html lang="fr">
 
 <head>
-    <title>L'ANECDOTEtest</title>
+    <title>L'ANECDOTE</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/teststyle.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <!-- animation AOS.init img page d'accueil -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <div id="contentFullHomePage">
-        <?php require_once "nav.php"   ?>
-<div class="flex-grow-1">
-blabla
-</div>
-
-        <?php require_once "footer.php" ?>
+    <div id="contentFullHomePage" class="adminPage">
+        <?php require_once "nav.php" ?>
+        <div class="flex-grow-1" id="bgHomePage">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="d-flex col-6 align-items-center justify-content-center">
+                        <form action="lacarte.php" method="POST">
+                            <button type="submit" class="btn justify-content-center mb-3" name="plats"><img src="../assets/img/carousel1.jpg" width="200px" height="220px">La carte</button>
+                        </form>
+                        <form action="menus.php" method="POST">
+                            <button type="submit" class="btn justify-content-center mb-3 ml-5" name="menus"><img src="../assets/img/carousel2.jpg" width="200px" height="220px">Menus</button>
+                        </form>
+                        <form action="boissons.php" method="POST">
+                            <button type="submit" class="btn justify-content-center mb-3 ml-5" name="menus"><img src="../assets/img/drinks.jpg" width="200px" height="220px">Boissons</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 

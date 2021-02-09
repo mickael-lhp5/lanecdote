@@ -2,43 +2,33 @@
 <html lang="fr">
 
 <head>
-    <title>L'ANECDOTE</title>
+    <title>L'ANECDOTEtest</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="stylesheet" href="../assets/css/style.css">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/teststyle.css">
     <!-- animation AOS.init img page d'accueil -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
 
-
     <div id="contentFullHomePage">
-        <?php require_once "nav.php" ?>
+        <?php require_once "nav.php"   ?>
 
-        <div class="flex-grow-1" id="bgHomePage">
-            <div class="container h-100">
-                <div class="row justify-content-center">
-                    <div class="col-6 align-items-center justify-content-center">
-                        <button type="submit" class="btn btn-warning justify-content-center mb-3" name="plats">Gestion des plats</button>
-                        <button type="submit" class="btn btn-warning justify-content-center mb-3" name="menus">Gestion des menus</button>
-                    </div>
-                </div>
-            </div>
+        <div class="flex-grow-1 text-center">
+            <p>Error 404 </p>
+            <a type="button" class="btn btn-warning" href="index.php"> Retour vers l'acceuil </a>
         </div>
-    
 
-    <?php require_once "footer.php" ?>
+        <?php require_once "footer.php" ?>
     </div>
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -1,5 +1,5 @@
 <?php 
-require_once 'controller/controller-nouscontacter.php';
+require_once '../controller/controller-nouscontacter.php';
 ?>
 
 <!doctype html>
@@ -17,7 +17,7 @@ require_once 'controller/controller-nouscontacter.php';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/teststyle.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <!-- animation AOS.init img page d'accueil -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>

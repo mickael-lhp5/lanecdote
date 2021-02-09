@@ -2,11 +2,11 @@
 <html lang="fr">
 
 <head>
-    <title>L'ANECDOTEtest</title>
+    <title>L'ANECDOTE</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="assets/css/teststyle.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -24,7 +24,7 @@
 
 <div class="flex-grow-1">
 
-    <p><span class="align-items-center" style="font-size: 3rem">...En construction</span></p>
+    <p class="d-flex justify-content-center m-auto"><span style="font-size: 3rem;color: grey">...En construction</span></p>
 
 </div>
 

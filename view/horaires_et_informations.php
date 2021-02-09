@@ -6,7 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="assets/css/teststyle.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -22,14 +22,40 @@
     <div id="contentFullHomePage">
         <?php require_once "nav.php"   ?>
 
-        <div class="flex-grow-1 text-center">
-            <p>Error 404 </p>
-            <a type="button" class="btn btn-warning" href="index.php"> Retour vers l'acceuil </a>
-        </div>
+        <div class="flex-grow-1" id="bgHomePage">
 
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <h1>Nos horaires</h1>
+                        <p>Mardi 12:00 – 14:00 - 19:00 – 21:30</p>
+                        <p>Mercredi 12:00 – 14:00 - 19:00 – 21:30</p>
+                        <p>Jeudi 12:00 – 14: 00 - 19:00 – 21:30</p>
+                        <p>Vendredi 12:00 – 14 :00 - 19:00 – 22 :00</p>
+                        <p>Samedi 12:00 – 14:30 – 19:00 – 22:00</p>
+                        <p>Dimanche 12:00 – 15:00</p>
+                        <p>Lundi : Close </p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <h1>Nous trouvez</h1>
+                        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10366.95776202135!2d0.1118675!3d49.4894287!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdc660c78593ded3e!2sL&#39;Anecdote!5e0!3m2!1sen!2sfr!4v1610981751686!5m2!1sen!2sfr" width="400" max-width="100%" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+                    </div>
+
+
+                    <div class="col-12">
+                        <h1>Informations</h1>
+                        <p>Notre vente à emporter est désormais disponible uniquement le jeudi, vendredi et samedi..
+                            Vos commandes sont à passer avant midi au minimum la veille, et sont à retirer entre 17h30 et 19h.
+                            Vous pouvez commander par téléphone au 09.83.87.57.14 ou par messenger.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
         <?php require_once "footer.php" ?>
     </div>
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">

@@ -1,12 +1,8 @@
-<?php
-require_once 'controller/controller-admin.php';
-
-?>
 <!doctype html>
 <html lang="fr">
 
 <head>
-    <title>L'ANECDOTE</title>
+    <title>L'ANECDOTEtest</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,44 +13,31 @@ require_once 'controller/controller-admin.php';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/teststyle.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <!-- animation AOS.init img page d'accueil -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
 
-
-    <div id="contentFullHomePage">
+    <div id="contentFullHomePage" class="adminPage">
         <?php require_once "nav.php" ?>
-
         <div class="flex-grow-1" id="bgHomePage">
             <div class="container h-100">
                 <div class="row justify-content-center">
-                    <div class="col-6 align-items-center justify-content-center">
-                        <h1 class="mt-5">Admin</h1>
-                        <form novalidate class="myForm mb-3" name="admin" method="POST" action="admin.php">
-                            <div>
-                                <span>
-                                    <?= isset($errorMessages['identification']) ? $errorMessages['identification'] : '' ?>
-                                </span>
-                            </div>
-                            <div class="form-group">
-                                <label for="identification"></label>
-                                <input class="form-control w-100" type="text" name="identification" placeholder="identifiant" id="identification" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="password"></label>
-                                <input class="form-control w-100 mb-5" type="password" name="password" placeholder="mot de passe" id="password" required>
-                            </div>
-                            <button type="submit" class="btn myAdminButton" name="connexion">connection</button>
+                    <div class="col-10 align-items-center justify-content-center">
+
+                        <form novalidate class="myForm mb-3" name="inscription" method="post" action="index.php">
+
+
+
+                        <button type="submit" class="btn btn-success justify-content-center mb-3" name="submit">enregistre toi !</button>
                         </form>
+
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <?php require_once "footer.php" ?>
     </div>
 
 

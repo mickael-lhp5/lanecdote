@@ -4,31 +4,20 @@ $password = "gregetjerome";
 $errorMessage = [];
 
 
-if (isset($_POST['connexion'])) {
-    if ($_POST['identification'] == $identifiant && $_POST['password'] == $password) {
+if (isset($_POST["connection"])) {
 
-        
-    } else {
+    if (isset($_POST['connection'])) {
+        if ($_POST['identification'] == $identifiant && $_POST['password'] == $password) {
+            
+        } else {
 
-        $errorMessages['identification'] = 'vos identifiants sont incorrects';
-        // require("http://lanecdote/admin.php");
+            $errorMessages['identification'] = 'vos identifiants sont incorrects';
 
+            $errorMessages['password'] = 'vos identifiants sont incorrects';
+        }
+    }
 
-        //$errorMessages['password'] = 'veuillez saisir votre mot de passe';
-
+    if (count($errorMessages) < 1) {
+        header("Location: gestionplatetmenu.php");
     }
 }
-
-
-
-
-
-
-// if (isset($_POST["lastname"])) {
-//     if (!preg_match($regexName, $_POST['lastname'])) {
-//         $errorMessages['lastname'] = 'veuillez saisir un nom valide';
-//     }
-//     if (empty($_POST["lastname"])) {
-//         $errorMessages['lastname'] = 'veuillez saisir votre nom';
-//     }
-// }

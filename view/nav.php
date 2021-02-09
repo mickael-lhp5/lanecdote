@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg" style="font-size: 16px">
-    <a href="index.php"><img src="assets/img/logoblanc.png" alt="logoblanc"></a>
+    <a href="../index.php"><img src="../assets/img/logoblanc.png" alt="logoblanc"></a>
 
     <div class="d-flex align-items-center">
         <a class="d-block d-lg-none mr-3" href="admin.php"><span class="" style="color: white;"><i class="fa fa-user-circle"></i></span></a>
@@ -15,7 +15,7 @@
                 <a class="nav-link" href="lanecdote.php">QUI SOMMES-NOUS ?</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="menus.php"> MENUS</a>
+                <a class="nav-link" href="carteetmenus.php"> CARTE & MENUS</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="horaires_et_informations.php">HORAIRES & INFORMATIONS</a>

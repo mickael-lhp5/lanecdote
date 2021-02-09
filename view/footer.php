@@ -6,8 +6,8 @@
           <!--Grid column-->
           <div class="col-12 col-sm-6 col-md-3">
             <div class="">
-              <a class="adresseFooter" href="horaires_et_informations.php"><i class="fa fa-map-marker"></i> 5 rue Saint Louis 76600 Le Havre</a>
-              <p><a class="mailFooter" href="lanecdotelh@gmail.com"><i class="fa fa-envelope"></i>  lanecdotelh@gmail.com</a></p>
+              <a class="adresseFooter mb-5" href="horaires_et_informations.php"><i class="fa fa-map-marker"></i> 5 rue Saint Louis 76600 Le Havre</a>
+              <p class="mt-2"><a class="mailFooter" href="lanecdotelh@gmail.com"><i class="fa fa-envelope"></i>  lanecdotelh@gmail.com</a></p>
             </div>
           </div>
           <!--Grid column-->
