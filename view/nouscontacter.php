@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once '../controller/controller-nouscontacter.php';
 ?>
 
@@ -26,16 +26,15 @@ require_once '../controller/controller-nouscontacter.php';
 
     <div id="contentFullHomePage">
         <?php require_once "nav.php" ?>
-       
+
 
         <div id="bgHomePage">
             <div class="container-fluid">
                 <div class="row justify-content-center col-12">
 
                     <?php if ($showForm) { ?>
-
+                        <legend class="mt-3" style="text-align: center;"><b>Laissez nous un message, nous vous recontacterons</b></legend>
                         <form novalidate class="myForm mb-3" name="contacter" method="post" action="nouscontacter.php">
-
                             <div class="form-group">
                                 <label for="lastname"></label>
                                 <input class="w-100 form-control" type="text" name="lastname" id="lastname" placeholder="ex : Doe" value="<?= isset($_POST['lastname']) ? $_POST['lastname'] : '' ?>" required>
@@ -43,7 +42,6 @@ require_once '../controller/controller-nouscontacter.php';
                                     <span><?= isset($errorMessages['lastname']) ? $errorMessages['lastname'] : '' ?></span>
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <label for="firstname"></label>
                                 <input class="form-control" type="text" name="firstname" id="firstname" class="w-100" placeholder="ex : John" value="<?= isset($_POST['firstname']) ? htmlspecialchars($_POST['firstname'])  : '' ?>" required>
@@ -51,7 +49,6 @@ require_once '../controller/controller-nouscontacter.php';
                                     <span><?= isset($errorMessages['firstname']) ? $errorMessages['firstname'] : '' ?></span>
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <label for="email"></label>
                                 <input class="form-control w-100" type="mail" name="email" id="email" placeholder="Adresse mail" id="email" value="<?= isset($_POST['email']) ? $_POST['email'] : '' ?>" required>
@@ -59,7 +56,6 @@ require_once '../controller/controller-nouscontacter.php';
                                     <span><?= isset($errorMessages['email']) ? $errorMessages['email'] : '' ?></span>
                                 </div>
                             </div>
-
                             <div class="form-group mb-3">
                                 <label for="myMessage"></label>
                                 <textarea class="form-control" name="myMessage" id="myMessage" cols="60" rows="8" placeholder="Message"><?= isset($_POST['codingExperience']) ? $_POST['codingExperience'] : '' ?></textarea>
@@ -67,7 +63,7 @@ require_once '../controller/controller-nouscontacter.php';
                                     <span><?= isset($errorMessages['myMessage']) ? $errorMessages['myMessage'] : '' ?></span>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-warning justify-content-center mb-3" name="submit">envoyer</button>
+                            <button type="submit" class="btn uploadDeleteButtons justify-content-center mb-3 mt-3" name="submit">envoyer</button>
                         </form>
                     <?php } else { ?>
                         <div class="text-white">

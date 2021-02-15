@@ -21,34 +21,60 @@
 
     <div id="contentFullHomePage">
         <?php require_once "nav.php"   ?>
-
         <div class="flex-grow-1" id="bgHomePage">
-
-
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-md-6">
-                        <h1>Nos horaires</h1>
-                        <p>Mardi 12:00 – 14:00 - 19:00 – 21:30</p>
-                        <p>Mercredi 12:00 – 14:00 - 19:00 – 21:30</p>
-                        <p>Jeudi 12:00 – 14: 00 - 19:00 – 21:30</p>
-                        <p>Vendredi 12:00 – 14 :00 - 19:00 – 22 :00</p>
-                        <p>Samedi 12:00 – 14:30 – 19:00 – 22:00</p>
-                        <p>Dimanche 12:00 – 15:00</p>
-                        <p>Lundi : Close </p>
+                        <table class="table table-hover table-dark" style="font-size : 16px">
+                            <tbody>
+                                <legend class="mt-2"><b>Nos horaires</b></legend>
+                                <tr>
+                                    <th scope="row">Mardi</th>
+                                    <td colspan="2">12:00 ~ 14:00</td>
+                                    <td>19:00 ~ 21:30</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Mercredi</th>
+                                    <td colspan="2">12:00 ~ 14:00</td>
+                                    <td>19:00 ~ 21:30</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Jeudi</th>
+                                    <td colspan="2">12:00 ~ 14:00</td>
+                                    <td>19:00 ~ 21:30</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Vendredi</th>
+                                    <td colspan="2">12:00 ~ 14:00</td>
+                                    <td>19:00 ~ 22:00</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Samedi</th>
+                                    <td colspan="2">12:00 ~ 14:30</td>
+                                    <td>19:00 ~ 22:00</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Dimanche</th>
+                                    <td colspan="2">12:00 ~ 15:00</td>
+                                    <td>Fermé</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Lundi</th>
+                                    <td colspan="2">Fermé</td>
+                                    <td>Fermé</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <div class="col-12 col-md-6">
-                        <h1>Nous trouvez</h1>
+                        <legend class="mt-2"><b>Nous trouver</b></legend>
                         <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10366.95776202135!2d0.1118675!3d49.4894287!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdc660c78593ded3e!2sL&#39;Anecdote!5e0!3m2!1sen!2sfr!4v1610981751686!5m2!1sen!2sfr" width="400" max-width="100%" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-
                     </div>
-
-
                     <div class="col-12">
-                        <h1>Informations</h1>
-                        <p>Notre vente à emporter est désormais disponible uniquement le jeudi, vendredi et samedi..
-                            Vos commandes sont à passer avant midi au minimum la veille, et sont à retirer entre 17h30 et 19h.
-                            Vous pouvez commander par téléphone au 09.83.87.57.14 ou par messenger.</p>
+                        <legend class="mt-2"><b>Informations</b></legend>
+                        <p><span style="color: black;"> vente à emporter est désormais disponible uniquement le jeudi, vendredi et samedi.
+                                Vos commandes sont à passer avant midi au minimum la veille, et sont à retirer entre 17h30 et 19h.
+                                Vous pouvez commander par téléphone au 09.83.87.57.14 ou par messenger.</span></p>
                     </div>
                 </div>
             </div>

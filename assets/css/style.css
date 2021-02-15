@@ -29,16 +29,17 @@ footer {
 .carouselImg {
   height: auto;
   display: block;
+  object-fit: contain;
+  object-position: bottom;
 }
 
 /* si je mets 100vh l'image est coupée */
 .myCarousel {
   max-height: 90vh;
-
-} 
+}
 
 .carousel-item {
-  object-fit: contain;
+
   overflow: hidden;
   /* height: 100vh; */
 }
@@ -56,7 +57,6 @@ footer {
   display: flex;
   align-items: center;
 }
-
 
 .navbar {
   background-color: black !important;
@@ -98,10 +98,6 @@ span.navbar-toggler-icon {
 .homeImg {
   height: 100%;
   object-fit: contain;
-}
-
-.homeImg:hover {
-  transform: scale(1.1);
 }
 
 .map {
@@ -182,16 +178,14 @@ footer {
   transform: scale(1.2);
 }
 
-
-.adminPage{
-min-height: 100vh;
+.adminPage {
+  min-height: 100vh;
 }
 
 .myAdminButton {
   background-color: #D4514A;
   font-weight: bold;
 }
-
 
 .uploadDeleteButtons {
   background-color: #D4514A;
@@ -216,5 +210,8 @@ min-height: 100vh;
   transform: translateY(2px);
 }
 
-
-/* Style Modal */
+.myForm {
+  max-width: 100%;
+  width: 500px;
+  justify-content: center;
+}

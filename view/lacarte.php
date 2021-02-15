@@ -40,20 +40,20 @@
                                 <tr>
                                     <th scope="row">Le Saumon Exotique</th>
                                     <td>Tartare de saumon, avocat et mangue, vinaigrette exotique</td>
-                                    <td><button type="button" class="btn uploadDeleteButtons" name="modif1">modifier</button></td>
-                                    <td><button type="submit" class="btn uploadDeleteButtons" name="supp1" data-toggle="modal" data-target="#supp1">supprimer</button></td>
+                                    <td><a href="formulairemodifier.php"><button type="button" class="btn uploadDeleteButtons" name="modif1">modifier</button></a></td>
+                                    <td><button type="button" class="btn uploadDeleteButtons" name="supp1" data-toggle="modal" data-target="#supp1">supprimer</button></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">L'Oeuf Cocotte</th>
                                     <td>Oeuf en cocotte au chorizo, gratiné au comté</td>
-                                    <td><button type="submit" class="btn uploadDeleteButtons" name="modif2" data-toggle="modal" data-target="#exampleModalLong">modifier</button></td>
-                                    <td><button type="submit" class="btn uploadDeleteButtons" name="supp2">supprimer</button></td>
+                                    <td><button type="button" class="btn uploadDeleteButtons" name="modif2" data-toggle="modal" data-target="#exampleModalLong">modifier</button></td>
+                                    <td><button type="button" class="btn uploadDeleteButtons" name="supp2">supprimer</button></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Le Foie Gras</th>
                                     <td>Tranche de foie gras, chutney de figue et crumble noisette</td>
-                                    <td><button type="submit" class="btn uploadDeleteButtons" name="modif3">modifier</button></td>
-                                    <td><button type="submit" class="btn uploadDeleteButtons" name="supp3">supprimer</button></td>
+                                    <td><button type="button" class="btn uploadDeleteButtons" name="modif3">modifier</button></td>
+                                    <td><button type="button" class="btn uploadDeleteButtons" name="supp3">supprimer</button></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -61,8 +61,6 @@
                 </div>
             </div>
         </div>
-
-
 
         <div class="modal fade" id="supp1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
             <div class="modal-dialog" role="document">

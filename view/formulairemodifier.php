@@ -1,5 +1,3 @@
-<?php require_once '../controller/controller-nouveauplatformulaire.php'; ?>
-
 <!doctype html>
 <html lang="fr">
 
@@ -31,36 +29,36 @@
                 <div class="row justify-content-center">
                     <div class="col-10 align-items-center">
 
-                        <form novalidate class="myForm mx-auto" name="newMeal" method="post" action="nouveauplatformulaire.php">
+                        <form novalidate class="myForm mx-auto" name="newMeal" method="get" action="nouveauplatformulaire.php">
                             <fieldset>
-                            <legend><b>Nouveau Plat</b></legend>
+                                <legend><b>Modifier mon plat</b></legend>
                                 <div class="form-group">
                                     <label for="categoryMeal"></label>
                                     <select class="form-control" id="categoryMeal" name="categoryMeal">
-                                        <option value="1">Mise en bouche</option>
-                                        <option value="2">Entrée</option>
-                                        <option value="3">Plat</option>
-                                        <option value="4">Fromage</option>
-                                        <option value="5">Dessert</option>
-                                        <option value="6">Mignardises</option>
+                                        <option>Mise en bouche</option>
+                                        <option>Entrée</option>
+                                        <option>Plat</option>
+                                        <option>Fromage</option>
+                                        <option>Dessert</option>
+                                        <option>Mignardises</option>
                                     </select>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="mealName"></label>
-                                    <input class="form-control" type="text" name="mealName" id="mealName" class="w-100" placeholder="Nom du plat">
+                                    <input class="form-control" type="text" name="mealName" id="mealName" class="w-100" placeholder="nom du plat" value="">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="mealComposition"></label>
-                                    <input class="form-control" type="text" name="mealComposition" id="mealComposition" class="w-100" placeholder="Composition du plat">
+                                    <input class="form-control" type="text" name="mealComposition" id="mealComposition" class="w-100" placeholder="composition du plat" value="">
                                 </div>
 
                                 <div class="d-flex justify-content-between">
                                     <div class="form-group ml-0 pl-0">
                                         <label for="mealPrice"></label>
                                         <div class="d-flex">
-                                            <input id="test" class="form-control" type="number" min="1" name="mealPrice" id="mealPrice" class="w-100" placeholder="19.90">
+                                            <input id="test" class="form-control" type="number" min="1" name="mealPrice" id="mealPrice" class="w-100" placeholder="19.90" value="">
                                             <span class="m-2 ">€</span>
                                         </div>
                                     </div>
@@ -68,7 +66,7 @@
                                     <div class="form-group ml-0 pl-0">
                                         <label for="mealSupp"></label>
                                         <div class="d-flex">
-                                            <input class="form-control" type="number" min="1" name="mealSupp" id="mealSupp" class="w-100" placeholder="2">
+                                            <input class="form-control" type="number" min="1" name="mealSupp" id="mealSupp" class="w-100" placeholder="2" value="">
                                             <span class="m-2">€</span>
                                         </div>
                                     </div>
@@ -77,16 +75,16 @@
 
                                 <div class="mt-3">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="0" name="notVisible">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="0" name="notVisible" value="">
                                         <label class="form-check-label" for="inlineCheckbox2">Ne pas afficher</label>
                                     </div>
                                 </div>
 
 
-                                <button type="submit" class="btn uploadDeleteButtons justify-content-center mb-3 mt-3" name="valider">valider</button>
+                                <button type="submit" class="btn uploadDeleteButtons justify-content-center mb-3 mt-3" name="modifier">modifier</button>
+                            </fieldset>
                         </form>
 
-                        </fieldset>
 
 
                     </div>

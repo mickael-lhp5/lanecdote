@@ -1,0 +1,7 @@
+SELECT menucomponent_name, menucomponent_composition, menucomponent_price, menucomponent_supp, category_menucomponent_name  
+FROM mf_menucompo
+INNER JOIN mf_menucomponents
+ON mf_menucompo.menucomponent_id = mf_menucomponents.menucomponent_id
+INNER JOIN mf_category_menucomponents
+ON mf_menucomponents.category_menucomponent_id = mf_category_menucomponents.category_menucomponent_id
+WHERE menu_id = 2

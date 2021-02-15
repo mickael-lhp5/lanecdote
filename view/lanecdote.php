@@ -26,65 +26,66 @@
             <div class="container d-flex justify-content-center" id="presentationLanecdote">
                 <div class="row" id="descriptif" style="width:100%;">
                     <section class="col-12 mt-4">
-                        <h1 style="font-size:30px;">L'Anecdote</h1>
-                        <h3 style="font-size:20px;">restaurant bistronomique </h3>
-                        <p style="font-size:15px;">L’Anecdote, plus qu’un restaurant, c’est le projet d’une vie, Jérôme et Greg en décembre 2019 se lance dans une folle aventure reprendre le Bistrot d’Antan, une adresse très réputé sur le Havre.
+                        <legend class="mt-3" style="text-align: center;font-size:30px;"><b>L'Anecdote</b></legend>
+                        <h3 style="font-size:20px;text-align: center;" class="mt-2">restaurant bistronomique </h3>
+                        <p style="font-size:15px;color: black;">L’Anecdote, plus qu’un restaurant, c’est le projet d’une vie, Jérôme et Greg en décembre 2019 se lance dans une folle aventure reprendre le Bistrot d’Antan, une adresse très réputé sur le Havre.
                             Malgré de nombreuses péripéties, le projet à vue le jour le 12 aout 2020, nous sommes fière de vous accueillir dans un établissement complétement rénové, décoré dans un style industriel sobre et épuré. Vous pouvez profiter d’une partie Lounge bar, avec des fauteuils et canapés pour prendre un verre autour d’une planche apéro ou bien déguster autour d’une table nos mets, tous fait maison bien sûr.
-                            Notre philosophie, le partage, nous tenons à partager avec chacun de nos clients notre savoir-faire et notre passion pour notre métier, notre but est que vous passiez un agréable moment dans notre établissement. Toute notre équipe partage les mêmes ambition et la même détermination.
-                        </p>
+                            Notre philosophie, le partage, nous tenons à partager avec chacun de nos clients notre savoir-faire et notre passion pour notre métier, notre but est que vous passiez un agréable moment dans notre établissement. Toute notre équipe partage les mêmes ambition et la même détermination.</p>
 
                     </section>
                     <section class="d-flex col-12 mt-4 mb-5 flex-wrap" id="restaurantPrez">
                         <div class="col-12 col-sm-3">
                             <div class="m-2">
-                                <img class="w-100 homeImg" src="../assets/img/devanture1.jpg">
+                                <img class="w-100 homeImg" data-aos="fade-up" data-aos-duration="3000" src="../assets/img/devanture1.jpg">
                             </div>
                         </div>
 
                         <div class="d-flex col-12 col-sm-3">
                             <div class="m-2">
-                                <img class="w-100 homeImg" src="../assets/img/salle3.jpg">
+                                <img class="w-100 homeImg" data-aos="fade-up" data-aos-duration="3000" src="../assets/img/salle3.jpg">
                             </div>
                         </div>
                         <div class="d-flex col-12 col-sm-3">
                             <div class="m-2">
-                                <img class="w-100 homeImg" src="../assets/img/salle4.jpg">
+                                <img class="w-100 homeImg" data-aos="fade-up" data-aos-duration="3000" src="../assets/img/salle4.jpg">
                             </div>
                         </div>
                         <div class="d-flex col-12 col-sm-3">
                             <div class="m-2">
-                                <img class="w-100  homeImg" src="../assets/img/devanture2.jpg">
+                                <img class="w-100  homeImg" data-aos="fade-up" data-aos-duration="3000" src="../assets/img/devanture2.jpg">
                             </div>
                         </div>
                     </section>
 
-                    <div class="d-flex justify-content-center">
-                        <h1 style="font-size:30px;">L'équipe</h1>
-                    </div>
+
+
+
                     <section class="d-flex col-12 mt-4 flex-wrap justify-content-center mb-2" id="teamPrez">
-                        <div class="d-flex col-12 col-sm-4  mb-3">
+                        <legend class="mt-3" style="text-align: center;font-size:30px;color:black;"><b>L'équipe</b></legend>
+
+                        <div class="d-flex col-12 col-sm-4  mb-3" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="1000">
                             <div class="m-2">
-                                <img class="w-100  homeImg" src="../assets/img/cuisiniertest.jpg">
+                                <img class="w-100  homeImg" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" src="../assets/img/cuisiniertest.jpg">
                             </div>
                         </div>
                         <div class="d-flex col-12 col-sm-4">
                             <div class="m-2">
-                                <img class="w-100  homeImg" src="../assets/img/serveur2test.jpg">
+                                <img class="w-100  homeImg" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" src="../assets/img/serveur2test.jpg">
                             </div>
                         </div>
                         <div class="d-flex col-12 col-sm-4">
                             <div class="m-2">
-                                <img class="w-100  homeImg" src="../assets/img/serveur4test.jpg">
+                                <img class="w-100  homeImg" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" src="../assets/img/serveur4test.jpg">
                             </div>
                         </div>
                         <div class="d-flex col-12 col-sm-4">
                             <div class="m-2">
-                                <img class="w-100  homeImg" src="../assets/img/serveur3test.jpg">
+                                <img class="w-100  homeImg" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" src="../assets/img/serveur3test.jpg">
                             </div>
                         </div>
                         <div class="d-flex col-12 col-sm-4">
                             <div class="m-2">
-                                <img class="w-100  homeImg" src="../assets/img/serveur3test.jpg">
+                                <img class="w-100  homeImg" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" src="../assets/img/serveur3test.jpg">
                             </div>
                         </div>
                     </section>
