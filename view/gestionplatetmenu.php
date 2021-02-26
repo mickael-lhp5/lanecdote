@@ -26,7 +26,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="d-flex col-6 align-items-center justify-content-center">
-                        <form action="lacarte.php" method="POST">
+                        <form action="lacarte-admin.php" method="POST">
                             <button type="submit" class="btn justify-content-center mb-3" name="plats"><img src="../assets/img/carousel1.jpg" width="200px" height="220px">La carte</button>
                         </form>
                         <form action="menus.php" method="POST">

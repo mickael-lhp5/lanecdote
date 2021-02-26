@@ -1,8 +1,12 @@
+<?php
+require_once '../controller/controller-nouscontacter.php';
+?>
+
 <!doctype html>
 <html lang="fr">
 
 <head>
-    <title>L'ANECDOTEtest</title>
+    <title>L'ANECDOTE</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,69 +24,66 @@
 
 <body>
 
-    <div id="contentFullHomePage" class="adminPage">
+    <div id="contentFullHomePage">
         <?php require_once "nav.php" ?>
+
+
         <div class="flex-grow-1" id="bgHomePage">
-            <div class="container h-100">
-                <div class="row justify-content-center">
-                    <div class="col-10 align-items-center justify-content-center">
+            <div class="container-fluid laCarteDropDown">
+                <div class="row justify-content-center col-12">
+                    <div class="d-flex col-6 align-items-center justify-content-center">
                         <div>
-                            <a href="nouveauplatformulaire.php"><button type="submit" class="btn mb-3 addNewMeal " name="addMeal">NOUVEAU PLAT</button></a>
+
+                            <div class="card mt-5 mb-5">
+                                <div class="card-header">
+                                    Les entrées
+                                </div>
+                                <div class="card-body">
+                                    <blockquote class="blockquote mb-0">
+                                        <legend class="mealCardTitle">Saumon fumée</legend>
+                                        <p><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</i> </p>
+                                        <hr>
+                                        <legend class="mealCardTitle">Oeuf cocotte</legend>
+                                        <p><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</i> </p>
+                                    </blockquote>
+                                </div>
+                            </div>
+                            <div class="card mt-5 mb-5">
+                                <div class="card-header">
+                                    Les plats
+                                </div>
+                                <div class="card-body">
+                                    <blockquote class="blockquote mb-0">
+                                        <legend class="mealCardTitle">Saumon fumée </legend>
+                                        <p  class="mealCardBody"><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</i> </p>
+                                        <hr>
+                                        <legend class="mealTitle">Oeuf cocotte</legend>
+                                        <p><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</i> </p>
+                                    </blockquote>
+                                </div>
+                            </div>
+                            <div class="card mt-5 mb-5">
+                                <div class="card-header">
+                                    Les desserts
+                                </div>
+                                <div class="card-body">
+                                    <blockquote class="blockquote mb-0">
+                                    <legend class="mealCardTitle">Saumon fumée</legend>
+                                        <p><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</i> </p>
+                                        <hr>
+                                        <legend class="mealCardTitle">Oeuf cocotte</legend>
+                                        <p><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</i> </p>
+                                    </blockquote>
+                                </div>
+                            </div>
                         </div>
-                        <table class="table table-hover table-dark">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Nom</th>
-                                    <th scope="col-9">Descritpion</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">Le Saumon Exotique</th>
-                                    <td>Tartare de saumon, avocat et mangue, vinaigrette exotique</td>
-                                    <td><a href="formulairemodifier.php"><button type="button" class="btn uploadDeleteButtons" name="modif1">modifier</button></a></td>
-                                    <td><button type="button" class="btn uploadDeleteButtons" name="supp1" data-toggle="modal" data-target="#supp1">supprimer</button></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">L'Oeuf Cocotte</th>
-                                    <td>Oeuf en cocotte au chorizo, gratiné au comté</td>
-                                    <td><button type="button" class="btn uploadDeleteButtons" name="modif2" data-toggle="modal" data-target="#exampleModalLong">modifier</button></td>
-                                    <td><button type="button" class="btn uploadDeleteButtons" name="supp2">supprimer</button></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Le Foie Gras</th>
-                                    <td>Tranche de foie gras, chutney de figue et crumble noisette</td>
-                                    <td><button type="button" class="btn uploadDeleteButtons" name="modif3">modifier</button></td>
-                                    <td><button type="button" class="btn uploadDeleteButtons" name="supp3">supprimer</button></td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="modal fade" id="supp1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Voulez-vous supprimer ce plat ?</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <!-- <div class="modal-body">
-                        Voulez-vous supprimer ce plat ?
-                    </div> -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Non</button>
-                        <button type="button" class="btn btn-danger">Valider la suppression</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php require_once "footer.php" ?>
     </div>
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -98,7 +99,5 @@
         AOS.init()
     </script>
 </body>
-
-
 
 </html>

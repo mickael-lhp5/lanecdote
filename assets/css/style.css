@@ -39,7 +39,6 @@ footer {
 }
 
 .carousel-item {
-
   overflow: hidden;
   /* height: 100vh; */
 }
@@ -116,13 +115,13 @@ span.navbar-toggler-icon {
   transform: translateY(2px);
 }
 
-footer {
+/* footer {
   width: 100%;
   background-color: black !important;
   border-top: 6px solid #D4514A;
   line-height: 1;
   color: white;
-}
+} */
 
 .footerContainer {
   justify-content: space-around;
@@ -130,6 +129,11 @@ footer {
 
 #myFooter {
   width: 100%;
+  width: 100%;
+  background-color: black !important;
+  border-top: 6px solid #D4514A;
+  line-height: 1;
+  color: white;
 }
 
 .mailFooter {
@@ -187,16 +191,16 @@ footer {
   font-weight: bold;
 }
 
-.uploadDeleteButtons {
+.updateDeleteButtons {
   background-color: #D4514A;
   font-weight: bold;
 }
 
-.uploadDeleteButtons:hover {
+.updateDeleteButtons:hover {
   background-color: #D4514A;
   font-weight: bold;
-  box-shadow: 0 4px #666;
-  transform: translateY(2px);
+  box-shadow: 0 2px #666;
+  transform: translateY(1px);
 }
 
 .addNewMeal {
@@ -206,12 +210,68 @@ footer {
 
 .addNewMeal:hover {
   color: black !important;
-  box-shadow: 0 4px #666;
-  transform: translateY(2px);
+  box-shadow: 0 2px #666;
+  transform: translateY(1px);
 }
 
 .myForm {
   max-width: 100%;
   width: 500px;
   justify-content: center;
+}
+
+.infoButtonEdit {
+  position: relative;
+}
+
+.infoButtonEdit:hover .infoModifier {
+  display: block;
+}
+
+.infoModifier {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+  color: white;
+  font-size: 12px;
+  opacity: 0.5;
+  width: 100%;
+  display: none;
+}
+
+.infoButtonDelete {
+  position: relative;
+}
+
+.infoButtonDelete:hover .infoDelete {
+  display: block;
+}
+
+.infoDelete {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+  color: white;
+  font-size: 12px;
+  opacity: 0.5;
+  width: 100%;
+  display: none;
+}
+
+.nameColumn {
+  width: 20%;
+}
+
+.nthPerso:nth-child(odd) {
+  background-color: #686868;
+}
+
+/* .laCarteDropDown{
+height: 120vh;
+} */
+
+legend.mealCardTitle{
+font-size: 1.2rem;
 }

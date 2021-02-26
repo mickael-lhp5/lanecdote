@@ -1,8 +1,10 @@
+<?php require_once '../controller/controller-modifierformulaire.php'; ?>
+
 <!doctype html>
 <html lang="fr">
 
 <head>
-    <title>L'ANECDOTEtest</title>
+    <title>L'ANECDOTE</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -28,37 +30,39 @@
             <div class="container h-100">
                 <div class="row justify-content-center">
                     <div class="col-10 align-items-center">
-
-                        <form novalidate class="myForm mx-auto" name="newMeal" method="get" action="nouveauplatformulaire.php">
+                        <form novalidate class="myForm mx-auto" name="modification" method="POST" action="formulairemodifier.php">
+                            <p class="h2 text-secondary"><?= $errorMessages['updateMeal'] ?? '' ?></p>
                             <fieldset>
-                                <legend><b>Modifier mon plat</b></legend>
+                                <legend><b>Modifiez votre plat</b></legend>
                                 <div class="form-group">
                                     <label for="categoryMeal"></label>
                                     <select class="form-control" id="categoryMeal" name="categoryMeal">
-                                        <option>Mise en bouche</option>
-                                        <option>Entrée</option>
-                                        <option>Plat</option>
-                                        <option>Fromage</option>
-                                        <option>Dessert</option>
-                                        <option>Mignardises</option>
+                                        <option value="null" disabled selected>Type de plat</option>
+                                        <?php
+                                        foreach ($typeOfMealArray as $key => $typeOfMeal) { ?>
+                                            <?php if ($key == $getMeal['typeplat'] ) { ?>
+                                                <option selected value="<?= $key ?>" <?= isset($_POST['categoryMeal']) && $_POST["categoryMeal"] == $key ? "categoryMeal" : '' ?>><?= $typeOfMeal ?></option>
+                                            <?php } else { ?>
+                                                <option value="<?= $key ?>" <?= isset($_POST['categoryMeal']) && $_POST["categoryMeal"] == $key ? "categoryMeal" : '' ?>><?= $typeOfMeal ?></option>
+                                            <?php } ?>
+                                        <?php } ?>
                                     </select>
                                 </div>
-
                                 <div class="form-group">
                                     <label for="mealName"></label>
-                                    <input class="form-control" type="text" name="mealName" id="mealName" class="w-100" placeholder="nom du plat" value="">
+                                    <input class="form-control" type="text" name="mealName" id="mealName" class="w-100" placeholder="Nom du plat" value="<?= isset($_POST['mealName']) ? htmlspecialchars($_POST['mealName'])  : $getMeal['nom'] ?>" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="mealComposition"></label>
-                                    <input class="form-control" type="text" name="mealComposition" id="mealComposition" class="w-100" placeholder="composition du plat" value="">
+                                    <input class="form-control w-100" type="text" name="mealComposition" id="mealComposition" placeholder="Composition du plat " value="<?= isset($_POST['mealComposition']) ? htmlspecialchars($_POST['mealComposition'])  : $getMeal['description'] ?>" required>
                                 </div>
 
                                 <div class="d-flex justify-content-between">
                                     <div class="form-group ml-0 pl-0">
                                         <label for="mealPrice"></label>
                                         <div class="d-flex">
-                                            <input id="test" class="form-control" type="number" min="1" name="mealPrice" id="mealPrice" class="w-100" placeholder="19.90" value="">
+                                            <input class="form-control w-100" type="number" min="1" name="mealPrice" id="mealPrice" placeholder="19.90" value="<?= isset($_POST['mealPrice']) ? htmlspecialchars($_POST['mealPrice'])  : $getMeal['prix'] ?>" required>
                                             <span class="m-2 ">€</span>
                                         </div>
                                     </div>
@@ -66,7 +70,7 @@
                                     <div class="form-group ml-0 pl-0">
                                         <label for="mealSupp"></label>
                                         <div class="d-flex">
-                                            <input class="form-control" type="number" min="1" name="mealSupp" id="mealSupp" class="w-100" placeholder="2" value="">
+                                            <input class="form-control w-100" type="number" min="1" name="mealSupp" id="mealSupp" placeholder="2" value="<?= isset($_POST['mealSupp']) ? htmlspecialchars($_POST['mealSupp'])  : $getMeal['supplément'] ?>" required>
                                             <span class="m-2">€</span>
                                         </div>
                                     </div>
@@ -75,18 +79,17 @@
 
                                 <div class="mt-3">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="0" name="notVisible" value="">
-                                        <label class="form-check-label" for="inlineCheckbox2">Ne pas afficher</label>
+                                        <input class="form-check-input" type="checkbox" id="notVisible" value="0" name="notVisible" value="<? isset($_POST['notVisible']) ? htmlspecialchars($_POST['notVisible']) : '' ?>" required>
+                                        <label class="form-check-label" for="notVisible">Ne pas afficher</label>
                                     </div>
                                 </div>
 
-
-                                <button type="submit" class="btn uploadDeleteButtons justify-content-center mb-3 mt-3" name="modifier">modifier</button>
-                            </fieldset>
+                                <div class="d-flex">
+                                    <button type="submit" class="btn uploadDeleteButtons justify-content-center mb-3 mt-3" name="modifier" value="<?= $getMeal['id'] ?>" >Modifier plat</button>
+                                    <a class="btn uploadDeleteButtons justify-content-center mb-3 mt-3 ml-3" href="../view/lacarte.php" name="backMealBtn">Liste des plats</button></a>
+                                </div>
                         </form>
-
-
-
+                        </fieldset>
                     </div>
                 </div>
             </div>

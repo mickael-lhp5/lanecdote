@@ -1,9 +1,19 @@
 <?php
 
-require_once '../model/model_nouveauplatformulaire.php';
+require_once '../model/database.php';
+require_once '../model/model_platformulaire.php';
+
+var_dump($_POST);
 
 $regexPrice = "/^[0-9]+.?[0-9]{0,2}$/";
-
+$typeOfMealArray = [
+    1 => 'Mise en bouche',
+    2 => 'Entrée',
+    3 => 'Plat',
+    4 => 'Fromage',
+    5 => 'Dessert',
+    6 => 'Mignardises'
+];
 
 if (isset($_POST['valider'])) {
 
@@ -34,18 +44,39 @@ if (isset($_POST['valider'])) {
 
     if (empty($errorMessages)) {
 
-        $name = $_POST['mealName'];
-        $composition = $_POST['mealComposition'];
-        $price = $_POST['mealPrice'];
-        $supp = $_POST['mealSupp'];
-        if (isset($_POST['notVisible'])) {
+        $mealObj = new Meal;
+
+          // création du tableau $mealDetails dans la fonction
+          if (isset($_POST['notVisible'])) {
             $visible = $_POST['notVisible'];
         } else {
             $visible = 0;
         }
-        $category = $_POST['categoryMeal'];
 
-        nouveauPlatFormulaire($name, $composition, $price, $supp, $visible, $category);
+          $mealDetails = [
+            'mealName'=> htmlspecialchars($_POST['mealName']),
+            'mealComposition'=> htmlspecialchars($_POST['mealComposition']),
+            'mealPrice'=> htmlspecialchars($_POST['mealPrice']),
+            'mealSupp'=> htmlspecialchars($_POST['mealSupp']),
+            'notVisible'=> htmlspecialchars($visible),
+            'categoryMeal'=> htmlspecialchars($_POST['categoryMeal'])            
+        ];
+
+
+         // on injecte la variable du tableau $mealDetails dans la fonction
+
+    if($mealObj->addMeal($mealDetails)){
+        $errorMessages['addMeal'] = "Plat enregistré";
+    }else {
+
+        $errorMessages['addMeal'] = "erreur de connexion";
     }
 
+   }
+
 }
+  
+
+
+
+

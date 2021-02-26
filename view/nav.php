@@ -14,8 +14,14 @@
             <li class="nav-item">
                 <a class="nav-link" href="lanecdote.php">QUI SOMMES-NOUS ?</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="carteetmenus.php"> CARTE & MENUS</a>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"> CARTE & MENUS</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="lacarte.php">La carte</a>
+                    <a class="dropdown-item" href="lesmenus.php">Les menus</a>
+                    <a class="dropdown-item" href="lesboissons.php">Les boissons</a>
+                </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="horaires_et_informations.php">HORAIRES & INFORMATIONS</a>

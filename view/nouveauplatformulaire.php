@@ -4,7 +4,7 @@
 <html lang="fr">
 
 <head>
-    <title>L'ANECDOTEtest</title>
+    <title>L'ANECDOTE</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -30,37 +30,35 @@
             <div class="container h-100">
                 <div class="row justify-content-center">
                     <div class="col-10 align-items-center">
-
                         <form novalidate class="myForm mx-auto" name="newMeal" method="post" action="nouveauplatformulaire.php">
+                            <p class="h2 text-secondary"><?= $errorMessages['addMeal'] ?? '' ?></p>
                             <fieldset>
-                            <legend><b>Nouveau Plat</b></legend>
+                                <legend><b>Nouveau Plat</b></legend>
                                 <div class="form-group">
                                     <label for="categoryMeal"></label>
                                     <select class="form-control" id="categoryMeal" name="categoryMeal">
-                                        <option value="1">Mise en bouche</option>
-                                        <option value="2">Entrée</option>
-                                        <option value="3">Plat</option>
-                                        <option value="4">Fromage</option>
-                                        <option value="5">Dessert</option>
-                                        <option value="6">Mignardises</option>
+                                        <option value="null" disabled selected>Type de plat</option>
+                                        <?php
+                                        foreach ($typeOfMealArray as $key => $typeOfMeal) { ?>
+                                            <option value="<?= $key ?>" <?= isset($_POST['categoryMeal']) && $_POST["categoryMeal"] == $key ? "categoryMeal" : '' ?>><?= $typeOfMeal ?></option>
+                                        <?php } ?>
                                     </select>
                                 </div>
-
                                 <div class="form-group">
                                     <label for="mealName"></label>
-                                    <input class="form-control" type="text" name="mealName" id="mealName" class="w-100" placeholder="Nom du plat">
+                                    <input class="form-control" type="text" name="mealName" id="mealName" class="w-100" placeholder="Nom du plat" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="mealComposition"></label>
-                                    <input class="form-control" type="text" name="mealComposition" id="mealComposition" class="w-100" placeholder="Composition du plat">
+                                    <input class="form-control" type="text" name="mealComposition" id="mealComposition" class="w-100" placeholder="Composition du plat " required>
                                 </div>
 
                                 <div class="d-flex justify-content-between">
                                     <div class="form-group ml-0 pl-0">
                                         <label for="mealPrice"></label>
                                         <div class="d-flex">
-                                            <input id="test" class="form-control" type="number" min="1" name="mealPrice" id="mealPrice" class="w-100" placeholder="19.90">
+                                            <input id="test" class="form-control" type="number" min="1" name="mealPrice" id="mealPrice" class="w-100" placeholder="19.90" required>
                                             <span class="m-2 ">€</span>
                                         </div>
                                     </div>
@@ -68,7 +66,7 @@
                                     <div class="form-group ml-0 pl-0">
                                         <label for="mealSupp"></label>
                                         <div class="d-flex">
-                                            <input class="form-control" type="number" min="1" name="mealSupp" id="mealSupp" class="w-100" placeholder="2">
+                                            <input class="form-control" type="number" min="1" name="mealSupp" id="mealSupp" class="w-100" placeholder="2" required>
                                             <span class="m-2">€</span>
                                         </div>
                                     </div>
@@ -77,13 +75,15 @@
 
                                 <div class="mt-3">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="0" name="notVisible">
-                                        <label class="form-check-label" for="inlineCheckbox2">Ne pas afficher</label>
+                                        <input class="form-check-input" type="checkbox" id="notVisible" value="0" name="notVisible" value="<? isset($_POST['notVisible']) ? htmlspecialchars($_POST['notVisible']) : '' ?>" required>
+                                        <label class="form-check-label" for="notVisible">Ne pas afficher</label>
                                     </div>
                                 </div>
 
-
-                                <button type="submit" class="btn uploadDeleteButtons justify-content-center mb-3 mt-3" name="valider">valider</button>
+                                <div class="d-flex">
+                                    <button type="submit" class="btn updateDeleteButtons justify-content-center mb-3 mt-3" name="valider">Ajouter plat</button>
+                                    <a class="btn updateDeleteButtons justify-content-center mb-3 mt-3 ml-3" href="../view/lacarte.php" name="backMealBtn">Liste des plats</button></a>
+                                </div>
                         </form>
 
                         </fieldset>
