@@ -82,7 +82,7 @@
 
                                 <div class="d-flex">
                                     <button type="submit" class="btn updateDeleteButtons justify-content-center mb-3 mt-3" name="valider">Ajouter plat</button>
-                                    <a class="btn updateDeleteButtons justify-content-center mb-3 mt-3 ml-3" href="../view/lacarte.php" name="backMealBtn">Liste des plats</button></a>
+                                    <a class="btn updateDeleteButtons justify-content-center mb-3 mt-3 ml-3" href="../view/lacarte-admin.php" name="backMealBtn">Liste des plats</button></a>
                                 </div>
                         </form>
 

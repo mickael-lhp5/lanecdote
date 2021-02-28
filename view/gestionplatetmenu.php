@@ -27,13 +27,13 @@
                 <div class="row justify-content-center">
                     <div class="d-flex col-6 align-items-center justify-content-center">
                         <form action="lacarte-admin.php" method="POST">
-                            <button type="submit" class="btn justify-content-center mb-3" name="plats"><img src="../assets/img/carousel1.jpg" width="200px" height="220px">La carte</button>
+                            <button type="submit" class="btn justify-content-center mb-3" name="plats"><img class="imgGestionPlatMenu" src="../assets/img/carousel1.jpg">La carte</button>
                         </form>
                         <form action="menus.php" method="POST">
-                            <button type="submit" class="btn justify-content-center mb-3 ml-5" name="menus"><img src="../assets/img/carousel2.jpg" width="200px" height="220px">Menus</button>
+                            <button type="submit" class="btn justify-content-center mb-3 ml-5" name="menus"><img class="imgGestionPlatMenu"  src="../assets/img/carousel2.jpg">Menus</button>
                         </form>
-                        <form action="boissons.php" method="POST">
-                            <button type="submit" class="btn justify-content-center mb-3 ml-5" name="menus"><img src="../assets/img/drinks.jpg" width="200px" height="220px">Boissons</button>
+                        <form action="lesboissons-admin.php" method="POST">
+                            <button type="submit" class="btn justify-content-center mb-3 ml-5" name="menus"><img class="imgGestionPlatMenu" src="../assets/img/drinks.jpg">Boissons</button>
                         </form>
                     </div>
                 </div>

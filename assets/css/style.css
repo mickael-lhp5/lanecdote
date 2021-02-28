@@ -191,6 +191,13 @@ span.navbar-toggler-icon {
   font-weight: bold;
 }
 
+.imgGestionPlatMenu{
+  height: 250px;
+  width: 250px;
+  border-radius: 2%;
+  object-fit: cover;
+}
+
 .updateDeleteButtons {
   background-color: #D4514A;
   font-weight: bold;
@@ -209,6 +216,17 @@ span.navbar-toggler-icon {
 }
 
 .addNewMeal:hover {
+  color: black !important;
+  box-shadow: 0 2px #666;
+  transform: translateY(1px);
+}
+
+.addNewDrink {
+  background-color: #D4514A;
+  font-weight: bold;
+}
+
+.addNewDrink:hover {
   color: black !important;
   box-shadow: 0 2px #666;
   transform: translateY(1px);
@@ -275,3 +293,34 @@ height: 120vh;
 legend.mealCardTitle{
 font-size: 1.2rem;
 }
+
+p.mealCardBody{
+  font-size: 1rem;
+}
+
+hr {
+
+}
+
+.suppSize{
+  font-size: 0.9rem;
+}
+
+.contentPrice{
+  min-width: 5rem;
+}
+
+.card-header{
+background-color: #e47c76!important;
+font-weight: bold;
+font-size: 1.2rem;
+font-style: italic;
+}
+
+.imgBgLacarte{
+
+background-image: url(../img/maintest.jpg);
+background-size: cover;
+background-attachment: fixed;
+}
+

@@ -1,5 +1,5 @@
 <?php
-require_once '../controller/controller-nouscontacter.php';
+require_once '../controller/controller-lacarte.php';
 ?>
 
 <!doctype html>
@@ -28,54 +28,44 @@ require_once '../controller/controller-nouscontacter.php';
         <?php require_once "nav.php" ?>
 
 
-        <div class="flex-grow-1" id="bgHomePage">
-            <div class="container-fluid laCarteDropDown">
+        <div class="flex-grow-1 " id="bgHomePage">
+            <div class="container-fluid imgBgLacarte">
                 <div class="row justify-content-center col-12">
                     <div class="d-flex col-6 align-items-center justify-content-center">
                         <div>
 
-                            <div class="card mt-5 mb-5">
-                                <div class="card-header">
-                                    Les entrées
-                                </div>
-                                <div class="card-body">
-                                    <blockquote class="blockquote mb-0">
-                                        <legend class="mealCardTitle">Saumon fumée</legend>
-                                        <p><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</i> </p>
-                                        <hr>
-                                        <legend class="mealCardTitle">Oeuf cocotte</legend>
-                                        <p><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</i> </p>
-                                    </blockquote>
-                                </div>
-                            </div>
-                            <div class="card mt-5 mb-5">
-                                <div class="card-header">
-                                    Les plats
-                                </div>
-                                <div class="card-body">
-                                    <blockquote class="blockquote mb-0">
-                                        <legend class="mealCardTitle">Saumon fumée </legend>
-                                        <p  class="mealCardBody"><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</i> </p>
-                                        <hr>
-                                        <legend class="mealTitle">Oeuf cocotte</legend>
-                                        <p><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</i> </p>
-                                    </blockquote>
-                                </div>
-                            </div>
-                            <div class="card mt-5 mb-5">
-                                <div class="card-header">
-                                    Les desserts
-                                </div>
-                                <div class="card-body">
-                                    <blockquote class="blockquote mb-0">
-                                    <legend class="mealCardTitle">Saumon fumée</legend>
-                                        <p><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</i> </p>
-                                        <hr>
-                                        <legend class="mealCardTitle">Oeuf cocotte</legend>
-                                        <p><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</i> </p>
-                                    </blockquote>
-                                </div>
-                            </div>
+                            <?php foreach ($categoryArray as $category) { ?>
+                                <?php $categoryArray = $readMealStarterObj->getMeals($category['category_menucomponent_id']) ?>
+                                <?php if (!empty($categoryArray)) { ?>
+                                    <div class="card mt-5 mb-5">
+                                        <div class="card-header">
+                                            <?= $category['category_menucomponent_name'] ?>
+                                        </div>
+
+                                        <div class="card-body">
+                                            <blockquote class="blockquote mb-0">
+                                                <?php foreach ($categoryArray as $categoryMenu) { ?>
+                                                    <legend class="mealCardTitle d-flex justify-content-between">
+                                                        <div>
+                                                            <p> <?= $categoryMenu['menucomponent_name'] ?> </p>
+                                                            <p class="mealCardBody"><i><?= $categoryMenu['menucomponent_composition'] ?></i> </p>
+                                                        </div>
+                                                        <div class="d-flex flex-column contentPrice">
+                                                            <span><?= $categoryMenu['menucomponent_price'] ?> € </span>
+                                                            <?php if (!empty($categoryMenu['menucomponent_supp'])) { ?>
+                                                                <span class="font-italic text-secondary suppSize"> (supp <?= $categoryMenu['menucomponent_supp'] ?> €)</span></span>
+                                                            <?php } ?>
+                                                        </div>
+                                                    </legend>
+                                                    <hr>
+                                                <?php } ?>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                <?php } ?>
+                            <?php } ?>
+
+
                         </div>
                     </div>
                 </div>

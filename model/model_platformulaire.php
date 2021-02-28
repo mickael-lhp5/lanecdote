@@ -120,4 +120,19 @@ class Meal extends Database
     }
 
 
+// READ LA CARTE COTE CLIENT
+
+public function getMeals($idCat)
+{
+
+   $query = "SELECT menucomponent_name, menucomponent_composition, menucomponent_price , menucomponent_supp , menucomponent_visible ,category_menucomponent_id
+    FROM lanecdote.mf_menucomponents
+    WHERE category_menucomponent_id = $idCat";
+
+    $readStarterMealQuery = $this->dataBase->query($query);
+    $result = $readStarterMealQuery->fetchAll();
+    return $result;
+}
+
+
 }
