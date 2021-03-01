@@ -4,30 +4,33 @@ session_start();
 
 require_once '../model/database.php';
 require_once '../model/model_drinks.php';
-
+require_once '../model/model_drinks_cat.php';
 var_dump($_POST);
 
+$drinkObj = new Drinks;
+$categoryDrinkObj = new Drinks_cat;
+
+$categoryDrinkArray = $categoryDrinkObj->readCategory();
+
+$errorMessages=[];
+$typeOfDrinkArray = [];
+foreach($categoryDrinkArray as $value){
+    $typeOfDrinkArray [$value['drinks_cat_id']] = $value['drinks_cat_name'];
+}
+
+
+
 $regexPrice = "/^[0-9]+.?[0-9]{0,2}$/";
-$typeOfDrinkArray = [
-    1 => 'Vin Rouge',
-    2 => 'Vin Blanc',
-    3 => 'Vin Rosé',
-    4 => 'Bière',
-
-];
-
-if (!empty($_POST['enterModifyForm'])) {
-    $_SESSION['id'] = $_POST['enterModifyForm'];
+if (!empty($_POST['enterModifyDrinkForm'])) {
+    $_SESSION['id'] = $_POST['enterModifyDrinkForm'];
 }
 
 $getDrink = $drinkObj->readDrinkModify($_SESSION['id']);
-var_dump($id);
 var_dump($getDrink);
 
 
 
-
-if (isset($_POST['valider'])) {
+if (isset($_POST['modifier'])) {
 
 
     if (isset($_POST['drinkName'])) {
@@ -46,11 +49,11 @@ if (isset($_POST['valider'])) {
         }
     }
 
+
+    var_dump($errorMessages);
     if (empty($errorMessages)) {
 
-        $drinkObj = new Drinks;
-
-        // création du tableau $mealDetails dans la fonction
+        // création du tableau $drinkDetails dans la fonction
         if (isset($_POST['notVisible'])) {
             $visible = $_POST['notVisible'];
         } else {
@@ -58,14 +61,15 @@ if (isset($_POST['valider'])) {
         }
 
         $drinkDetails = [
+            'id' => $_SESSION['id'],
             'drinkName' => htmlspecialchars($_POST['drinkName']),
             'drinkPrice' => htmlspecialchars($_POST['drinkPrice']),
             'notVisible' => htmlspecialchars($visible),
             'categoryDrink' => htmlspecialchars($_POST['categoryDrink'])
         ];
 
-
-        // on injecte la variable du tableau $mealDetails dans la fonction
+var_dump($drinkDetails);
+        // on injecte la variable du tableau $drinkDetails dans la fonction
 
         if ($drinkObj->updateDrink($drinkDetails)) {
             $errorMessages['updateDrink'] = "Boisson modifié";
@@ -74,11 +78,4 @@ if (isset($_POST['valider'])) {
             $errorMessages['updateDrink'] = "erreur de connexion";
         }
     }
-
-
-
-
-    
 }
-
-

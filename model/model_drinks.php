@@ -1,8 +1,9 @@
 <?php
-class Drinks extends Database {
-// CREATE DRINKS
+class Drinks extends Database
+{
+    // CREATE DRINKS
 
-/**
+    /**
      * 
      * @param array $drinkDetail contient toutes les informations du addDrink
      * @return boolean permet de savoir si la requete est bien passée
@@ -33,10 +34,10 @@ class Drinks extends Database {
         }
     }
 
-// READ
-public function readDrink()
-{
-    $query = "SELECT 
+    // READ
+    public function readDrink()
+    {
+        $query = "SELECT 
     `drink_id` AS `id`,
     `drink_name` AS `nom`, 
     `drink_price` AS `prix`, 
@@ -44,19 +45,57 @@ public function readDrink()
     `mf_drinks_cat`.`drinks_cat_name` AS `Type de boisson` 
     FROM mf_drinks
     INNER JOIN mf_drinks_cat 
-    ON mf_drinks.drinks_cat_id = mf_drinks_cat.drinks_cat_id;";       
-    $readDrinkQuery = $this->dataBase->query($query);
-    $result = $readDrinkQuery->fetchAll();
-    return $result;
+    ON mf_drinks.drinks_cat_id = mf_drinks_cat.drinks_cat_id;";
+        $readDrinkQuery = $this->dataBase->query($query);
+        $result = $readDrinkQuery->fetchAll();
+        return $result;
+    }
+
+
+
+    //UPDATE
+    public function readDrinkModify($id)
+    {
+        $query =  $query = "SELECT 
+`drink_id` AS `id`, 
+`drink_name` AS `nom`, 
+`mf_drinks`.`drinks_cat_id` AS `typeboisson`, 
+`drink_price` AS `prix`, 
+`drink_visible` AS `visible`, 
+`mf_drinks_cat`.`drinks_cat_name` AS `Type de boisson` 
+FROM `mf_drinks` 
+INNER JOIN mf_drinks_cat
+ON mf_drinks.drinks_cat_id = mf_drinks_cat.drinks_cat_id
+WHERE `drink_id` = '$id'";
+
+        $readDrinkModifyQuery = $this->dataBase->query($query);
+        $result = $readDrinkModifyQuery->fetch();
+        return $result;
+    }
+
+    public function updateDrink(array $drinkDetails)
+    {
+        // requete me permettant de modifier ma boisson
+        $query = 'UPDATE `mf_drinks` SET
+`drink_name` = :drink_name,
+`drink_price` = :drink_price,
+`drink_visible` = :drink_visible,
+`drinks_cat_id` = :drinks_cat_id
+WHERE `drink_id` = :id';
+
+        //je prepare requête à l'aide de la methode prepare pour me premunir des injections SQL 
+        $updateDrinkQuery = $this->dataBase->prepare($query);
+
+        //On bind les values pour renseigner les marqueurs nominatifs
+        $updateDrinkQuery->bindvalue(':drink_name', $drinkDetails['drinkName'], PDO::PARAM_STR);
+        $updateDrinkQuery->bindvalue(':drink_price', $drinkDetails['drinkPrice'], PDO::PARAM_STR);
+        $updateDrinkQuery->bindvalue(':drink_visible', $drinkDetails['notVisible'], PDO::PARAM_STR);
+        $updateDrinkQuery->bindvalue(':drinks_cat_id', $drinkDetails['categoryDrink'], PDO::PARAM_STR);
+        $updateDrinkQuery->bindvalue(':id', $drinkDetails['id'], PDO::PARAM_STR);
+        if ($updateDrinkQuery->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
-
-
-
-
-
-
-
-
-}
-
-

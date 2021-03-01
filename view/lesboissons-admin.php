@@ -56,14 +56,14 @@ require_once '../controller/controller-lesboissons-admin.php';
                                         <td>
                                             <div class="infoButtonEdit">
                                                 <form action="formulairemodifierBoissons.php" method="POST">
-                                                    <button type="submit" class="btn updateDeleteButtons" name="enterModifyDrinkForm"><i class="far fa-edit"></i></button>
+                                                    <button type="submit" class="btn updateDeleteButtons" name="enterModifyDrinkForm"  value="<?= $drinks['id'] ?>"><i class="far fa-edit"></i></button>
                                                     <div class="infoModifier">modifier</div>
                                                 </form>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="infoButtonDelete">
-                                                <button type="button" class="btn updateDeleteButtons" id="deleteDrink" name="deleteDrink" data-toggle="modal" data-target="#deleteModal"><i class=" far fa-trash-alt"></i></button>
+                                                <button type="button" class="btn updateDeleteButtons" id="deleteDrink" name="deleteDrink" data-toggle="modal" data-target="#deleteModal"><i class=" far fa-trash-alt" ></i></button>
                                                 <div class="infoDelete">supprimer</div>
                                             </div>
                                         </td>

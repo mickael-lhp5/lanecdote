@@ -29,7 +29,6 @@
                     <div class="col-10 align-items-center">
                         <form novalidate class="myForm mx-auto" name="newDrink" method="post" action="formulairemodifierboissons.php">
                             <p class="h2 text-secondary"><?= $errorMessages['addDrink'] ?? '' ?></p>
-
                             <legend><b>Modifier votre boisson</b></legend>
                             <div class="form-group">
                                 <label for="categoryDrink"></label>
@@ -37,13 +36,17 @@
                                     <option value="null" disabled selected>Type de boisson</option>
                                     <?php
                                     foreach ($typeOfDrinkArray as $key => $typeOfDrink) { ?>
-                                        <option value="<?= $key ?>" <?= isset($_POST['categoryDrink']) && $_POST["categoryDrink"] == $key ? "categoryDrink" : '' ?>><?= $typeOfDrink ?></option>
+                                        <?php if ($key == $getDrink['typeboisson']) { ?>
+                                            <option selected value="<?= $key ?>" <?= isset($_POST['categoryDrink']) && $_POST["categoryDrink"] == $key ? "categoryDrink" : '' ?>><?= $typeOfDrink ?></option>
+                                        <?php } else { ?>
+                                            <option value="<?= $key ?>" <?= isset($_POST['categoryDrink']) && $_POST["categoryDrink"] == $key ? "categoryDrink" : '' ?>><?= $typeOfDrink ?></option>
+                                        <?php } ?>
                                     <?php } ?>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="drinkName"></label>
-                                <input class="form-control" type="text" name="drinkName" id="drinkName" class="w-100" placeholder="Nom de la boisson" required>
+                                <input class="form-control" type="text" name="drinkName" id="drinkName" class="w-100" placeholder="Nom de la boisson" value="<?= isset($_POST['drinkName']) ? htmlspecialchars($_POST['drinkName'])  : $getDrink['nom'] ?>" required>
                                 <div class="text-danger">
                                     <span><?= isset($errorMessages['drinkName']) ? $errorMessages['drinkName'] : '' ?></span>
                                 </div>
@@ -51,7 +54,7 @@
 
                             <div class="form-group ">
                                 <label for="drinkPrice"></label>
-                                <input id="test" class="form-control" type="number" min="1" name="drinkPrice" id="drinkPrice" class="w-100" placeholder="13.90" required>
+                                <input id="test" class="form-control" type="number" min="1" name="drinkPrice" id="drinkPrice" class="w-100" placeholder="13.90" value="<?= isset($_POST['drinkPrice']) ? htmlspecialchars($_POST['drinkPrice'])  : $getDrink['prix'] ?>" required>
                                 <div class="text-danger">
                                     <span><?= isset($errorMessages['drinkPrice']) ? $errorMessages['drinkPrice'] : '' ?></span>
                                 </div>
@@ -64,7 +67,7 @@
                                 </div>
                             </div>
                             <div class="d-flex">
-                                <button type="submit" class="btn updateDeleteButtons justify-content-center mb-3 mt-3" name="modifier">Modifier</button>
+                                <button type="submit" class="btn updateDeleteButtons justify-content-center mb-3 mt-3" name="modifier" >Modifier</button>
                                 <a class="btn updateDeleteButtons justify-content-center mb-3 mt-3 ml-3" href="../view/lesboissons-admin.php" name="backMealBtn">Liste des boissons</button></a>
                             </div>
                         </form>
@@ -89,7 +92,5 @@
         AOS.init()
     </script>
 </body>
-
-
 
 </html>

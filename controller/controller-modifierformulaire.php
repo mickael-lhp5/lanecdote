@@ -4,27 +4,28 @@ session_start();
 
 require_once '../model/database.php';
 require_once '../model/model_platformulaire.php';
+require_once '../model/model_category_menucomponent.php';
 
 
 $mealObj = new Meal;
+$categoryObj = new Category_menucomponent;
+
+$categoryArray = $categoryObj->readCategory();
+
+$typeOfMealArray = [];
+foreach ($categoryArray as $value) {
+    $typeOfMealArray[$value['category_menucomponent_id']] = $value['category_menucomponent_name'];
+}
 
 $regexPrice = "/^[0-9]+.?[0-9]{0,2}$/";
-$typeOfMealArray = [
-    1 => 'Mise en bouche',
-    2 => 'Entrée',
-    3 => 'Plat',
-    4 => 'Fromage',
-    5 => 'Dessert',
-    6 => 'Mignardises'
-];
 
 if (!empty($_POST['enterModifyForm'])) {
     $_SESSION['id'] = $_POST['enterModifyForm'];
 }
 
 $getMeal = $mealObj->readMealModify($_SESSION['id']);
-var_dump($id);
-var_dump($getMeal);
+// var_dump($id);
+// var_dump($getMeal);
 
 if (isset($_POST['modifier'])) {
 
@@ -52,8 +53,6 @@ if (isset($_POST['modifier'])) {
     }
 
     if (empty($errorMessages)) {
-
-        $mealObj = new Meal;
 
     
         if (isset($_POST['notVisible'])) {
