@@ -57,16 +57,16 @@ class Drinks extends Database
     public function readDrinkModify($id)
     {
         $query =  $query = "SELECT 
-`drink_id` AS `id`, 
-`drink_name` AS `nom`, 
-`mf_drinks`.`drinks_cat_id` AS `typeboisson`, 
-`drink_price` AS `prix`, 
-`drink_visible` AS `visible`, 
-`mf_drinks_cat`.`drinks_cat_name` AS `Type de boisson` 
-FROM `mf_drinks` 
-INNER JOIN mf_drinks_cat
-ON mf_drinks.drinks_cat_id = mf_drinks_cat.drinks_cat_id
-WHERE `drink_id` = '$id'";
+        `drink_id` AS `id`, 
+        `drink_name` AS `nom`, 
+        `mf_drinks`.`drinks_cat_id` AS `typeboisson`, 
+        `drink_price` AS `prix`, 
+        `drink_visible` AS `visible`, 
+        `mf_drinks_cat`.`drinks_cat_name` AS `Type de boisson` 
+        FROM `mf_drinks` 
+        INNER JOIN mf_drinks_cat
+        ON mf_drinks.drinks_cat_id = mf_drinks_cat.drinks_cat_id
+        WHERE `drink_id` = '$id'";
 
         $readDrinkModifyQuery = $this->dataBase->query($query);
         $result = $readDrinkModifyQuery->fetch();
@@ -77,11 +77,11 @@ WHERE `drink_id` = '$id'";
     {
         // requete me permettant de modifier ma boisson
         $query = 'UPDATE `mf_drinks` SET
-`drink_name` = :drink_name,
-`drink_price` = :drink_price,
-`drink_visible` = :drink_visible,
-`drinks_cat_id` = :drinks_cat_id
-WHERE `drink_id` = :id';
+        `drink_name` = :drink_name,
+        `drink_price` = :drink_price,
+        `drink_visible` = :drink_visible,
+        `drinks_cat_id` = :drinks_cat_id
+        WHERE `drink_id` = :id';
 
         //je prepare requête à l'aide de la methode prepare pour me premunir des injections SQL 
         $updateDrinkQuery = $this->dataBase->prepare($query);
@@ -97,5 +97,26 @@ WHERE `drink_id` = :id';
         } else {
             return false;
         }
+    }
+    //DELETE
+
+    public function deleteDrink($id)
+    {
+        $query = "DELETE FROM `mf_drinks` WHERE `drink_id` = '$id' ";
+        $deleteDrinkQuery = $this->dataBase->query($query);
+        $deleteDrinkQuery->fetch();
+    }
+    // READ LES BOISSONS COTE CLIENT
+
+    public function readDrinks($idCat)
+    {
+
+    $query = "SELECT drink_name, drink_price
+    FROM mf_drinks
+    WHERE drinks_cat_id = $idCat AND drink_visible = 0";
+
+        $readDrinksQuery = $this->dataBase->query($query);
+        $result = $readDrinksQuery->fetchAll();
+        return $result;
     }
 }

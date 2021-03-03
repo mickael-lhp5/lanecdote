@@ -2,7 +2,7 @@
     <a href="../index.php"><img src="../assets/img/logoblanc.png" alt="logoblanc"></a>
 
     <div class="d-flex align-items-center">
-        <a class="d-block d-lg-none mr-3" href="admin.php"><span class="" style="color: white;"><i class="fa fa-user-circle"></i></span></a>
+        <a class="d-block d-lg-none mr-3" href="admin.php"><span style="color: whitesmoke;"><i class="fa fa-user-circle"></i></span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="text-white"><i class="fa fa-bars"></i></span>
         </button>

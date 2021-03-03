@@ -22,7 +22,7 @@
 
     <div id="contentFullHomePage">
       <nav class="navbar navbar-expand-lg" style="font-size: 16px">
-        <a href="../index.php"><img src="../assets/img/logoblanc.png" alt="logoblanc"></a>
+        <a href="../view/lanecdote.php"><img src="../assets/img/logoblanc.png" alt="logoblanc"></a>
 
         <div class="d-flex align-items-center">
           <a class="d-block d-lg-none mr-3" href="admin.php"><span class="" style="color: white;"><i class="fa fa-user-circle"></i></span></a>

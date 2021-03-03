@@ -2,17 +2,28 @@
 
 require_once '../model/database.php';
 require_once '../model/model_drinks.php';
+require_once '../model/model_drinks_cat.php';
 
 var_dump($_POST);
 
 $regexPrice = "/^[0-9]+.?[0-9]{0,2}$/";
-$typeOfDrinkArray = [
-    1 => 'Vin Rouge',
-    2 => 'Vin Blanc',
-    3 => 'Vin Rosé',
-    4 => 'Bière',
 
-];
+$DrinkObj = new Drinks;
+$categoryDrinkObj = new Drinks_cat;
+
+
+$categoryDrinkArray = $categoryDrinkObj->readDrinks();
+
+
+$errorMessages = [];
+$typeOfDrinkArray = [];
+
+
+
+foreach ($categoryDrinkArray as $value) {
+   $typeOfDrinkArray[$value['drinks_cat_id']] = $value['drinks_cat_name']; 
+}
+
 
 if (isset($_POST['valider'])) {
 
@@ -35,8 +46,6 @@ if (isset($_POST['valider'])) {
 
     if (empty($errorMessages)) {
 
-        $drinkObj = new Drinks;
-
         // création du tableau $mealDetails dans la fonction
         if (isset($_POST['notVisible'])) {
             $visible = $_POST['notVisible'];
@@ -52,18 +61,13 @@ if (isset($_POST['valider'])) {
         ];
 
 
-        // on injecte la variable du tableau $mealDetails dans la fonction
+        // on injecte la variable du tableau $drinkDetails dans la fonction
 
-        if ($drinkObj->addDrink($drinkDetails)) {
+        if ($DrinkObj->addDrink($drinkDetails)) {
             $errorMessages['addDrink'] = "Boisson enregistré";
         } else {
 
             $errorMessages['addDrink'] = "erreur de connexion";
         }
     }
-
-
-
-
-    
 }

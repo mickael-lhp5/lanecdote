@@ -27,13 +27,11 @@ require_once '../controller/controller-lacarte.php';
     <div id="contentFullHomePage">
         <?php require_once "nav.php" ?>
 
-
-        <div class="flex-grow-1 " id="bgHomePage">
+        <div class="flex-grow-1" id="bgHomePage">
             <div class="container-fluid imgBgLacarte">
-                <div class="row justify-content-center col-12">
-                    <div class="d-flex col-6 align-items-center justify-content-center">
+                <div class="row justify-content-center">
+                    <div class="d-flex col-12 col-lg-6 align-items-center justify-content-center">
                         <div>
-
                             <?php foreach ($categoryArray as $category) { ?>
                                 <?php $categoryArray = $readMealStarterObj->getMeals($category['category_menucomponent_id']) ?>
                                 <?php if (!empty($categoryArray)) { ?>
@@ -41,7 +39,6 @@ require_once '../controller/controller-lacarte.php';
                                         <div class="card-header">
                                             <?= $category['category_menucomponent_name'] ?>
                                         </div>
-
                                         <div class="card-body">
                                             <blockquote class="blockquote mb-0">
                                                 <?php foreach ($categoryArray as $categoryMenu) { ?>
@@ -50,7 +47,7 @@ require_once '../controller/controller-lacarte.php';
                                                             <p> <?= $categoryMenu['menucomponent_name'] ?> </p>
                                                             <p class="mealCardBody"><i><?= $categoryMenu['menucomponent_composition'] ?></i> </p>
                                                         </div>
-                                                        <div class="d-flex flex-column contentPrice">
+                                                        <div class="d-flex flex-column contentPrice mr-3">
                                                             <span><?= $categoryMenu['menucomponent_price'] ?> € </span>
                                                             <?php if (!empty($categoryMenu['menucomponent_supp'])) { ?>
                                                                 <span class="font-italic text-secondary suppSize"> (supp <?= $categoryMenu['menucomponent_supp'] ?> €)</span></span>
@@ -64,8 +61,6 @@ require_once '../controller/controller-lacarte.php';
                                     </div>
                                 <?php } ?>
                             <?php } ?>
-
-
                         </div>
                     </div>
                 </div>

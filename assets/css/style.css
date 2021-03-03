@@ -71,6 +71,7 @@ footer {
 
 .nav-link {
   color: white !important;
+  font-size: 1em;
 }
 
 .nav-link:hover {
@@ -98,6 +99,50 @@ span.navbar-toggler-icon {
   height: 100%;
   object-fit: contain;
 }
+
+
+.bandeauImg {
+  width: 100%;
+  /*object-fit: cover;*/
+  background-attachment: fixed;
+  background-image: url('/assets/img/salletest.jpg');
+  height: 600px;
+  /*margin: 0 auto;*/
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.sectionLanecdote {
+  background-color: black;
+  color: white;
+  margin: 0px;
+  padding: 0px;
+}
+
+.lanecdoteTitle {
+  text-align: center;
+  font-size: 2.5em;
+  color: whitesmoke;
+  Font-Family: 'Cormorant Garamond', Serif;
+}
+
+
+h3 {
+  font-size: 2em;
+  text-align: center;
+  color: whitesmoke;
+  Font-Family: 'Cormorant Garamond', Serif;
+
+}
+
+.lanecdoteprez {
+  font-size: 0.9em;
+  color: whitesmoke;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+}
+
 
 .map {
   max-width: 100%;
@@ -191,7 +236,7 @@ span.navbar-toggler-icon {
   font-weight: bold;
 }
 
-.imgGestionPlatMenu{
+.imgGestionPlatMenu {
   height: 250px;
   width: 250px;
   border-radius: 2%;
@@ -286,41 +331,46 @@ span.navbar-toggler-icon {
   background-color: #686868;
 }
 
-/* .laCarteDropDown{
-height: 120vh;
-} */
 
-legend.mealCardTitle{
-font-size: 1.2rem;
+legend.mealCardTitle {
+  font-size: 1.2rem;
 }
 
-p.mealCardBody{
+p.mealCardBody {
   font-size: 1rem;
 }
 
-hr {
-
-}
-
-.suppSize{
+.suppSize {
   font-size: 0.9rem;
 }
 
-.contentPrice{
+.contentPrice {
   min-width: 5rem;
 }
 
-.card-header{
-background-color: #e47c76!important;
-font-weight: bold;
-font-size: 1.2rem;
-font-style: italic;
+.card-header {
+  background-color: black !important;
+  color: #D3C974;
+  font-size: 1.2rem;
+  font-style: italic;
 }
 
-.imgBgLacarte{
-
-background-image: url(../img/maintest.jpg);
-background-size: cover;
-background-attachment: fixed;
+.imgBgLacarte {
+  background-image: url(../img/maintest.jpg);
+  background-size: cover;
+  background-attachment: fixed;
 }
 
+.imgBgDrinks {
+  background-image: url(../img/wines2.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+p.drinkCardBody {
+  font-size: 1rem;
+}
+
+.drinkPriceSize {
+  font-size: 1rem;
+}

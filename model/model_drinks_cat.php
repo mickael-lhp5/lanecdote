@@ -3,9 +3,10 @@
 
 class Drinks_cat extends Database{
 
-        public function readCategory(){
+        public function readDrinks(){
 
-            $query = "SELECT * FROM mf_drinks_cat";
+            $query = "SELECT *
+            FROM mf_drinks_cat";
 
             $readDrinkCategoryQuery = $this->dataBase->query($query);
             $result = $readDrinkCategoryQuery->fetchAll();
@@ -16,3 +17,7 @@ class Drinks_cat extends Database{
         }
 
 }
+
+
+
+

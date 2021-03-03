@@ -56,7 +56,7 @@ require_once '../controller/controller-lesboissons-admin.php';
                                         <td>
                                             <div class="infoButtonEdit">
                                                 <form action="formulairemodifierBoissons.php" method="POST">
-                                                    <button type="submit" class="btn updateDeleteButtons" name="enterModifyDrinkForm"  value="<?= $drinks['id'] ?>"><i class="far fa-edit"></i></button>
+                                                    <button type="submit" class="btn updateDeleteButtons ml-1" name="enterModifyDrinkForm"  value="<?= $drinks['id'] ?>"><i class="far fa-edit"></i></button>
                                                     <div class="infoModifier">modifier</div>
                                                 </form>
                                             </div>
@@ -68,9 +68,7 @@ require_once '../controller/controller-lesboissons-admin.php';
                                             </div>
                                         </td>
                                     </tr>
-
                                 <?php } ?>
-
                             </tbody>
                         </table>
                     </div>
@@ -92,8 +90,8 @@ require_once '../controller/controller-lesboissons-admin.php';
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                    <form name="delete" method="post" action="lacarte-admin.php">
-                        <button type="submit" class="btn btn updateDeleteButtons" id="deleteDrink" name="deleteDrink" value="<?= $drinks['id'] ?>"><i class=" far fa-trash-alt"></i>Supprimer</button>
+                    <form name="delete" method="POST" action="lesboissons-admin.php">
+                        <button type="submit" class="btn btn updateDeleteButtons" id="deleteDrink" name="deleteDrink" value="<?= $drinks['id'] ?>">Supprimer</button>
                     </form>
                 </div>
             </div>

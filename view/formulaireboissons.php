@@ -29,8 +29,6 @@
                     <div class="col-10 align-items-center">
                         <form novalidate class="myForm mx-auto" name="newDrink" method="post" action="formulaireboissons.php">
                             <p class="h2 text-secondary"><?= $errorMessages['addDrink'] ?? '' ?></p>
-
-                            <legend><b>Nouvelle boisson</b></legend>
                             <div class="form-group">
                                 <label for="categoryDrink"></label>
                                 <select class="form-control" id="categoryDrink" name="categoryDrink">

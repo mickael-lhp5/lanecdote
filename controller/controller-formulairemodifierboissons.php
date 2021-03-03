@@ -5,7 +5,7 @@ session_start();
 require_once '../model/database.php';
 require_once '../model/model_drinks.php';
 require_once '../model/model_drinks_cat.php';
-var_dump($_POST);
+
 
 $drinkObj = new Drinks;
 $categoryDrinkObj = new Drinks_cat;
@@ -26,7 +26,7 @@ if (!empty($_POST['enterModifyDrinkForm'])) {
 }
 
 $getDrink = $drinkObj->readDrinkModify($_SESSION['id']);
-var_dump($getDrink);
+
 
 
 

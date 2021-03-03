@@ -13,6 +13,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,900;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:700i|Fira+Sans" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css">
     <!-- animation AOS.init img page d'accueil -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -22,78 +28,74 @@
 
     <div id="contentFullHomePage">
         <?php require_once "nav.php" ?>
-        <div id="bgHomePage">
-            <div class="container d-flex justify-content-center" id="presentationLanecdote">
-                <div class="row" id="descriptif" style="width:100%;">
-                    <section class="col-12 mt-4">
-                        <legend class="mt-3" style="text-align: center;font-size:30px;"><b>L'Anecdote</b></legend>
-                        <h3 style="font-size:20px;text-align: center;" class="mt-2">restaurant bistronomique </h3>
-                        <p style="font-size:15px;color: black;">L’Anecdote, plus qu’un restaurant, c’est le projet d’une vie, Jérôme et Greg en décembre 2019 se lance dans une folle aventure reprendre le Bistrot d’Antan, une adresse très réputé sur le Havre.
-                            Malgré de nombreuses péripéties, le projet à vue le jour le 12 aout 2020, nous sommes fière de vous accueillir dans un établissement complétement rénové, décoré dans un style industriel sobre et épuré. Vous pouvez profiter d’une partie Lounge bar, avec des fauteuils et canapés pour prendre un verre autour d’une planche apéro ou bien déguster autour d’une table nos mets, tous fait maison bien sûr.
-                            Notre philosophie, le partage, nous tenons à partager avec chacun de nos clients notre savoir-faire et notre passion pour notre métier, notre but est que vous passiez un agréable moment dans notre établissement. Toute notre équipe partage les mêmes ambition et la même détermination.</p>
+        <header class="bandeauImg"></header>
+        <section class="col-12 sectionLanecdote">
+            <legend class="lanecdoteTitle mt-4"><b>L'Anecdote</legend>
+            <h3 class="">Restaurant Bistronomique </h3>
+            <p class="lanecdoteprez mb-5 ml-5 mr-5">L’Anecdote, plus qu’un restaurant, c’est le projet d’une vie, Jérôme et Greg en décembre 2019 se lance dans une folle aventure reprendre le Bistrot d’Antan, une adresse très réputée sur le Havre.
+                Malgré de nombreuses péripéties, le projet à vue le jour le 12 aout 2020, nous sommes fière de vous accueillir dans un établissement complétement rénové, décoré dans un style industriel sobre et épuré. Vous pouvez profiter d’une partie Lounge bar, avec des fauteuils et canapés pour prendre un verre autour d’une planche apéro ou bien déguster autour d’une table nos mets, tous fait maison bien sûr.
+                Notre philosophie, le partage, nous tenons à partager avec chacun de nos clients notre savoir-faire et notre passion pour notre métier, notre but est que vous passiez un agréable moment dans notre établissement. Toute notre équipe partage les mêmes ambition et la même détermination.</p>
+            <section class="col-12 mt-4 sectionLanecdote">
+                <div id="bgHomePage">
+                    <div class="container d-flex justify-content-center" id="presentationLanecdote">
+                        <div class="row" id="descriptif" style="width:100%;">
+                            <section class="d-flex col-12 mt-4 mb-5 flex-wrap" id="restaurantPrez">
+                                <div class="d-flex col-12 col-sm-3">
+                                    <div class="m-2">
+                                        <img class="w-100 homeImg" data-aos="fade-up" data-aos-duration="3000" src="../assets/img/devanture1.jpg">
+                                    </div>
+                                </div>
 
-                    </section>
-                    <section class="d-flex col-12 mt-4 mb-5 flex-wrap" id="restaurantPrez">
-                        <div class="col-12 col-sm-3">
-                            <div class="m-2">
-                                <img class="w-100 homeImg" data-aos="fade-up" data-aos-duration="3000" src="../assets/img/devanture1.jpg">
-                            </div>
-                        </div>
+                                <div class="d-flex col-12 col-sm-3">
+                                    <div class="m-2">
+                                        <img class="w-100 homeImg" data-aos="fade-up" data-aos-duration="3000" src="../assets/img/salle3.jpg">
+                                    </div>
+                                </div>
+                                <div class="d-flex col-12 col-sm-3">
+                                    <div class="m-2">
+                                        <img class="w-100 homeImg" data-aos="fade-up" data-aos-duration="3000" src="../assets/img/salle4.jpg">
+                                    </div>
+                                </div>
+                                <div class="d-flex col-12 col-sm-3">
+                                    <div class="m-2">
+                                        <img class="w-100  homeImg" data-aos="fade-up" data-aos-duration="3000" src="../assets/img/devanture2.jpg">
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="d-flex col-12 mt-4 flex-wrap justify-content-center mb-2" id="teamPrez">
+                                <legend class="mt-3" style="text-align: center;font-size:30px;color:black;"><b>L'équipe</b></legend>
 
-                        <div class="d-flex col-12 col-sm-3">
-                            <div class="m-2">
-                                <img class="w-100 homeImg" data-aos="fade-up" data-aos-duration="3000" src="../assets/img/salle3.jpg">
-                            </div>
+                                <div class="d-flex col-12 col-sm-4  mb-3" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="1000">
+                                    <div class="m-2">
+                                        <img class="w-100  homeImg" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" src="../assets/img/cuisiniertest.jpg">
+                                    </div>
+                                </div>
+                                <div class="d-flex col-12 col-sm-4">
+                                    <div class="m-2">
+                                        <img class="w-100  homeImg" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" src="../assets/img/serveur2test.jpg">
+                                    </div>
+                                </div>
+                                <div class="d-flex col-12 col-sm-4">
+                                    <div class="m-2">
+                                        <img class="w-100  homeImg" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" src="../assets/img/serveur4test.jpg">
+                                    </div>
+                                </div>
+                                <div class="d-flex col-12 col-sm-4">
+                                    <div class="m-2">
+                                        <img class="w-100  homeImg" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" src="../assets/img/serveur3test.jpg">
+                                    </div>
+                                </div>
+                                <div class="d-flex col-12 col-sm-4">
+                                    <div class="m-2">
+                                        <img class="w-100  homeImg" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" src="../assets/img/serveur3test.jpg">
+                                    </div>
+                                </div>
+                            </section>
                         </div>
-                        <div class="d-flex col-12 col-sm-3">
-                            <div class="m-2">
-                                <img class="w-100 homeImg" data-aos="fade-up" data-aos-duration="3000" src="../assets/img/salle4.jpg">
-                            </div>
-                        </div>
-                        <div class="d-flex col-12 col-sm-3">
-                            <div class="m-2">
-                                <img class="w-100  homeImg" data-aos="fade-up" data-aos-duration="3000" src="../assets/img/devanture2.jpg">
-                            </div>
-                        </div>
-                    </section>
-
-
-
-
-                    <section class="d-flex col-12 mt-4 flex-wrap justify-content-center mb-2" id="teamPrez">
-                        <legend class="mt-3" style="text-align: center;font-size:30px;color:black;"><b>L'équipe</b></legend>
-
-                        <div class="d-flex col-12 col-sm-4  mb-3" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="1000">
-                            <div class="m-2">
-                                <img class="w-100  homeImg" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" src="../assets/img/cuisiniertest.jpg">
-                            </div>
-                        </div>
-                        <div class="d-flex col-12 col-sm-4">
-                            <div class="m-2">
-                                <img class="w-100  homeImg" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" src="../assets/img/serveur2test.jpg">
-                            </div>
-                        </div>
-                        <div class="d-flex col-12 col-sm-4">
-                            <div class="m-2">
-                                <img class="w-100  homeImg" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" src="../assets/img/serveur4test.jpg">
-                            </div>
-                        </div>
-                        <div class="d-flex col-12 col-sm-4">
-                            <div class="m-2">
-                                <img class="w-100  homeImg" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" src="../assets/img/serveur3test.jpg">
-                            </div>
-                        </div>
-                        <div class="d-flex col-12 col-sm-4">
-                            <div class="m-2">
-                                <img class="w-100  homeImg" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" src="../assets/img/serveur3test.jpg">
-                            </div>
-                        </div>
-                    </section>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <?php require_once "footer.php" ?>
+                <?php require_once "footer.php" ?>
     </div>
 
 

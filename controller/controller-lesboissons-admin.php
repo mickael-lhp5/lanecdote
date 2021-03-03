@@ -7,11 +7,11 @@ $readDrinkObj = new Drinks;
 
 
 
-// $deleteMealObj = new Meal;
-// //On vérifie qu'une variable POST à été transmise
-// if (isset($_POST['deleteMeal'])) {
-//     $id = $_POST['deleteMeal'];
-//     $deleteMealObj->deleteMeal($id);
-// } 
+$deleteDrinkObj = new Drinks;
+//On vérifie qu'une variable POST à été transmise
+if (isset($_POST['deleteDrink'])) {
+    $id = $_POST['deleteDrink'];
+    $deleteDrinkObj->deleteDrink($id);
+}
 
 $drinkDetails = $readDrinkObj->readDrink();
