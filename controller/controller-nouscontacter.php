@@ -38,11 +38,11 @@ if (isset($_POST['submit'])) {
 
         // var_dump(filter_var($_POST['email'],FILTER_VALIDATE_EMAIL));
         if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-            $errorMessages['email'] = 'veuillez saisir un email valide';
+            $errorMessages['email'] = 'veuillez saisir une adresse mail valide';
         }
 
         if (empty($_POST["email"])) {
-            $errorMessages['email'] = 'veuillez saisir email';
+            $errorMessages['email'] = 'veuillez saisir votre adresse mail';
         }
     }
 
