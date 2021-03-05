@@ -10,12 +10,12 @@ require_once '../model/model_drinks_cat.php';
 $drinkObj = new Drinks;
 $categoryDrinkObj = new Drinks_cat;
 
-$categoryDrinkArray = $categoryDrinkObj->readCategory();
+$categoryDrinkArray = $categoryDrinkObj->readDrinks();
 
-$errorMessages=[];
+$errorMessages = [];
 $typeOfDrinkArray = [];
-foreach($categoryDrinkArray as $value){
-    $typeOfDrinkArray [$value['drinks_cat_id']] = $value['drinks_cat_name'];
+foreach ($categoryDrinkArray as $value) {
+    $typeOfDrinkArray[$value['drinks_cat_id']] = $value['drinks_cat_name'];
 }
 
 
@@ -50,14 +50,13 @@ if (isset($_POST['modifier'])) {
     }
 
 
-    var_dump($errorMessages);
     if (empty($errorMessages)) {
 
         // création du tableau $drinkDetails dans la fonction
         if (isset($_POST['notVisible'])) {
             $visible = $_POST['notVisible'];
         } else {
-            $visible = 0;
+            $visible = 1;
         }
 
         $drinkDetails = [
@@ -68,7 +67,7 @@ if (isset($_POST['modifier'])) {
             'categoryDrink' => htmlspecialchars($_POST['categoryDrink'])
         ];
 
-var_dump($drinkDetails);
+        var_dump($drinkDetails);
         // on injecte la variable du tableau $drinkDetails dans la fonction
 
         if ($drinkObj->updateDrink($drinkDetails)) {

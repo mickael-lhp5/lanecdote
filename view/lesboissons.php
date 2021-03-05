@@ -44,11 +44,12 @@ require_once '../controller/controller-lesboissons.php';
                                                     ?>
                                                     <legend class="mealCardTitle d-flex justify-content-between">                                                    
                                                         <div>
-                                                            <p  class="drinkCardBody"> <?= $categoryDrinks['drink_name'] ?> </p>
+                                                            <p class="drinkCardBody"> <?= $categoryDrinks['drink_name'] ?> </p>
                                                         </div>
                                                         <div class="d-flex flex-column contentPrice ml-3 drinkPriceSize">
                                                             <span><?= $categoryDrinks['drink_price'] ?> € </span>
                                                         </div>
+
                                                     </legend>
                                                     <hr>
                                                 <?php } ?>

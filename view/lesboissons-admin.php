@@ -63,7 +63,7 @@ require_once '../controller/controller-lesboissons-admin.php';
                                         </td>
                                         <td>
                                             <div class="infoButtonDelete">
-                                                <button type="button" class="btn updateDeleteButtons" id="deleteDrink" name="deleteDrink" data-toggle="modal" data-target="#deleteModal"><i class=" far fa-trash-alt" ></i></button>
+                                                <button type="button" class="btn updateDeleteButtons" id="deleteDrink" name="deleteDrink" data-toggle="modal" data-target="#deleteModal<?= $drinks['id'] ?>"><i class=" far fa-trash-alt" ></i></button>
                                                 <div class="infoDelete">supprimer</div>
                                             </div>
                                         </td>
@@ -77,9 +77,9 @@ require_once '../controller/controller-lesboissons-admin.php';
         </div>
     </div>
 
-
     <!-- Modal -->
-    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <?php foreach($drinkDetails as $drinks){ ?>
+        <div class="modal fade" id="deleteModal<?= $drinks['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -97,6 +97,8 @@ require_once '../controller/controller-lesboissons-admin.php';
             </div>
         </div>
     </div>
+    <?php } ?>
+   
     </div>
 
     <!-- Optional JavaScript -->

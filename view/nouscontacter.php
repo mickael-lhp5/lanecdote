@@ -36,8 +36,7 @@ require_once '../controller/controller-nouscontacter.php';
 
                                 <form novalidate class="myForm" name="contacter" method="post" action="nouscontacter.php">
                                     <legend class="mb-3 legendForm"><b>Laissez nous un message, nous vous recontacterons</b></legend>
-                                    <div class="d-flex">
-                                        
+                                    <div class="d-flex">                                        
                                         <div class="form-group w-50 ">
                                             <label for="firstname"></label>
                                             <input class="form-control" type="text" name="firstname" id="firstname" maxlength="100" placeholder="ex : John" value="<?= isset($_POST['firstname']) ? htmlspecialchars($_POST['firstname'])  : '' ?>" required>

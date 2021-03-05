@@ -58,7 +58,7 @@ if (isset($_POST['valider'])) {
             'mealComposition'=> htmlspecialchars($_POST['mealComposition']),
             'mealPrice'=> htmlspecialchars($_POST['mealPrice']),
             'mealSupp'=> htmlspecialchars($_POST['mealSupp']),
-            'notVisible'=> htmlspecialchars($visible),
+            'notVisible'=> ($visible),
             'categoryMeal'=> htmlspecialchars($_POST['categoryMeal'])            
         ];
 

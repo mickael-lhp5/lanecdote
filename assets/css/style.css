@@ -440,15 +440,13 @@ p.drinkCardBody {
   border-radius: 3px;
 }
 
-.overflow-scroll-y::-webkit-scrollbar
-{
+.overflow-scroll-y::-webkit-scrollbar{
 	width: 4px;
 	background-color: transparent;
   border-radius: 3px;
 }
 
-.overflow-scroll-y::-webkit-scrollbar-thumb
-{
+.overflow-scroll-y::-webkit-scrollbar-thumb{
 	background-color:transparent;
   border-radius: 3px;
   opacity: 0.1;
@@ -457,4 +455,14 @@ p.drinkCardBody {
 .legendForm{
 text-align: center;
 color: whitesmoke;
+}
+
+
+.imgBgLacarteModifForm{
+  height: 100vh;
+  background-image: url(../img/maintest.jpg);
+  background-size: cover;
+  
+
+
 }

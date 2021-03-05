@@ -66,7 +66,7 @@ require_once '../controller/controller-lacarte-admin.php';
                                         </td>
                                         <td>
                                             <div class="infoButtonDelete">
-                                                <button type="button" class="btn btn updateDeleteButtons" id="deleteMeal" name="deleteMeal" data-toggle="modal" data-target="#deleteModal" value="<?= $meals['id'] ?>"><i class=" far fa-trash-alt"></i></button>
+                                                <button type="button" class="btn btn updateDeleteButtons" id="deleteMeal" name="deleteMeal" data-toggle="modal" data-target="#deleteModal<?= $meals['id'] ?>"><i class=" far fa-trash-alt"></i></button>
                                                 <div class="infoDelete">supprimer</div>
                                             </div>
                                         </td>
@@ -80,7 +80,8 @@ require_once '../controller/controller-lacarte-admin.php';
         </div>
 
         <!-- Modal -->
-        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <?php foreach($mealDetails as $meals){ ?>
+            <div class="modal fade" id="deleteModal<?= $meals['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -98,6 +99,8 @@ require_once '../controller/controller-lacarte-admin.php';
                 </div>
             </div>
         </div>
+        <?php } ?>
+       
     </div>
 
     <!-- Optional JavaScript -->

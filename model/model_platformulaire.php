@@ -110,7 +110,7 @@ class Meal extends Database
         }
     }
 
-    //DELETE
+ //DELETE
 
     public function deleteMeal($id)
     {        

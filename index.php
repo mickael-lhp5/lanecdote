@@ -39,17 +39,20 @@
           <li class="nav-item">
             <a class="nav-link" href="view/lanecdote.php">LE RESTAURANT</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="view/menus.php"> MENUS</a>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"> CARTE & MENUS</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="view/lacarte.php">La carte</a>
+              <a class="dropdown-item" href="view/lesmenus.php">Les menus</a>
+              <a class="dropdown-item" href="view/lesboissons.php">Les boissons</a>
+            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="view/horaires_et_informations.php">HORAIRES & INFORMATIONS</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="view/nouscontacter.php">NOUS CONTACTER</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="view/livredor.php">LIVRE D'OR</a>
           </li>
         </ul>
       </div>
@@ -62,26 +65,26 @@
 
 
 
-        <header class="bandeauImg"></header>
-        <section class="col-12 sectionLanecdote">
+          <header class="bandeauImg"></header>
+          <section class="col-12 sectionLanecdote">
             <legend class="lanecdoteTitle mt-4"><b>L'Anecdote</legend>
             <h3 class="">Restaurant Bistronomique </h3>
             <p class="lanecdoteprez mb-5 ml-5 mr-5">L’Anecdote, plus qu’un restaurant, c’est le projet d’une vie, Jérôme et Greg en décembre 2019 se lance dans une folle aventure reprendre le Bistrot d’Antan, une adresse très réputée sur le Havre.
-                Malgré de nombreuses péripéties, le projet à vue le jour le 12 aout 2020, nous sommes fière de vous accueillir dans un établissement complétement rénové, décoré dans un style industriel sobre et épuré. Vous pouvez profiter d’une partie Lounge bar, avec des fauteuils et canapés pour prendre un verre autour d’une planche apéro ou bien déguster autour d’une table nos mets, tous fait maison bien sûr.
-                Notre philosophie, le partage, nous tenons à partager avec chacun de nos clients notre savoir-faire et notre passion pour notre métier, notre but est que vous passiez un agréable moment dans notre établissement. Toute notre équipe partage les mêmes ambition et la même détermination.</p>
+              Malgré de nombreuses péripéties, le projet à vue le jour le 12 aout 2020, nous sommes fière de vous accueillir dans un établissement complétement rénové, décoré dans un style industriel sobre et épuré. Vous pouvez profiter d’une partie Lounge bar, avec des fauteuils et canapés pour prendre un verre autour d’une planche apéro ou bien déguster autour d’une table nos mets, tous fait maison bien sûr.
+              Notre philosophie, le partage, nous tenons à partager avec chacun de nos clients notre savoir-faire et notre passion pour notre métier, notre but est que vous passiez un agréable moment dans notre établissement. Toute notre équipe partage les mêmes ambition et la même détermination.</p>
 
             <section class="col-12 mt-4 mb-4 sectionLanecdote">
-                <div class="d-flex flex-wrap justify-content-center imgTextChef">
-                    <img class="chefFoto" src="../assets/img/cuisiniertest2.jpg" srcset="../assets/img/cuisiniertest2.jpg">
-                    <div class="textChef">
-                        <h2 class="mt-5">LE CHEF</h2>
-                        <h3 class="mb-3"><span style="color: black;">Greg Chenel</span> </h3>
-                        <p class="mt-3">"Je travaille main dans la main avec mes producteurs et apprécie le partage et la créativité qui émergent de ces belles relations".<br>
-                            Lorsque le produit est bon, c’est parce que son producteur a une exigence, une précision, nous nous devons en tant que chef de cuisine respecter et sublimer ces magnifiques produits.</p>
-                        <img class="reverseComma mt-5" src="../assets/img/reversecommagold.png" alt="pointVirgule">
-                        <p class="suspensionPoint">...</p>
-                    </div>
+              <div class="d-flex flex-wrap justify-content-center imgTextChef">
+                <img class="chefFoto" src="../assets/img/cuisiniertest2.jpg" srcset="../assets/img/cuisiniertest2.jpg">
+                <div class="textChef">
+                  <h2 class="mt-5">LE CHEF</h2>
+                  <h3 class="mb-3"><span style="color: black;">Greg Chenel</span> </h3>
+                  <p class="mt-3">"Je travaille main dans la main avec mes producteurs et apprécie le partage et la créativité qui émergent de ces belles relations".<br>
+                    Lorsque le produit est bon, c’est parce que son producteur a une exigence, une précision, nous nous devons en tant que chef de cuisine respecter et sublimer ces magnifiques produits.</p>
+                  <img class="reverseComma mt-5" src="../assets/img/reversecommagold.png" alt="pointVirgule">
+                  <p class="suspensionPoint">...</p>
                 </div>
+              </div>
             </section>
 
             <!-- <section class="col-12 mt-4 sectionLanecdote">
@@ -143,11 +146,11 @@
                                     </div>
                                 </div>
                             </section> -->
-    </div>
-    </div>
+        </div>
+      </div>
     </div>
 
-          <!-- <div class="d-flex justify-content-center col-12 col-sm-4">
+    <!-- <div class="d-flex justify-content-center col-12 col-sm-4">
 
             <div id="carouselExampleControls" class="carousel slide " data-ride="carousel">
               <div class="carousel-inner  myCarousel">
@@ -172,7 +175,7 @@
             </div> -->
 
 
-            <!-- <div class="m-2" data-aos="zoom-in" data-aos-duration="1500">
+    <!-- <div class="m-2" data-aos="zoom-in" data-aos-duration="1500">
                 <img class="w-100 homeImg" src="assets/img/carousel1.jpg">
               </div>
             </div>
@@ -186,12 +189,12 @@
                 <img class="w-100 homeImg" src="assets/img/IMG_20200723_215527.jpg">
               </div>
             </div> -->
-          </div>
-        </div>
-      </div>
-    </div>
+  </div>
+  </div>
+  </div>
+  </div>
 
-    <?php require_once "view/footer.php" ?>
+  <?php require_once "view/footer.php" ?>
 
   </div>
 
