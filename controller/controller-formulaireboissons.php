@@ -46,11 +46,12 @@ if (isset($_POST['valider'])) {
 
     if (empty($errorMessages)) {
 
-        // création du tableau $mealDetails dans la fonction
-        if (isset($_POST['notVisible'])) {
+        // création du tableau $drinkDetails dans la fonction
+      
+        if (array_key_exists('notVisible', $_POST)) {
             $visible = $_POST['notVisible'];
         } else {
-            $visible = 0;
+            $visible = 1;
         }
 
         $drinkDetails = [
@@ -59,6 +60,7 @@ if (isset($_POST['valider'])) {
             'notVisible' => htmlspecialchars($visible),
             'categoryDrink' => htmlspecialchars($_POST['categoryDrink'])
         ];
+
 
 
         // on injecte la variable du tableau $drinkDetails dans la fonction

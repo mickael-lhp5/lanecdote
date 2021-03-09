@@ -1,23 +1,17 @@
-<?php 
+<?php
 
 
-class Drinks_cat extends Database{
+class Drinks_cat extends Database
+{
 
-        public function readDrinks(){
+    public function readDrinks()
+    {
 
-            $query = "SELECT *
+        $query = "SELECT *
             FROM mf_drinks_cat";
 
-            $readDrinkCategoryQuery = $this->dataBase->query($query);
-            $result = $readDrinkCategoryQuery->fetchAll();
-            return $result;
-
-
-
-        }
-
+        $readDrinkCategoryQuery = $this->dataBase->query($query);
+        $result = $readDrinkCategoryQuery->fetchAll();
+        return $result;
+    }
 }
-
-
-
-

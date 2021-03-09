@@ -33,6 +33,7 @@ require_once '../controller/controller-lesboissons-admin.php';
                     <div class="col-6 align-items-center justify-content-center">
                         <div>
                             <a href="formulaireboissons.php"> <button type="submit" class="btn mb-3 mt-5 addNewDrink" name="addDrink">NOUVELLE BOISSON</button></a>
+                            <a href="gestionplatetmenu.php"><button type="submit" class="btn mb-3 mt-5 ml-3 addNewDrink" name="addDrink">RETOUR</button></a>
                         </div>
                         <table class="table table-hover table-dark">
                             <thead>

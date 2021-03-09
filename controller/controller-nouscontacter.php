@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $errorMessages = [];
 $regexName = '/^[a-zA-Z]+$/';

@@ -27,34 +27,39 @@
             <div class="container h-100">
                 <div class="row justify-content-center">
                     <div class="col-10 align-items-center">
-                        <form novalidate class="myForm mx-auto" name="newDrink" method="post" action="formulairemodifierboissons.php">
-                            <p class="h2 text-secondary"><?= $errorMessages['addDrink'] ?? '' ?></p>
-                            <legend class="font-weight-bold text-light">Modifier votre boisson</legend>
-                            <div class="form-group w-25">
-                                <label for="categoryDrink"></label>
-                                <select class="form-control" id="categoryDrink" name="categoryDrink">
-                                    <option value="null" disabled selected>Type de boisson</option>
-                                    <?php
-                                    foreach ($typeOfDrinkArray as $key => $typeOfDrink) { ?>
-                                        <?php if ($key == $getDrink['typeboisson']) { ?>
-                                            <option selected value="<?= $key ?>" <?= isset($_POST['categoryDrink']) && $_POST["categoryDrink"] == $key ? "categoryDrink" : '' ?>><?= $typeOfDrink ?></option>
-                                        <?php } else { ?>
-                                            <option value="<?= $key ?>" <?= isset($_POST['categoryDrink']) && $_POST["categoryDrink"] == $key ? "categoryDrink" : '' ?>><?= $typeOfDrink ?></option>
+                        <form novalidate class="modifyDrinkForm mx-auto" name="newDrink" method="post" action="formulairemodifierboissons.php">
+                            <p class="h2 text-secondary"><?= $errorMessages['updateDrink'] ?? '' ?></p>
+                            <legend class="font-weight-bold text-light text-center">Modifier votre boisson</legend>
+
+                            <div class="d-flex">
+                                <div class="form-group w-25">
+                                    <label for="categoryDrink"></label>
+                                    <select class="form-control" id="categoryDrink" name="categoryDrink">
+                                        <option value="null" disabled selected>Type de boisson</option>
+                                        <?php
+                                        foreach ($typeOfDrinkArray as $key => $typeOfDrink) { ?>
+                                            <?php if ($key == $getDrink['typeboisson']) {                                                 
+                                                ?>
+                                                <option selected value="<?= $key ?>" <?= isset($_POST['categoryDrink']) && $_POST["categoryDrink"] == $key ? "categoryDrink" : '' ?>><?= $typeOfDrink ?></option>
+                                            <?php } else { ?>
+                                                <option value="<?= $key ?>" <?= isset($_POST['categoryDrink']) && $_POST["categoryDrink"] == $key ? "categoryDrink" : '' ?>><?= $typeOfDrink ?></option>
+                                            <?php } ?>
                                         <?php } ?>
-                                    <?php } ?>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="drinkName"></label>
-                                <input class="form-control" type="text" name="drinkName" id="drinkName" class="w-100" placeholder="Nom de la boisson" value="<?= isset($_POST['drinkName']) ? htmlspecialchars($_POST['drinkName'])  : $getDrink['nom'] ?>" required>
-                                <div class="text-danger">
-                                    <span><?= isset($errorMessages['drinkName']) ? $errorMessages['drinkName'] : '' ?></span>
+                                    </select>
+                                </div>
+
+                                <div class="form-group w-75 ml-3">
+                                    <label for="drinkName"></label>
+                                    <input class="form-control w-50" type="text" name="drinkName" id="drinkName" placeholder="Nom de la boisson" value="<?= isset($_POST['drinkName']) ? htmlspecialchars($_POST['drinkName'])  : $getDrink['nom'] ?>" required>
+                                    <div class="text-danger">
+                                        <span><?= isset($errorMessages['drinkName']) ? $errorMessages['drinkName'] : '' ?></span>
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="form-group ">
                                 <label for="drinkPrice"></label>
-                                <input id="test" class="form-control" type="number" min="1" name="drinkPrice" id="drinkPrice" class="w-100" placeholder="13.90" value="<?= isset($_POST['drinkPrice']) ? htmlspecialchars($_POST['drinkPrice'])  : $getDrink['prix'] ?>" required>
+                                <input class="form-control w-25" type="number" min="1" name="drinkPrice" id="drinkPrice" placeholder="13.90" value="<?= isset($_POST['drinkPrice']) ? htmlspecialchars($_POST['drinkPrice'])  : $getDrink['prix'] ?>" required>
                                 <div class="text-danger">
                                     <span><?= isset($errorMessages['drinkPrice']) ? $errorMessages['drinkPrice'] : '' ?></span>
                                 </div>
@@ -62,12 +67,12 @@
 
                             <div class="mt-3">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="notVisible" value="1" name="notVisible" <?php if ($getDrink['visible'] == 1) { ?> checked <?php } ?> required>
+                                    <input class="form-check-input" type="checkbox" id="notVisible" value="0" name="notVisible" <?= $getDrink['visible'] == 0 ? 'checked' : '' ?> required>
                                     <label class="form-check-label text-light" for="notVisible">Ne pas afficher</label>
                                 </div>
                             </div>
                             <div class="d-flex">
-                                <button type="submit" class="btn updateDeleteButtons justify-content-center mb-3 mt-3" name="modifier" >Modifier</button>
+                                <button type="submit" class="btn updateDeleteButtons justify-content-center mb-3 mt-3" name="modifier">Modifier</button>
                                 <a class="btn updateDeleteButtons justify-content-center mb-3 mt-3 ml-3" href="../view/lesboissons-admin.php" name="backMealBtn">Liste des boissons</button></a>
                             </div>
                         </form>

@@ -33,7 +33,7 @@ require_once '../controller/controller-lacarte.php';
                     <div class="d-flex col-12 col-lg-6 align-items-center justify-content-center">
                         <div>
                             <?php foreach ($categoryArray as $category) { ?>
-                                <?php $categoryArray = $readMealStarterObj->getMeals($category['category_menucomponent_id']) ?>
+                                <?php $categoryArray = $readMealGetObj->getMeals($category['category_menucomponent_id']) ?>
                                 <?php if (!empty($categoryArray)) { ?>
                                     <div class="card mt-5 mb-5">
                                         <div class="card-header">

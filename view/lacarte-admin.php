@@ -32,6 +32,7 @@ require_once '../controller/controller-lacarte-admin.php';
                     <div class="col-12 align-items-center justify-content-center">
                         <div>
                             <a href="nouveauplatformulaire.php"><button type="submit" class="btn mb-3 mt-5 addNewMeal" name="addMeal">NOUVEAU PLAT</button></a>
+                            <a href="gestionplatetmenu.php"><button type="submit" class="btn mb-3 mt-5 ml-3 addNewMeal" name="addMeal">RETOUR</button></a>
                         </div>
                         <table class="table table-hover table-dark">
                             <thead>
@@ -80,27 +81,25 @@ require_once '../controller/controller-lacarte-admin.php';
         </div>
 
         <!-- Modal -->
-        <?php foreach($mealDetails as $meals){ ?>
+        <?php foreach ($mealDetails as $meals) { ?>
             <div class="modal fade" id="deleteModal<?= $meals['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Voulez vous supprimer ce plat ?</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                        <form name="delete" method="post" action="lacarte-admin.php">
-                            <button type="submit" class="btn btn updateDeleteButtons" id="deleteMeal" name="deleteMeal" value="<?= $meals['id'] ?>"><i class=" far fa-trash-alt"></i>Supprimer</button>
-                        </form>
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Voulez vous supprimer ce plat ?</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                            <form name="delete" method="post" action="lacarte-admin.php">
+                                <button type="submit" class="btn btn updateDeleteButtons" id="deleteMeal" name="deleteMeal" value="<?= $meals['id'] ?>"><i class="far fa-trash-alt mr-1"></i>Supprimer</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         <?php } ?>
-       
+
     </div>
 
     <!-- Optional JavaScript -->

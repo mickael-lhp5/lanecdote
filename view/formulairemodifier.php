@@ -69,7 +69,7 @@
                                 <div class="form-group ml-0 pl-0">
                                     <label for="mealSupp"></label>
                                     <div class="d-flex">
-                                        <input class="form-control w-100" type="number" min="1" name="mealSupp" id="mealSupp" placeholder="2" value="<?= isset($_POST['mealSupp']) ? htmlspecialchars($_POST['mealSupp'])  : $getMeal['supplément'] ?>" required>
+                                        <input class="form-control w-100" type="number" min="0" name="mealSupp" id="mealSupp" placeholder="0" value="<?= isset($_POST['mealSupp']) ? htmlspecialchars($_POST['mealSupp'])  : $getMeal['supplément'] ?>" required>
                                         <span class="m-2">€</span>
                                     </div>
                                 </div>
@@ -78,17 +78,16 @@
                             <div class="mt-3">
                                 <div class="form-check form-check-inline">
                                     <label class="form-check-label mr-2 font-weight-bold" for="notVisible">Ne pas afficher</label>
-                                    <input class="form-check-input" type="checkbox" id="notVisible" value="1" name="notVisible"  <?php if ($getMeal['visible'] == 1) { ?> checked <?php } ?> required>
+                                    <input class="form-check-input" type="checkbox" id="notVisible" value="0" name="notVisible"  <?= $getMeal['visible'] == 0 ? 'checked' : '' ?> required>
 
                                 </div>
                             </div>
 
                             <div class="d-flex">
                                 <button type="submit" class="btn updateDeleteButtons justify-content-center mb-3 mt-3" name="modifier" value="<?= $getMeal['id'] ?>">Modifier plat</button>
-                                <a class="btn updateDeleteButtons justify-content-center mb-3 mt-3 ml-3" href="../view/lacarte.php" name="backMealBtn">Liste des plats</button></a>
+                                <a class="btn updateDeleteButtons justify-content-center mb-3 mt-3 ml-3" href="../view/lacarte-admin.php" name="backMealBtn">Liste des plats</button></a>
                             </div>
                         </form>
-
                     </div>
                 </div>
             </div>

@@ -1,3 +1,8 @@
+<?php 
+session_start()
+
+?>
+
 <!doctype html>
 <html lang="fr">
 
@@ -22,23 +27,28 @@
 
     <div id="contentFullHomePage" class="adminPage">
         <?php require_once "nav.php" ?>
-        <div class="flex-grow-1" id="bgHomePage">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="d-flex col-6 align-items-center justify-content-center">
-                        <form action="lacarte-admin.php" method="POST">
-                            <button type="submit" class="btn justify-content-center mb-3" name="plats"><img class="imgGestionPlatMenu" src="../assets/img/carousel1.jpg">La carte</button>
-                        </form>
-                        <form action="menus.php" method="POST">
-                            <button type="submit" class="btn justify-content-center mb-3 ml-5" name="menus"><img class="imgGestionPlatMenu"  src="../assets/img/carousel2.jpg">Menus</button>
-                        </form>
-                        <form action="lesboissons-admin.php" method="POST">
-                            <button type="submit" class="btn justify-content-center mb-3 ml-5" name="menus"><img class="imgGestionPlatMenu" src="../assets/img/drinks.jpg">Boissons</button>
-                        </form>
+        <?php if ($_SESSION['isconnected']) { ?>
+            <div class="flex-grow-1">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="d-flex col-lg-6 col-sm-3 align-items-center justify-content-center">
+                            <form action="lacarte-admin.php" method="POST">
+                                <button type="submit" class="btn justify-content-center" name="plats"><img class="imgGestionPlatMenu mb-3" src="../assets/img/carousel1.jpg"><b class="platEtMenuTitle">La carte</b></button>
+                            </form>
+                            <form action="menus.php" method="POST">
+                                <button type="submit" class="btn justify-content-center ml-5" name="menus"><img class="imgGestionPlatMenu mb-3" src="../assets/img/carousel2.jpg"><b class="platEtMenuTitle">Menus</b> </button>
+                            </form>
+                            <form action="lesboissons-admin.php" method="POST">
+                                <button type="submit" class="btn justify-content-center ml-5" name="menus"><img class="imgGestionPlatMenu mb-3" src="../assets/img/drinks.jpg"><b class="platEtMenuTitle">Boissons</b></button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        <?php  } else { ?>
+            <p>eifvbica</p>
+
+        <?php } ?>
     </div>
 
 

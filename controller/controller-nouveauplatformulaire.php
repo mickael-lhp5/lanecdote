@@ -1,7 +1,11 @@
-<?php
 
+<?php
+session_start();
 require_once '../model/database.php';
 require_once '../model/model_platformulaire.php';
+
+$mealObj = new Meal;
+
 
 var_dump($_POST);
 
@@ -42,26 +46,33 @@ if (isset($_POST['valider'])) {
     }
 
 
-    if (empty($errorMessages)) {
+    if (isset($_POST['mealSupp'])) {
+        $mealSupp = $_POST['mealSupp'];
+        if (!preg_match($regexPrice, $_POST['mealSupp'])) {
+            $errorMessages['mealSupp'] = 'veuillez saisir un prix valide';
+        }
+        if (empty($_POST['mealSupp'])) {
+            $mealSupp = NULL;
+            unset($errorMessages['mealSupp']);
+        }
+    }
 
-        $mealObj = new Meal;
-
-          // création du tableau $mealDetails dans la fonction
+    if (empty($errorMessages)) {     
           if (isset($_POST['notVisible'])) {
             $visible = $_POST['notVisible'];
         } else {
-            $visible = 0;
+            $visible = 1;
         }
-
+     // création du tableau $mealDetails dans la fonction
           $mealDetails = [
             'mealName'=> htmlspecialchars($_POST['mealName']),
             'mealComposition'=> htmlspecialchars($_POST['mealComposition']),
             'mealPrice'=> htmlspecialchars($_POST['mealPrice']),
-            'mealSupp'=> htmlspecialchars($_POST['mealSupp']),
+            'mealSupp'=> $mealSupp,
+
             'notVisible'=> ($visible),
             'categoryMeal'=> htmlspecialchars($_POST['categoryMeal'])            
         ];
-
 
          // on injecte la variable du tableau $mealDetails dans la fonction
 

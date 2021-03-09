@@ -26,6 +26,8 @@ class Drinks extends Database
         $addDrinkQuery->bindvalue(':drink_visible', $drinkDetails['notVisible'], PDO::PARAM_STR);
         $addDrinkQuery->bindvalue(':drinks_cat_id', $drinkDetails['categoryDrink'], PDO::PARAM_STR);
 
+        // $addDrinkQuery->execute();
+
         // tester et executer la requete pour afficher le message d'erreurs
         if ($addDrinkQuery->execute()) {
             return true;
@@ -38,16 +40,18 @@ class Drinks extends Database
     public function readDrink()
     {
         $query = "SELECT 
-    `drink_id` AS `id`,
-    `drink_name` AS `nom`, 
-    `drink_price` AS `prix`, 
-    `drink_visible` AS `visible`, 
-    `mf_drinks_cat`.`drinks_cat_name` AS `Type de boisson` 
-    FROM mf_drinks
-    INNER JOIN mf_drinks_cat 
-    ON mf_drinks.drinks_cat_id = mf_drinks_cat.drinks_cat_id;";
+        `drink_id` AS `id`,
+        `drink_name` AS `nom`, 
+        `drink_price` AS `prix`, 
+        `drink_visible` AS `visible`, 
+        `mf_drinks_cat`.`drinks_cat_name` AS `Type de boisson` 
+        FROM mf_drinks
+        INNER JOIN mf_drinks_cat 
+        ON mf_drinks.drinks_cat_id = mf_drinks_cat.drinks_cat_id";
+
         $readDrinkQuery = $this->dataBase->query($query);
         $result = $readDrinkQuery->fetchAll();
+
         return $result;
     }
 
@@ -92,6 +96,9 @@ class Drinks extends Database
         $updateDrinkQuery->bindvalue(':drink_visible', $drinkDetails['notVisible'], PDO::PARAM_STR);
         $updateDrinkQuery->bindvalue(':drinks_cat_id', $drinkDetails['categoryDrink'], PDO::PARAM_STR);
         $updateDrinkQuery->bindvalue(':id', $drinkDetails['id'], PDO::PARAM_STR);
+
+        $updateDrinkQuery->execute();
+
         if ($updateDrinkQuery->execute()) {
             return true;
         } else {
@@ -111,9 +118,9 @@ class Drinks extends Database
     public function readDrinks($idCat)
     {
 
-    $query = "SELECT drink_name, drink_price
-    FROM mf_drinks
-    WHERE drinks_cat_id = $idCat AND drink_visible = 0";
+        $query = "SELECT drink_name, drink_price
+                FROM mf_drinks
+                WHERE drinks_cat_id = $idCat AND drink_visible = 1";
 
         $readDrinksQuery = $this->dataBase->query($query);
         $result = $readDrinksQuery->fetchAll();

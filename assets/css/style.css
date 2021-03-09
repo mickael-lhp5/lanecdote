@@ -80,9 +80,10 @@ footer {
   font-weight: 100;
 }
 
-.connectionIcon {
+.connectionIcon{
   color: white;
 }
+
 
 .connectionIcon:hover {
   color: #D4514A;
@@ -114,12 +115,14 @@ span.navbar-toggler-icon {
   background-size: cover;
 }
 
+
 .sectionLanecdote {
   background-color: black;
   color: white;
   margin: 0px;
   padding: 0px;
 }
+
 
 .lanecdoteTitle {
   text-align: center;
@@ -256,10 +259,11 @@ h3 {
 }
 
 .imgGestionPlatMenu {
-  height: 250px;
-  width: 250px;
+  height: 350px;
+  width: 350px;
   border-radius: 2%;
   object-fit: cover;
+  margin-top: 150px;
 }
 
 .updateDeleteButtons {
@@ -358,7 +362,6 @@ height: 300px;
   background-color: #686868;
 }
 
-
 legend.mealCardTitle {
   font-size: 1.2rem;
 }
@@ -432,8 +435,7 @@ p.drinkCardBody {
   overflow-y: scroll;
 }
 
-.overflow-scroll-y::-webkit-scrollbar-track
-{
+.overflow-scroll-y::-webkit-scrollbar-track{
   /* box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
 	background-color: transparent;
@@ -457,12 +459,34 @@ text-align: center;
 color: whitesmoke;
 }
 
-
 .imgBgLacarteModifForm{
   height: 100vh;
   background-image: url(../img/maintest.jpg);
   background-size: cover;
-  
+}
+
+.informationsTable{
+color: whitesmoke;
+}
+
+.bgImgAdmin{
+  background-image: url(../img/login3.jpg);
+  background-size: cover;
+  height: 100vh;
+}
+
+.adminForm{
+ margin-top: 100px ;
+}
+ 
+.platEtMenuTitle{
+  Font-Family: 'Cormorant Garamond', Serif;
+  font-size: 26px;
+}
+
+.modifyDrinkForm {
+align-items: center;
+margin-top: 100px;
 
 
 }

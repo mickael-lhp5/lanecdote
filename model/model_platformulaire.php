@@ -125,12 +125,12 @@ class Meal extends Database
 public function getMeals($idCat)
 {
 
-   $query = "SELECT menucomponent_name, menucomponent_composition, menucomponent_price , menucomponent_supp , menucomponent_visible ,category_menucomponent_id
+   $query = "SELECT menucomponent_name, menucomponent_composition, menucomponent_price , menucomponent_supp , menucomponent_visible, category_menucomponent_id
     FROM lanecdote.mf_menucomponents
-    WHERE category_menucomponent_id = $idCat";
+    WHERE category_menucomponent_id = $idCat AND menucomponent_visible = 1";
 
-    $readStarterMealQuery = $this->dataBase->query($query);
-    $result = $readStarterMealQuery->fetchAll();
+    $readGetMealQuery = $this->dataBase->query($query);
+    $result = $readGetMealQuery->fetchAll();
     return $result;
 }
 

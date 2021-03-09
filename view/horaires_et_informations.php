@@ -21,13 +21,13 @@
 
     <div id="contentFullHomePage">
         <?php require_once "nav.php"   ?>
-        <div class="flex-grow-1" id="bgHomePage">
+        <div class="flex-grow-1" id="">
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-md-6">
-                        <table class="table table-hover table-dark" style="font-size : 16px">
+                        <table class="table table-hover table-dark" style="font-size : 17px">
                             <tbody>
-                                <legend class="mt-2"><b>Nos horaires</b></legend>
+                                <legend class="mt-3"><b>Nos horaires</b></legend>
                                 <tr>
                                     <th scope="row">Mardi</th>
                                     <td colspan="2">12:00 ~ 14:00</td>
@@ -67,14 +67,14 @@
                         </table>
                     </div>
                     <div class="col-12 col-md-6">
-                        <legend class="mt-2"><b>Nous trouver</b></legend>
+                        <legend class="mt-3"><b>Nous trouver</b></legend>
                         <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10366.95776202135!2d0.1118675!3d49.4894287!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdc660c78593ded3e!2sL&#39;Anecdote!5e0!3m2!1sen!2sfr!4v1610981751686!5m2!1sen!2sfr" width="400" max-width="100%" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                     </div>
                     <div class="col-12">
-                        <legend class="mt-2"><b>Informations</b></legend>
-                        <p><span style="color: black;"> vente à emporter est désormais disponible uniquement le jeudi, vendredi et samedi.
+                        <legend class="mt-2 mb-2"><b>Informations</b></legend>
+                        <p>vente à emporter est désormais disponible uniquement le jeudi, vendredi et samedi.
                                 Vos commandes sont à passer avant midi au minimum la veille, et sont à retirer entre 17h30 et 19h.
-                                Vous pouvez commander par téléphone au 09.83.87.57.14 ou par messenger.</span></p>
+                                Vous pouvez commander par téléphone au 09.83.87.57.14 ou par messenger.</p>
                     </div>
                 </div>
             </div>

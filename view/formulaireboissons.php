@@ -57,12 +57,11 @@
 
                             <div class="mt-3">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="notVisible" value="1" name="notVisible" <?php if (isset($_POST['notVisible'])) {
-                                        if ($_POST['notVisible'] == 1) { ?>
+                                <label class="form-check-label" for="notVisible">Ne pas afficher</label>
+                                    <input class="form-check-input" type="checkbox" id="notVisible" value="0" name="notVisible" <?php if (isset($_POST['notVisible'])) {if ($_POST['notVisible'] == 0) { ?>
                                             checked
                                         <?php }
-                                    } ?> required>
-                                    <label class="form-check-label" for="notVisible">Ne pas afficher</label>
+                                    } ?> required>                                
                                 </div>
                             </div>
                             <div class="d-flex">

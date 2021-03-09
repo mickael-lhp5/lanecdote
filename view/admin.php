@@ -23,25 +23,26 @@ require_once '../controller/controller-admin.php';
 </head>
 
 <body>
-    <div id="contentFullHomePage" class="adminPage">
+    <div id="contentFullHomePage">
         <?php require_once "nav.php" ?>
-        <div class="flex-grow-1" id="bgHomePage">
-            <div class="container h-100">
+
+        <div class="flex-grow-1 bgImgAdmin">
+            <div class="container-fluid">
                 <div class="row justify-content-center">
-                    <div class="col-6 align-items-center justify-content-center">
-                        <h1 class="mt-5">Admin</h1>
-                        <form novalidate class="myForm mb-3" name="admin" method="POST" action="">
+                    <div class="adminForm col-lg-4 col-sm-6 align-items-center justify-content-center">
+                        <form novalidate class="mb-3" name="admin" method="POST" action="">
+                            <h1 class="mt-5 text-center text-light"><b>Espace Administrateur</b> </h1>
                             <div class="form-group">
                                 <label for="identification"></label>
                                 <input class="form-control w-100" type="text" name="identification" placeholder="identifiant" id="identification" required>
-                                <div class="text-danger">
+                                <div class="text-light">
                                     <span><?= isset($errorMessages['identification']) ? $errorMessages['identification'] : '' ?></span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="password"></label>
                                 <input class="form-control w-100" type="password" name="password" placeholder="mot de passe" id="password" required>
-                                <div class="text-danger">
+                                <div class="text-light">
                                     <span><?= isset($errorMessages['password']) ? $errorMessages['password'] : '' ?></span>
                                 </div>
                             </div>

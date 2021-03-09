@@ -27,9 +27,6 @@ if (!empty($_POST['enterModifyDrinkForm'])) {
 
 $getDrink = $drinkObj->readDrinkModify($_SESSION['id']);
 
-
-
-
 if (isset($_POST['modifier'])) {
 
 
@@ -52,8 +49,10 @@ if (isset($_POST['modifier'])) {
 
     if (empty($errorMessages)) {
 
+        var_dump($_POST);
+
         // création du tableau $drinkDetails dans la fonction
-        if (isset($_POST['notVisible'])) {
+        if (array_key_exists('notVisible', $_POST)) {
             $visible = $_POST['notVisible'];
         } else {
             $visible = 1;
@@ -67,13 +66,12 @@ if (isset($_POST['modifier'])) {
             'categoryDrink' => htmlspecialchars($_POST['categoryDrink'])
         ];
 
-        var_dump($drinkDetails);
         // on injecte la variable du tableau $drinkDetails dans la fonction
 
         if ($drinkObj->updateDrink($drinkDetails)) {
             $errorMessages['updateDrink'] = "Boisson modifié";
+            $getDrink = $drinkObj->readDrinkModify($_SESSION['id']);
         } else {
-
             $errorMessages['updateDrink'] = "erreur de connexion";
         }
     }

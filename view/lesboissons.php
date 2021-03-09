@@ -49,7 +49,6 @@ require_once '../controller/controller-lesboissons.php';
                                                         <div class="d-flex flex-column contentPrice ml-3 drinkPriceSize">
                                                             <span><?= $categoryDrinks['drink_price'] ?> € </span>
                                                         </div>
-
                                                     </legend>
                                                     <hr>
                                                 <?php } ?>
