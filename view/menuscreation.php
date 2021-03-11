@@ -1,3 +1,5 @@
+<?php require_once '../controller/controller-menuscreation.php'; ?>
+
 <!doctype html>
 <html lang="fr">
 
@@ -22,38 +24,39 @@
 
     <div id="contentFullHomePage">
         <?php require_once "nav.php" ?>
-        <div class="flex-grow-1" id="bgHomePage">
+        <div class="flex-grow-1">
             <div class="container h-100">
                 <div class="row justify-content-center">
-                    <div class="col-6 align-items-center justify-content-center">
+                    <div class="col-10 align-items-center newMealForm">
+                        <form novalidate class="mx-auto" name="newMenu" method="post" action="menuscreation.php">
+                            <p class="mt-2"><span style="color: #D4514A; font-style:italic"><?= $errorMessages['addMeal'] ?? '' ?></span></p>
+                            <legend class="text-white text-center font-weight-bold"><b>Nouveau Menu</b></legend>
+                            <div class="form-group w-75 mb-4">
+                                <label for="menuName"></label>
+                                <input class="form-control" type="text" name="menuName" id="menuName" class="w-100" placeholder="Nom du menu" required>
+                            </div>
 
-                        <form novalidate class="myForm mb-3" name="menus" method="POST" action="">
-                            <div class="form-group ">
-                                <label for="exampleFormControlInput1">Email address</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                            </div>
                             <div class="form-group">
-                                <label for="exampleFormControlSelect1">Example select</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
+                                <label for="menuImage"></label>
+                                <input class="text-light  mr-3 " type="file" enctype="multipart/form-data" name="menuImage" id="menuImage" class="w-100" placeholder="Image du Menu " required>
                             </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Example textarea</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+                            <div class="mt-3">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="notVisible" value="0" name="notVisible" value="<? isset($_POST['notVisible']) ? htmlspecialchars($_POST['notVisible']) : '' ?>" required>
+                                    <label class="form-check-label text-white" for="notVisible">Ne pas afficher</label>
+                                </div>
                             </div>
-                            <button type="submit" class="btn btn-warning justify-content-center mb-3" name="submit">valider</button>
+
+                            <div class="d-flex mb-3">
+                                <button type="submit" class="btn updateDeleteButtons justify-content-center mb-3 mt-3" name="valider">Ajouter menu</button>
+                                <a class="btn updateDeleteButtons justify-content-center mb-3 mt-3 ml-3" href="../view/lesmenus-admin.php" name="backMealBtn">Les menus</button></a>
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-
-        <?php require_once "footer.php" ?>
     </div>
 
 

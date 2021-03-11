@@ -1,4 +1,8 @@
-<?php require_once '../controller/controller-formulaireboissons.php'; ?>
+<?php require_once '../controller/controller-formulaireboissons.php'; 
+
+session_start();
+
+?>
 
 <!doctype html>
 <html lang="fr">
@@ -21,14 +25,15 @@
 </head>
 
 <body>
-    <div id="contentFullHomePage" class="adminPage">
+    <div id="contentFullHomePage">
         <?php require_once "nav.php" ?>
-        <div class="flex-grow-1" id="bgHomePage">
+        <div class="flex-grow-1">
             <div class="container h-100">
                 <div class="row justify-content-center">
-                    <div class="col-10 align-items-center">
-                        <form novalidate class="myForm mx-auto" name="newDrink" method="post" action="formulaireboissons.php">
-                            <p class="h2 text-secondary"><?= $errorMessages['addDrink'] ?? '' ?></p>
+                    <div class="col-10 align-items-center newDrinkForm">
+                        <form novalidate class="mx-auto" name="newDrink" method="post" action="formulaireboissons.php">
+                            <p><span style="color: #D4514A; font-style:italic"><?= $errorMessages['addDrink'] ?? '' ?></span></p>
+                            <legend class="text-white text-center font-weight-bold">Nouvelle Boisson</legend>
                             <div class="form-group">
                                 <label for="categoryDrink"></label>
                                 <select class="form-control" id="categoryDrink" name="categoryDrink">
@@ -57,11 +62,10 @@
 
                             <div class="mt-3">
                                 <div class="form-check form-check-inline">
-                                <label class="form-check-label" for="notVisible">Ne pas afficher</label>
-                                    <input class="form-check-input" type="checkbox" id="notVisible" value="0" name="notVisible" <?php if (isset($_POST['notVisible'])) {if ($_POST['notVisible'] == 0) { ?>
-                                            checked
-                                        <?php }
-                                    } ?> required>                                
+                                    <label class="form-check-label text-light mr-2" for="notVisible">Ne pas afficher</label>
+                                    <input class="form-check-input" type="checkbox" id="notVisible" value="0" name="notVisible" <?php if (isset($_POST['notVisible'])) {
+                                                                                                                                    if ($_POST['notVisible'] == 0) { ?> checked <?php }
+                                                                                                                                                                                                            } ?> required>
                                 </div>
                             </div>
                             <div class="d-flex">

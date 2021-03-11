@@ -49,7 +49,7 @@ if (isset($_POST['modifier'])) {
 
     if (empty($errorMessages)) {
 
-        var_dump($_POST);
+        // var_dump($_POST);
 
         // création du tableau $drinkDetails dans la fonction
         if (array_key_exists('notVisible', $_POST)) {
@@ -69,7 +69,7 @@ if (isset($_POST['modifier'])) {
         // on injecte la variable du tableau $drinkDetails dans la fonction
 
         if ($drinkObj->updateDrink($drinkDetails)) {
-            $errorMessages['updateDrink'] = "Boisson modifié";
+            $errorMessages['updateDrink'] = "Boisson modifiée";
             $getDrink = $drinkObj->readDrinkModify($_SESSION['id']);
         } else {
             $errorMessages['updateDrink'] = "erreur de connexion";

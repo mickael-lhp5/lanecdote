@@ -12,7 +12,6 @@ class Meal extends Database
      */
     public function addMeal(array $mealDetails)
 
-
     {
         // je met en place des marqueurs nominatifs pour preparer ma requete avec des valeurs recuperées via form
         $query = "INSERT INTO `mf_menucomponents`(`menucomponent_name`,`menucomponent_composition`, `menucomponent_price`, `menucomponent_supp`, `menucomponent_visible`, `category_menucomponent_id`) 

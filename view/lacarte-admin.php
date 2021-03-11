@@ -1,5 +1,6 @@
 <?php
 require_once '../controller/controller-lacarte-admin.php';
+
 ?>
 
 <!doctype html>
@@ -26,13 +27,13 @@ require_once '../controller/controller-lacarte-admin.php';
 <body>
     <div id="contentFullHomePage" class="adminPage">
         <?php require_once "nav.php" ?>
-        <div class="flex-grow-1" id="bgHomePage">
+        <div class="flex-grow-1" id="">
             <div class="container h-100">
                 <div class="row justify-content-center">
                     <div class="col-12 align-items-center justify-content-center">
                         <div>
-                            <a href="nouveauplatformulaire.php"><button type="submit" class="btn mb-3 mt-5 addNewMeal" name="addMeal">NOUVEAU PLAT</button></a>
-                            <a href="gestionplatetmenu.php"><button type="submit" class="btn mb-3 mt-5 ml-3 addNewMeal" name="addMeal">RETOUR</button></a>
+                            <a href="nouveauplatformulaire.php"><button type="submit" class="btn mb-3 mt-3 addNewMeal" name="addMeal">NOUVEAU PLAT</button></a>
+                            <a href="gestionplatetmenu.php"><button type="submit" class="btn mb-3 mt-3 ml-3 addNewMeal" name="addMeal">RETOUR</button></a>
                         </div>
                         <table class="table table-hover table-dark">
                             <thead>
@@ -50,12 +51,14 @@ require_once '../controller/controller-lacarte-admin.php';
                             <tbody>
                                 <?php foreach ($mealDetails as $meals) { ?>
                                     <tr class="nthPerso">
-                                        <td><?= $meals['nom'] ?></td>
-                                        <td><?= $meals['description'] ?></td>
-                                        <td><?= $meals['prix'] ?>€</td>
-                                        <td><?= $meals['supplément'] ?></th>
-                                        <td><?= $meals['visible'] ?></th>
-                                        <td><?= $meals['Type de plat'] ?>
+                                        <td class="align-middle"><?= $meals['nom'] ?></td>
+                                        <td class="align-middle"><?= $meals['description'] ?></td>
+                                        <td class="align-middle"><?= $meals['prix'] ?>€</td>
+                                        <td class="text-center align-middle"><?= $meals['supplément'] ?></th>
+                                        <td class="text-center align-middle">
+                                            <?= $meals['visible'] == 0 ? 'non' : 'oui' ?>
+                                        </td>
+                                        <td class="align-middle"><?= $meals['Type de plat'] ?>
                                         </td>
                                         <td>
                                             <div class="infoButtonEdit">

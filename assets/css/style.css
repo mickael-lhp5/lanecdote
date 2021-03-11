@@ -80,7 +80,7 @@ footer {
   font-weight: 100;
 }
 
-.connectionIcon{
+.connectionIcon {
   color: white;
 }
 
@@ -264,6 +264,7 @@ h3 {
   border-radius: 2%;
   object-fit: cover;
   margin-top: 150px;
+  /* border: 1px solid black; */
 }
 
 .updateDeleteButtons {
@@ -309,8 +310,8 @@ h3 {
   font-family: 'Open Sans', sans-serif;
 }
 
-.formSize{
-height: 300px;
+.formSize {
+  height: 300px;
 
 }
 
@@ -391,11 +392,6 @@ p.mealCardBody {
   background-attachment: fixed;
 }
 
-.imgBgDrinks {
-  background-image: url(../img/wines2.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-}
 
 p.drinkCardBody {
   font-size: 1rem;
@@ -431,62 +427,101 @@ p.drinkCardBody {
   color: black;
 }
 
-.overflow-scroll-y{
+.overflow-scroll-y {
   overflow-y: scroll;
 }
 
-.overflow-scroll-y::-webkit-scrollbar-track{
+.overflow-scroll-y::-webkit-scrollbar-track {
   /* box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
-	background-color: transparent;
+  background-color: transparent;
   border-radius: 3px;
 }
 
-.overflow-scroll-y::-webkit-scrollbar{
-	width: 4px;
-	background-color: transparent;
+.overflow-scroll-y::-webkit-scrollbar {
+  width: 4px;
+  background-color: transparent;
   border-radius: 3px;
 }
 
-.overflow-scroll-y::-webkit-scrollbar-thumb{
-	background-color:transparent;
+.overflow-scroll-y::-webkit-scrollbar-thumb {
+  background-color: transparent;
   border-radius: 3px;
   opacity: 0.1;
 }
 
-.legendForm{
-text-align: center;
-color: whitesmoke;
+.legendForm {
+  text-align: center;
+  color: whitesmoke;
 }
 
-.imgBgLacarteModifForm{
+.imgBgLacarteModifForm {
   height: 100vh;
   background-image: url(../img/maintest.jpg);
   background-size: cover;
 }
 
-.informationsTable{
-color: whitesmoke;
+.informationsTable {
+  color: whitesmoke;
 }
 
+/* 
 .bgImgAdmin{
   background-image: url(../img/login3.jpg);
   background-size: cover;
   height: 100vh;
+} */
+
+.adminForm {
+  margin-top: 150px;
+  background-color: black;
+  border-radius: 5%;
 }
 
-.adminForm{
- margin-top: 100px ;
-}
- 
-.platEtMenuTitle{
+.platEtMenuTitle {
   Font-Family: 'Cormorant Garamond', Serif;
   font-size: 26px;
 }
 
-.modifyDrinkForm {
-align-items: center;
-margin-top: 100px;
+.gestionPlatetMenuButton.focus,
+.gestionPlatetMenuButton:focus {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
 
+.newMealForm {
+  margin-top: 100px;
+  background-color: black;
+  border-radius: 1%;
+}
 
+.newDrinkForm {
+  margin-top: 120px;
+  background-color: black;
+  border-radius: 1%;
+
+}
+
+.newDrinkModifyForm {
+  margin-top: 100px;
+  background-color: black;
+  border-radius: 1%;
+}
+
+.addMenu{
+  background-color: #D4514A;
+  font-weight: bold;
+}
+
+.myContactForm {
+  max-width: 100%;
+  justify-content: center;
+  /* background: grey; */
+  border-radius: 2px;
+  padding: 20px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.mydisconnectButton{
+margin-left: 50px ;
 }

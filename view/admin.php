@@ -1,6 +1,7 @@
 <?php
+session_start();
 require_once '../controller/controller-admin.php';
-
+var_dump($_SESSION['isconnected']);
 ?>
 <!doctype html>
 <html lang="fr">
@@ -26,28 +27,33 @@ require_once '../controller/controller-admin.php';
     <div id="contentFullHomePage">
         <?php require_once "nav.php" ?>
 
-        <div class="flex-grow-1 bgImgAdmin">
+        <div class="flex-grow-1">
             <div class="container-fluid">
                 <div class="row justify-content-center">
                     <div class="adminForm col-lg-4 col-sm-6 align-items-center justify-content-center">
-                        <form novalidate class="mb-3" name="admin" method="POST" action="">
-                            <h1 class="mt-5 text-center text-light"><b>Espace Administrateur</b> </h1>
-                            <div class="form-group">
-                                <label for="identification"></label>
-                                <input class="form-control w-100" type="text" name="identification" placeholder="identifiant" id="identification" required>
-                                <div class="text-light">
-                                    <span><?= isset($errorMessages['identification']) ? $errorMessages['identification'] : '' ?></span>
+
+                        <div class="adminForm m-5">
+                            <form novalidate class="mb-3 mt-3" name="admin" method="POST" action="">
+                                <h1 class="text-center text-light"><b>Administrateur</b> </h1>
+                                <div class="form-group">
+                                    <label for="identification"></label>
+                                    <input class="form-control w-100" type="text" name="identification" placeholder="identifiant" id="identification" required>
+                                    <div class="text-light">
+                                        <span><?= isset($errorMessages['identification']) ? $errorMessages['identification'] : '' ?></span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="password"></label>
-                                <input class="form-control w-100" type="password" name="password" placeholder="mot de passe" id="password" required>
-                                <div class="text-light">
-                                    <span><?= isset($errorMessages['password']) ? $errorMessages['password'] : '' ?></span>
+                                <div class="form-group">
+                                    <label for="password"></label>
+                                    <input class="form-control w-100" type="password" name="password" placeholder="mot de passe" id="password" required>
+                                    <div class="text-light">
+                                        <span><?= isset($errorMessages['password']) ? $errorMessages['password'] : '' ?></span>
+                                    </div>
                                 </div>
-                            </div>
-                            <button type="submit" class="btn myAdminButton" name="connection">connection</button>
-                        </form>
+                                <button  type="submit" class="btn myAdminButton mt-2" name="connection">connexion</button>
+                            </form>
+                        </div>
+
+
                     </div>
                 </div>
             </div>

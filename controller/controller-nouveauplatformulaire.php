@@ -3,24 +3,23 @@
 session_start();
 require_once '../model/database.php';
 require_once '../model/model_platformulaire.php';
+require_once '../model/model_category_menucomponent.php';
 
 $mealObj = new Meal;
 
 
-var_dump($_POST);
-
 $regexPrice = "/^[0-9]+.?[0-9]{0,2}$/";
-$typeOfMealArray = [
-    1 => 'Mise en bouche',
-    2 => 'Entrée',
-    3 => 'Plat',
-    4 => 'Fromage',
-    5 => 'Dessert',
-    6 => 'Mignardises'
-];
+
+$categoryObj = new Category_menucomponent;
+$categoryArray =  $categoryObj->readCategory();;
+
+$typeOfMealArray = [];
+foreach ($categoryArray as $value) {
+    $typeOfMealArray[$value['category_menucomponent_id']] = $value['category_menucomponent_name'];
+}
+
 
 if (isset($_POST['valider'])) {
-
 
     if (isset($_POST['mealName'])) {
         if (empty($_POST['mealName'])) {
@@ -35,10 +34,10 @@ if (isset($_POST['valider'])) {
     }
 
 
-    if(isset($_POST['mealPrice'])){
+    if (isset($_POST['mealPrice'])) {
 
-        if(empty($_POST['mealPrice'])) {
-        $errorMessages['mealPrice'] = "Vueillez entrer un prix";
+        if (empty($_POST['mealPrice'])) {
+            $errorMessages['mealPrice'] = "Vueillez entrer un prix";
         }
         if (!preg_match($regexPrice, $_POST['mealPrice'])) {
             $errorMessages['mealPrice'] = 'veuillez saisir un prix valide';
@@ -57,37 +56,30 @@ if (isset($_POST['valider'])) {
         }
     }
 
-    if (empty($errorMessages)) {     
-          if (isset($_POST['notVisible'])) {
+    if (empty($errorMessages)) {
+        if (isset($_POST['notVisible'])) {
             $visible = $_POST['notVisible'];
         } else {
             $visible = 1;
         }
-     // création du tableau $mealDetails dans la fonction
-          $mealDetails = [
-            'mealName'=> htmlspecialchars($_POST['mealName']),
-            'mealComposition'=> htmlspecialchars($_POST['mealComposition']),
-            'mealPrice'=> htmlspecialchars($_POST['mealPrice']),
-            'mealSupp'=> $mealSupp,
+        // création du tableau $mealDetails dans la fonction
+        $mealDetails = [
+            'mealName' => htmlspecialchars($_POST['mealName']),
+            'mealComposition' => htmlspecialchars($_POST['mealComposition']),
+            'mealPrice' => htmlspecialchars($_POST['mealPrice']),
+            'mealSupp' => $mealSupp,
 
-            'notVisible'=> ($visible),
-            'categoryMeal'=> htmlspecialchars($_POST['categoryMeal'])            
+            'notVisible' => ($visible),
+            'categoryMeal' => htmlspecialchars($_POST['categoryMeal'])
         ];
 
-         // on injecte la variable du tableau $mealDetails dans la fonction
+        // on injecte la variable du tableau $mealDetails dans la fonction
 
-    if($mealObj->addMeal($mealDetails)){
-        $errorMessages['addMeal'] = "Plat enregistré";
-    }else {
+        if ($mealObj->addMeal($mealDetails)) {
+            $errorMessages['addMeal'] = "Plat enregistré";
+        } else {
 
-        $errorMessages['addMeal'] = "erreur de connexion";
+            $errorMessages['addMeal'] = "erreur de connexion";
+        }
     }
-
-   }
-
 }
-  
-
-
-
-

@@ -1,4 +1,5 @@
-<?php require_once '../controller/controller-formulairemodifierboissons.php'; ?>
+<?php require_once '../controller/controller-modifiermenus.php'; ?>
+
 
 <!doctype html>
 <html lang="fr">
@@ -27,53 +28,37 @@
             <div class="container h-100">
                 <div class="row justify-content-center">
                     <div class="col-10 align-items-center newDrinkModifyForm">
-                        <form novalidate class="mx-auto" name="newDrink" method="post" action="formulairemodifierboissons.php">
+                        <form novalidate class="mx-auto" name="newMenu" method="post" action="menusmodifier.php">
                             <p><span style="color: #D4514A; font-style:italic"><?= $errorMessages['updateDrink'] ?? '' ?></span></p>
-                            <legend class="font-weight-bold text-light text-center mt-2">Modifier votre boisson</legend>
+                            <legend class="font-weight-bold text-light text-center mt-2">Modifier menu</legend>
 
-                            <div class="d-flex justify-content-center">
-                                <div class="form-group w-25">
-                                    <label for="categoryDrink"></label>
-                                    <select class="form-control" id="categoryDrink" name="categoryDrink">
-                                        <option value="null" disabled selected>Type de boisson</option>
-                                        <?php
-                                        foreach ($typeOfDrinkArray as $key => $typeOfDrink) { ?>
-                                            <?php if ($key == $getDrink['typeboisson']) {                                                 
-                                                ?>
-                                                <option selected value="<?= $key ?>" <?= isset($_POST['categoryDrink']) && $_POST["categoryDrink"] == $key ? "categoryDrink" : '' ?>><?= $typeOfDrink ?></option>
-                                            <?php } else { ?>
-                                                <option value="<?= $key ?>" <?= isset($_POST['categoryDrink']) && $_POST["categoryDrink"] == $key ? "categoryDrink" : '' ?>><?= $typeOfDrink ?></option>
-                                            <?php } ?>
-                                        <?php } ?>
-                                    </select>
-                                </div>
-
-                                <div class="form-group w-75 ml-3">
-                                    <label for="drinkName"></label>
-                                    <input class="form-control w-50" type="text" name="drinkName" id="drinkName" placeholder="Nom de la boisson" value="<?= isset($_POST['drinkName']) ? htmlspecialchars($_POST['drinkName'])  : $getDrink['nom'] ?>" required>
+                            <div class="">
+                                <div class="form-group w-75 mb-4">
+                                    <label for="menuName"></label>
+                                    <input class="form-control" type="text" name="menuName" id="menuName" placeholder="Nom du menu" value="" required>
                                     <div class="text-danger">
-                                        <span><?= isset($errorMessages['drinkName']) ? $errorMessages['drinkName'] : '' ?></span>
+                                        <span><?= isset($errorMessages['menuName']) ? $errorMessages['menuName'] : '' ?></span>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group ">
-                                <label for="drinkPrice"></label>
-                                <input class="form-control w-25" type="number" min="1" name="drinkPrice" id="drinkPrice" placeholder="13.90" value="<?= isset($_POST['drinkPrice']) ? htmlspecialchars($_POST['drinkPrice'])  : $getDrink['prix'] ?>" required>
+                                <label for="menuImage"></label>
+                                <input class="w-25 text-light" type="file"enctype="multipart/form-data" name="menuImage" id="menuImage" placeholder="image de mon menu" value="" required>
                                 <div class="text-danger">
-                                    <span><?= isset($errorMessages['drinkPrice']) ? $errorMessages['drinkPrice'] : '' ?></span>
+                                    <span><?= isset($errorMessages['menuImage']) ? $errorMessages['menuImage'] : '' ?></span>
                                 </div>
                             </div>
 
-                            <div class="mt-3">
+                            <div class="mt-3 mb-2">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="notVisible" value="0" name="notVisible" <?= $getDrink['visible'] == 0 ? 'checked' : '' ?> required>
+                                    <input class="form-check-input" type="checkbox" id="notVisible" value="0" name="notVisible" required>
                                     <label class="form-check-label text-light" for="notVisible">Ne pas afficher</label>
                                 </div>
                             </div>
-                            <div class="d-flex">
+                            <div class="d-flex mb-3">
                                 <button type="submit" class="btn updateDeleteButtons justify-content-center mb-3 mt-3" name="modifier">Modifier</button>
-                                <a class="btn updateDeleteButtons justify-content-center mb-3 mt-3 ml-3" href="../view/lesboissons-admin.php" name="backMealBtn">Liste des boissons</button></a>
+                                <a class="btn updateDeleteButtons justify-content-center mb-3 mt-3 ml-3" href="../view/lesmenus-admin.php" name="backMealBtn">Les menus</button></a>
                             </div>
                         </form>
                     </div>

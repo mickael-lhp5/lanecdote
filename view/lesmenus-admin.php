@@ -1,7 +1,6 @@
 <?php
-require_once '../controller/controller-lesboissons-admin.php';
+require_once '../controller/controller-lesmenus-admin.php';
 ?>
-
 
 <!doctype html>
 <html lang="fr">
@@ -25,83 +24,79 @@ require_once '../controller/controller-lesboissons-admin.php';
 </head>
 
 <body>
-    <div id="contentFullHomePage">
+    <div id="contentFullHomePage" class="adminPage">
         <?php require_once "nav.php" ?>
         <div class="flex-grow-1" id="bgHomePage">
             <div class="container h-100">
                 <div class="row justify-content-center">
-                    <div class="col-6 align-items-center justify-content-center">
+                    <div class="col-12 align-items-center justify-content-center">
                         <div>
-                            <a href="formulaireboissons.php"> <button type="submit" class="btn mb-3 mt-5 addNewDrink" name="addDrink">NOUVELLE BOISSON</button></a>
-                            <a href="gestionplatetmenu.php"><button type="submit" class="btn mb-3 mt-5 ml-3 addNewDrink" name="addDrink">RETOUR</button></a>
+                            <a href="menuscreation.php"><button type="submit" class="btn mb-3 mt-5 addMenu" name="addMenu">NOUVEAU MENU</button></a>
+                            <a href="gestionplatetmenu.php"><button type="submit" class="btn mb-3 mt-5 ml-3 addMenu" name="addMenu">RETOUR</button></a>
                         </div>
                         <table class="table table-hover table-dark">
                             <thead>
                                 <tr>
-                                    <th scope="col">Nom</th>
-                                    <th scope="col-9">Prix</th>
+                                    <th scope="col" class="nameColumn">Nom</th>
+                                    <th scope="col">Image</th>
+                                    <th scope="col">Prix</th>
                                     <th scope="col">Visible</th>
-                                    <th scope="col">Type</th>
-
+                                    <th></th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
-
-
-                                <?php foreach ($drinkDetails as $drinks) { ?>
+                                
                                     <tr class="nthPerso">
-                                        <td><?= $drinks['nom']?></td>
-                                        <td><?= $drinks['prix']?><span>€</span></td>
-                                        <td>
-                                            <?= $drinks['visible'] == 0 ? 'non' : 'oui' ?>
-                                        </td>
-                                        <td><?= $drinks['Type de boisson']?></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></th>
+                                        <td></th>
+                                        <td></td>
                                         <td>
                                             <div class="infoButtonEdit">
-                                                <form action="formulairemodifierBoissons.php" method="POST">
-                                                    <button type="submit" class="btn updateDeleteButtons ml-1" name="enterModifyDrinkForm"  value="<?= $drinks['id'] ?>"><i class="far fa-edit"></i></button>
+                                                <form action="menusmodifier.php" method="POST">
+                                                    <button type="submit" class="btn btn updateDeleteButtons" name="enterModifyForm" value=""><i class="far fa-edit"></i></button>
                                                     <div class="infoModifier">modifier</div>
                                                 </form>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="infoButtonDelete">
-                                                <button type="button" class="btn updateDeleteButtons" id="deleteDrink" name="deleteDrink" data-toggle="modal" data-target="#deleteModal<?= $drinks['id'] ?>"><i class=" far fa-trash-alt" ></i></button>
+                                                <button type="button" class="btn btn updateDeleteButtons" id="deleteMeal" name="deleteMeal" data-toggle="modal" data-target="#deleteModal"><i class=" far fa-trash-alt"></i></button>
                                                 <div class="infoDelete">supprimer</div>
                                             </div>
                                         </td>
                                     </tr>
-                                <?php } ?>
+                            
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Modal -->
-    <?php foreach($drinkDetails as $drinks){ ?>
-        <div class="modal fade" id="deleteModal<?= $drinks['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Voulez vous supprimer cette boisson ?</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                    <form name="delete" method="POST" action="lesboissons-admin.php">
-                        <button type="submit" class="btn btn updateDeleteButtons" id="deleteDrink" name="deleteDrink" value="<?= $drinks['id'] ?>">Supprimer</button>
-                    </form>
+        <!-- Modal -->
+       
+            <div class="modal fade" id="deleteModal<?= $meals['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Voulez vous supprimer ce plat ?</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                            <form name="delete" method="post" action="lacarte-admin.php">
+                                <button type="submit" class="btn btn updateDeleteButtons" id="deleteMeal" name="deleteMeal" value=""><i class="far fa-trash-alt mr-1"></i>Supprimer</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <?php } ?>
-   
+ 
+
     </div>
 
     <!-- Optional JavaScript -->

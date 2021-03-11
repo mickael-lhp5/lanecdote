@@ -1,5 +1,6 @@
 <?php
 require_once '../controller/controller-nouscontacter.php';
+
 ?>
 
 <!doctype html>
@@ -34,7 +35,7 @@ require_once '../controller/controller-nouscontacter.php';
                         <div class="m-3 overflow-scroll-y">
                             <?php if ($showForm) { ?>
 
-                                <form novalidate class="myForm" name="contacter" method="post" action="nouscontacter.php">
+                                <form novalidate class="myContactForm" name="contacter" method="post" action="nouscontacter.php">
                                     <legend class="mb-3 legendForm"><b>Laissez nous un message, nous vous recontacterons</b></legend>
                                     <div class="d-flex">                                        
                                         <div class="form-group w-50 ">

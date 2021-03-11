@@ -4,7 +4,7 @@ require_once '../model/database.php';
 require_once '../model/model_drinks.php';
 require_once '../model/model_drinks_cat.php';
 
-var_dump($_POST);
+// var_dump($_POST);
 
 $regexPrice = "/^[0-9]+.?[0-9]{0,2}$/";
 
@@ -66,7 +66,7 @@ if (isset($_POST['valider'])) {
         // on injecte la variable du tableau $drinkDetails dans la fonction
 
         if ($DrinkObj->addDrink($drinkDetails)) {
-            $errorMessages['addDrink'] = "Boisson enregistré";
+            $errorMessages['addDrink'] = "Boisson enregistrée";
         } else {
 
             $errorMessages['addDrink'] = "erreur de connexion";

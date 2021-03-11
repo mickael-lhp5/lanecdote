@@ -1,4 +1,7 @@
-<?php require_once '../controller/controller-modifierformulaire.php'; ?>
+<?php require_once '../controller/controller-modifierformulaire.php';
+
+session_start();
+?>
 
 <!doctype html>
 <html lang="fr">
