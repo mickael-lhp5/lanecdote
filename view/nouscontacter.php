@@ -27,14 +27,12 @@ require_once '../controller/controller-nouscontacter.php';
 
     <div id="contentFullHomePage">
         <?php require_once "nav.php" ?>
-
         <div>
             <div class="container-fluid bandeauImg">
                 <div class="row justify-content-center h-100">
                     <div class="col-12 h-100 d-flex justify-content-center">
                         <div class="m-3 overflow-scroll-y">
                             <?php if ($showForm) { ?>
-
                                 <form novalidate class="myContactForm" name="contacter" method="post" action="nouscontacter.php">
                                     <legend class="mb-3 legendForm"><b>Laissez nous un message, nous vous recontacterons</b></legend>
                                     <div class="d-flex">                                        
@@ -80,10 +78,7 @@ require_once '../controller/controller-nouscontacter.php';
                                 </div>
                             <?php } ?>
                         </div>
-
                     </div>
-
-
                 </div>
             </div>
         </div>

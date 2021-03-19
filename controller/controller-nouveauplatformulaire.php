@@ -11,7 +11,7 @@ $mealObj = new Meal;
 $regexPrice = "/^[0-9]+.?[0-9]{0,2}$/";
 
 $categoryObj = new Category_menucomponent;
-$categoryArray =  $categoryObj->readCategory();;
+$categoryArray =  $categoryObj->readCategory();
 
 $typeOfMealArray = [];
 foreach ($categoryArray as $value) {

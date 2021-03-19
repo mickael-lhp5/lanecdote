@@ -133,5 +133,4 @@ public function getMeals($idCat)
     return $result;
 }
 
-
 }

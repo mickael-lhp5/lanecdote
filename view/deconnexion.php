@@ -31,7 +31,7 @@ session_destroy();
             <div class="container-fluid">
                 <div class="row justify-content-center">
                     <div class="col-lg-4 col-sm-6 align-items-center justify-content-center">
-                      <p class="mt-5">Vous avez bien été deconnecté</p>
+                        <p class="mt-5">Vous avez bien été deconnecté</p>
                     </div>
                 </div>
             </div>
@@ -50,8 +50,12 @@ session_destroy();
     </script>
     <script src="assets/js/script.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init()
+    <script type="text/javascript">
+        setTimeout('Redirect()', 2000);
+
+        function Redirect() {
+            location.href = '/index.php';
+        }
     </script>
 </body>
 

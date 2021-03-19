@@ -1,5 +1,6 @@
 <?php
 require_once '../controller/controller-lesmenus.php';
+
 ?>
 
 <!doctype html>
@@ -28,15 +29,19 @@ require_once '../controller/controller-lesmenus.php';
         <?php require_once "nav.php" ?>
 
         <div class="flex-grow-1" id="bgHomePage">
-            <div class="container-fluid imgBgLacarte">
+            <div class="container-fluid">
                 <div class="row justify-content-center">
-                    <div class="d-flex col-12 col-lg-6 align-items-center justify-content-center">
-                
+                    <div class="col-12 col-lg-6 align-items-center">
 
-
-
-
-                
+                        <?php foreach ($menusArray as $menu) { ?>
+                            <legend class="mealCardTitle d-flex justify-content-between text-dark">
+                                <div>
+                                    <p class="menuTitle text-center mt-3"><?= $menu['menuimage_name']?></p>
+                                    <p class="mealCardBody"><img class="menuimages" src="../assets/img/imagemenu/<?= $menu['menuimage_picture']?>"></p>
+                                </div>                                
+                            </legend>
+                            <hr>
+                        <?php } ?>
                     </div>
                 </div>
             </div>

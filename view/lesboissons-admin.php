@@ -50,23 +50,23 @@ require_once '../controller/controller-lesboissons-admin.php';
 
                                 <?php foreach ($drinkDetails as $drinks) { ?>
                                     <tr class="nthPerso">
-                                        <td><?= $drinks['nom']?></td>
-                                        <td><?= $drinks['prix']?><span>€</span></td>
+                                        <td><?= $drinks['nom'] ?></td>
+                                        <td><?= $drinks['prix'] ?><span>€</span></td>
                                         <td>
                                             <?= $drinks['visible'] == 0 ? 'non' : 'oui' ?>
                                         </td>
-                                        <td><?= $drinks['Type de boisson']?></td>
+                                        <td><?= $drinks['Type de boisson'] ?></td>
                                         <td>
                                             <div class="infoButtonEdit">
                                                 <form action="formulairemodifierBoissons.php" method="POST">
-                                                    <button type="submit" class="btn updateDeleteButtons ml-1" name="enterModifyDrinkForm"  value="<?= $drinks['id'] ?>"><i class="far fa-edit"></i></button>
+                                                    <button type="submit" class="btn updateDeleteButtons ml-1" name="enterModifyDrinkForm" value="<?= $drinks['id'] ?>"><i class="far fa-edit"></i></button>
                                                     <div class="infoModifier">modifier</div>
                                                 </form>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="infoButtonDelete">
-                                                <button type="button" class="btn updateDeleteButtons" id="deleteDrink" name="deleteDrink" data-toggle="modal" data-target="#deleteModal<?= $drinks['id'] ?>"><i class=" far fa-trash-alt" ></i></button>
+                                                <button type="button" class="btn updateDeleteButtons deleteButtons" id="deleteDrink" name="deleteDrink" data-toggle="modal" data-target="#deleteModal" data-id="<?= $drinks['id'] ?>"><i class=" far fa-trash-alt"></i></button>
                                                 <div class="infoDelete">supprimer</div>
                                             </div>
                                         </td>
@@ -80,28 +80,41 @@ require_once '../controller/controller-lesboissons-admin.php';
         </div>
     </div>
 
-    <!-- Modal -->
-    <?php foreach($drinkDetails as $drinks){ ?>
-        <div class="modal fade" id="deleteModal<?= $drinks['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+
+    <!-- ------------------------------------- -->
+    <!-- ICI NOTRE MODAL DE SUPPRESSION DE RDV -->
+    <!-- ------------------------------------- -->
+
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Voulez vous supprimer cette boisson ?</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
                 </div>
+                <!-- <div id="modalBody" class="modal-body">
+                           <div><span class="fw-bold">Patient : </span><span id="patientDeleteModal"></span></div>
+                           <div><span class="fw-bold">Date : </span><span id="dateDeleteModal"></span></div>
+                           <div><span class="fw-bold">Heure : </span><span id="hourDeleteModal"></span></div>
+                        </div> -->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+
                     <form name="delete" method="POST" action="lesboissons-admin.php">
-                        <button type="submit" class="btn btn updateDeleteButtons" id="deleteDrink" name="deleteDrink" value="<?= $drinks['id'] ?>">Supprimer</button>
+                        <button type="submit" class="btn btn updateDeleteButtons" id="deleteButtonModal" name="deleteDrink" value="<?= $drinks['id'] ?>">Supprimer</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    <?php } ?>
-   
+    <!-- ------------------------------------- -->
+    <!-- ICI NOTRE MODAL DE SUPPRESSION DE RDV -->
+    <!-- ------------------------------------- -->
+
+
+
+
+
+
     </div>
 
     <!-- Optional JavaScript -->
@@ -112,11 +125,11 @@ require_once '../controller/controller-lesboissons-admin.php';
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-    <script src="assets/js/script.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init()
     </script>
+    <script src="../assets/js/script.js"></script>
 </body>
 
 

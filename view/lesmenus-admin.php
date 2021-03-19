@@ -37,27 +37,28 @@ require_once '../controller/controller-lesmenus-admin.php';
                         <table class="table table-hover table-dark">
                             <thead>
                                 <tr>
-                                    <th scope="col" class="nameColumn">Nom</th>
-                                    <th scope="col">Image</th>
-                                    <th scope="col">Prix</th>
-                                    <th scope="col">Visible</th>
+                                    <th scope="col "class="align-middle">Nom</th>
+                                    <th scope="col" class="align-middle">Image</th>
+                                    <th scope="col" class="align-middle">Visible</th>
                                     <th></th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                
+                                <?php foreach ($imageDetails as $menus) { var_dump($menus); ?>
                                     <tr class="nthPerso">
+                                        <td class="align-middle"><?= $menus['menuimage_name'] ?></td>
+                                        <td class="align-middle"><?= $menus['menuimage_picture'] ?></td>
+                                        <td class="align-middle">
+                                            <?= $menus['menuimage_visible'] == 0 ? 'non' : 'oui' ?>
+                                        </td>
                                         <td></td>
                                         <td></td>
-                                        <td></td>
-                                        <td></th>
-                                        <td></th>
-                                        <td></td>
+
                                         <td>
                                             <div class="infoButtonEdit">
-                                                <form action="menusmodifier.php" method="POST">
-                                                    <button type="submit" class="btn btn updateDeleteButtons" name="enterModifyForm" value=""><i class="far fa-edit"></i></button>
+                                                <form action="menusmodifier.php" method="post">
+                                                    <button type="submit" class="btn btn updateDeleteButtons" name="enterModifyForm" value="<?=$menus['menu_image_id']?>"><i class="far fa-edit"></i></button>
                                                     <div class="infoModifier">modifier</div>
                                                 </form>
                                             </div>
@@ -69,7 +70,7 @@ require_once '../controller/controller-lesmenus-admin.php';
                                             </div>
                                         </td>
                                     </tr>
-                            
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>
@@ -78,24 +79,23 @@ require_once '../controller/controller-lesmenus-admin.php';
         </div>
 
         <!-- Modal -->
-       
-            <div class="modal fade" id="deleteModal<?= $meals['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Voulez vous supprimer ce plat ?</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                            <form name="delete" method="post" action="lacarte-admin.php">
-                                <button type="submit" class="btn btn updateDeleteButtons" id="deleteMeal" name="deleteMeal" value=""><i class="far fa-trash-alt mr-1"></i>Supprimer</button>
-                            </form>
-                        </div>
+
+        <div class="modal fade" id="deleteModal<?= $meals['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Voulez vous supprimer ce plat ?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                        <form name="delete" method="post" action="lacarte-admin.php">
+                            <button type="submit" class="btn btn updateDeleteButtons" id="deleteMeal" name="deleteMeal" value=""><i class="far fa-trash-alt mr-1"></i>Supprimer</button>
+                        </form>
                     </div>
                 </div>
             </div>
- 
+        </div>
 
     </div>
 

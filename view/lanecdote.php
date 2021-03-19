@@ -22,13 +22,12 @@ session_start();
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,900;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:700i|Fira+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <!-- animation AOS.init img page d'accueil -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
-
     <div id="contentFullHomePage">
         <?php require_once "nav.php" ?>
         <div class="container">
@@ -54,66 +53,6 @@ session_start();
                             </div>
                         </div>
                     </section>
-
-                    <!-- <section class="col-12 mt-4 sectionLanecdote">
-                <div id="bgHomePage">
-                    <div class="container d-flex justify-content-center" id="presentationLanecdote">
-                        <div class="row" id="descriptif">
-                            <section class="d-flex col-12 mt-4 mb-5 flex-wrap" id="restaurantPrez">
-                                <div class="d-flex col-12 col-sm-3">
-                                    <div class="m-2">
-                                        <img class="w-100 homeImg" data-aos="fade-up" data-aos-duration="3000" src="../assets/img/devanture1.jpg">
-                                    </div>
-                                </div>
-
-                                <div class="d-flex col-12 col-sm-3">
-                                    <div class="m-2">
-                                        <img class="w-100 homeImg" data-aos="fade-up" data-aos-duration="3000" src="../assets/img/salle3.jpg">
-                                    </div>
-                                </div>
-                                <div class="d-flex col-12 col-sm-3">
-                                    <div class="m-2">
-                                        <img class="w-100 homeImg" data-aos="fade-up" data-aos-duration="3000" src="../assets/img/salle4.jpg">
-                                    </div>
-                                </div>
-                                <div class="d-flex col-12 col-sm-3">
-                                    <div class="m-2">
-                                        <img class="w-100  homeImg" data-aos="fade-up" data-aos-duration="3000" src="../assets/img/devanture2.jpg">
-                                    </div>
-                                </div>
-                            </section> -->
-
-
-
-                    <!-- <section class="d-flex col-12 mt-2 flex-wrap justify-content-center mb-2" id="teamPrez">
-                                <legend class="mt-3" style="text-align: center;font-size:30px;color:white;"><b>L'équipe</b></legend>
-
-                                <div class="d-flex col-12 col-sm-4  mb-3" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="1000">
-                                    <div class="m-2">
-                                        <img class="w-100  homeImg" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" src="../assets/img/cuisiniertest.jpg">
-                                    </div>
-                                </div>
-                                <div class="d-flex col-12 col-sm-4">
-                                    <div class="m-2">
-                                        <img class="w-100  homeImg" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" src="../assets/img/serveur2test.jpg">
-                                    </div>
-                                </div>
-                                <div class="d-flex col-12 col-sm-4">
-                                    <div class="m-2">
-                                        <img class="w-100  homeImg" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" src="../assets/img/serveur4test.jpg">
-                                    </div>
-                                </div>
-                                <div class="d-flex col-12 col-sm-4">
-                                    <div class="m-2">
-                                        <img class="w-100  homeImg" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" src="../assets/img/serveur3test.jpg">
-                                    </div>
-                                </div>
-                                <div class="d-flex col-12 col-sm-4">
-                                    <div class="m-2">
-                                        <img class="w-100  homeImg" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" src="../assets/img/serveur3test.jpg">
-                                    </div>
-                                </div>
-                            </section> -->
             </div>
         </div>
     </div>

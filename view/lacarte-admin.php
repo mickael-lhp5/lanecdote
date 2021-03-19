@@ -35,89 +35,97 @@ require_once '../controller/controller-lacarte-admin.php';
                             <a href="nouveauplatformulaire.php"><button type="submit" class="btn mb-3 mt-3 addNewMeal" name="addMeal">NOUVEAU PLAT</button></a>
                             <a href="gestionplatetmenu.php"><button type="submit" class="btn mb-3 mt-3 ml-3 addNewMeal" name="addMeal">RETOUR</button></a>
                         </div>
-                        <table class="table table-hover table-dark">
-                            <thead>
-                                <tr>
-                                    <th scope="col" class="nameColumn">Nom</th>
-                                    <th scope="col">Descritpion</th>
-                                    <th scope="col">Prix</th>
-                                    <th scope="col">Supplément</th>
-                                    <th scope="col">Visible</th>
-                                    <th scope="col">Type</th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($mealDetails as $meals) { ?>
-                                    <tr class="nthPerso">
-                                        <td class="align-middle"><?= $meals['nom'] ?></td>
-                                        <td class="align-middle"><?= $meals['description'] ?></td>
-                                        <td class="align-middle"><?= $meals['prix'] ?>€</td>
-                                        <td class="text-center align-middle"><?= $meals['supplément'] ?></th>
-                                        <td class="text-center align-middle">
-                                            <?= $meals['visible'] == 0 ? 'non' : 'oui' ?>
-                                        </td>
-                                        <td class="align-middle"><?= $meals['Type de plat'] ?>
-                                        </td>
-                                        <td>
-                                            <div class="infoButtonEdit">
-                                                <form action="formulairemodifier.php" method="POST">
-                                                    <button type="submit" class="btn btn updateDeleteButtons" name="enterModifyForm" value="<?= $meals['id'] ?>"><i class="far fa-edit"></i></button>
-                                                    <div class="infoModifier">modifier</div>
-                                                </form>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="infoButtonDelete">
-                                                <button type="button" class="btn btn updateDeleteButtons" id="deleteMeal" name="deleteMeal" data-toggle="modal" data-target="#deleteModal<?= $meals['id'] ?>"><i class=" far fa-trash-alt"></i></button>
-                                                <div class="infoDelete">supprimer</div>
-                                            </div>
-                                        </td>
+                        <div class="table-responsive">
+                            <table class="table table-hover table-dark">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="nameColumn">Nom</th>
+                                        <th scope="col">Descritpion</th>
+                                        <th scope="col">Prix</th>
+                                        <th scope="col">Supplément</th>
+                                        <th scope="col">Visible</th>
+                                        <th scope="col">Type</th>
+                                        <th></th>
+                                        <th></th>
                                     </tr>
-                                <?php } ?>
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($mealDetails as $meals) { ?>
+                                        <tr class="nthPerso">
+                                            <td class="align-middle"><?= $meals['nom'] ?></td>
+                                            <td class="align-middle"><?= $meals['description'] ?></td>
+                                            <td class="align-middle"><?= $meals['prix'] ?>€</td>
+                                            <td class="text-center align-middle"><?= $meals['supplément'] ?></th>
+                                            <td class="text-center align-middle">
+                                                <?= $meals['visible'] == 0 ? 'non' : 'oui' ?>
+                                            </td>
+                                            <td class="align-middle"><?= $meals['Type de plat'] ?>
+                                            </td>
+                                            <td>
+                                                <div class="infoButtonEdit">
+                                                    <form action="formulairemodifier.php" method="POST">
+                                                        <button type="submit" class="btn btn updateDeleteButtons" name="enterModifyForm" value="<?= $meals['id'] ?>"><i class="far fa-edit"></i></button>
+                                                        <div class="infoModifier">modifier</div>
+                                                    </form>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="infoButtonDelete">
+                                                    <button type="button" class="btn updateDeleteButtons deleteButtons" id="deleteMeal" name="deleteMeal" data-toggle="modal" data-target="#deleteModal" data-id="<?= $meals['id'] ?>"><i class=" far fa-trash-alt"></i></button>
+                                                    <div class="infoDelete">supprimer</div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Modal -->
-        <?php foreach ($mealDetails as $meals) { ?>
-            <div class="modal fade" id="deleteModal<?= $meals['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Voulez vous supprimer ce plat ?</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                            <form name="delete" method="post" action="lacarte-admin.php">
-                                <button type="submit" class="btn btn updateDeleteButtons" id="deleteMeal" name="deleteMeal" value="<?= $meals['id'] ?>"><i class="far fa-trash-alt mr-1"></i>Supprimer</button>
-                            </form>
-                        </div>
+        <!-- ------------------------------------- -->
+        <!-- ICI NOTRE MODAL DE SUPPRESSION DE RDV -->
+        <!-- ------------------------------------- -->
+
+        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Voulez vous supprimer ce plat ?</h5>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                        <form name="delete" method="POST" action="lacarte-admin.php">
+                            <button type="submit" class="btn btn updateDeleteButtons" id="deleteButtonModal" name="deleteMeal" ><i class="far fa-trash-alt mr-1"></i>Supprimer</button>
+                        </form>
                     </div>
                 </div>
             </div>
-        <?php } ?>
+        </div>
+        <!-- ------------------------------------- -->
+        <!-- ICI NOTRE MODAL DE SUPPRESSION DE RDV -->
+        <!-- ------------------------------------- -->
 
-    </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
-    <script src="assets/js/script.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init()
-    </script>
+
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init()
+        </script>
+        <script src="../assets/js/script.js"></script>
 </body>
 
 

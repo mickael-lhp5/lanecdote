@@ -1,6 +1,6 @@
 <?php require_once '../controller/controller-modifierformulaire.php';
 
-session_start();
+
 ?>
 
 <!doctype html>
@@ -24,15 +24,15 @@ session_start();
 </head>
 
 <body>
-    <div id="contentFullHomePage" class="adminPage">
+    <div id="contentFullHomePage">
         <?php require_once "nav.php" ?>
-        <div class="flex-grow-1 imgBgLacarteModifForm" >
+        <div class="flex-grow-1" >
             <div class="container-fluid h-100">
                 <div class="row justify-content-center">
-                    <div class="col-10 align-items-center">
+                    <div class="col-10 align-items-center modifyMealForm">
                         <form novalidate class="myForm mx-auto" name="modification" method="POST" action="formulairemodifier.php">
                             <p class="h2 text-secondary"><?= $errorMessages['updateMeal'] ?? '' ?></p>
-                            <legend class="font-weight-bold">Modifiez votre plat</legend>
+                            <legend class="font-weight-bold text-light">Modifiez votre plat</legend>
                             <div class="form-group d-flex ">
                                 <div class="form-group w-25">
                                     <label for="categoryMeal"></label>
@@ -65,7 +65,7 @@ session_start();
                                     <label for="mealPrice"></label>
                                     <div class="d-flex">
                                         <input class="form-control" type="number" min="1" name="mealPrice" id="mealPrice" placeholder="19.90" value="<?= isset($_POST['mealPrice']) ? htmlspecialchars($_POST['mealPrice'])  : $getMeal['prix'] ?>" required>
-                                        <span class="m-2 ">€</span>
+                                        <span class="m-2 text-light">€</span>
                                     </div>
                                 </div>
 
@@ -73,14 +73,14 @@ session_start();
                                     <label for="mealSupp"></label>
                                     <div class="d-flex">
                                         <input class="form-control w-100" type="number" min="0" name="mealSupp" id="mealSupp" placeholder="0" value="<?= isset($_POST['mealSupp']) ? htmlspecialchars($_POST['mealSupp'])  : $getMeal['supplément'] ?>" required>
-                                        <span class="m-2">€</span>
+                                        <span class="m-2 text-light">€</span>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="mt-3">
                                 <div class="form-check form-check-inline">
-                                    <label class="form-check-label mr-2 font-weight-bold" for="notVisible">Ne pas afficher</label>
+                                    <label class="form-check-label mr-2  text-light" for="notVisible">Ne pas afficher</label>
                                     <input class="form-check-input" type="checkbox" id="notVisible" value="0" name="notVisible"  <?= $getMeal['visible'] == 0 ? 'checked' : '' ?> required>
 
                                 </div>

@@ -27,15 +27,15 @@
         <div class="flex-grow-1">
             <div class="container h-100">
                 <div class="row justify-content-center">
-                    <div class="col-10 align-items-center newDrinkModifyForm">
+                    <div class="col-10 align-items-center menuModifyForm">
                         <form novalidate class="mx-auto" name="newMenu" method="post" action="menusmodifier.php">
-                            <p><span style="color: #D4514A; font-style:italic"><?= $errorMessages['updateDrink'] ?? '' ?></span></p>
+                            <p><span style="color: #D4514A; font-style:italic"><?= $errorMessages['updateMenu'] ?? '' ?></span></p>
                             <legend class="font-weight-bold text-light text-center mt-2">Modifier menu</legend>
 
                             <div class="">
-                                <div class="form-group w-75 mb-4">
+                                <div class="form-group w-75 mb-3">
                                     <label for="menuName"></label>
-                                    <input class="form-control" type="text" name="menuName" id="menuName" placeholder="Nom du menu" value="" required>
+                                    <input class="form-control" type="text" name="menuName" id="menuName" placeholder="Nom du menu" value="<?= $_SESSION['$menuDetails']['menuimage_name'] ?>" required>
                                     <div class="text-danger">
                                         <span><?= isset($errorMessages['menuName']) ? $errorMessages['menuName'] : '' ?></span>
                                     </div>
@@ -43,8 +43,13 @@
                             </div>
 
                             <div class="form-group ">
+
                                 <label for="menuImage"></label>
-                                <input class="w-25 text-light" type="file"enctype="multipart/form-data" name="menuImage" id="menuImage" placeholder="image de mon menu" value="" required>
+                                <div class="imgModifyAdminPosition">
+                                    <img class="imgModifyAdmin" src="../assets/img/imagemenu/<?= $_SESSION['$menuDetails']['menuimage_picture'] ?>" alt="">
+                                    <input class="w-25 text-light mt-3" type="file" enctype="multipart/form-data" name="menuImage" id="menuImage" placeholder="image de mon menu" value="<?= $_SESSION['$menuDetails']['menuimage_picture'] ?>" required>
+                                </div>
+
                                 <div class="text-danger">
                                     <span><?= isset($errorMessages['menuImage']) ? $errorMessages['menuImage'] : '' ?></span>
                                 </div>
@@ -52,13 +57,13 @@
 
                             <div class="mt-3 mb-2">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="notVisible" value="0" name="notVisible" required>
+                                    <input class="form-check-input" type="checkbox" id="notVisible" value="0" name="notVisible" <?= $_SESSION['$menuDetails']['menuimage_visible'] == 0 ? 'checked' : '' ?> required>
                                     <label class="form-check-label text-light" for="notVisible">Ne pas afficher</label>
                                 </div>
                             </div>
                             <div class="d-flex mb-3">
-                                <button type="submit" class="btn updateDeleteButtons justify-content-center mb-3 mt-3" name="modifier">Modifier</button>
-                                <a class="btn updateDeleteButtons justify-content-center mb-3 mt-3 ml-3" href="../view/lesmenus-admin.php" name="backMealBtn">Les menus</button></a>
+                                <button type="submit" class="btn updateDeleteButtons justify-content-center mb-3 mt-3" name="modifier" value="<?= $_SESSION['$menuDetails']['menu_image_id'] ?>">Modifier</button>
+                                <a class="btn updateDeleteButtons justify-content-center mb-3 mt-3 ml-3" href="../view/lesmenus-admin.php" name="backMenuBtn">Les menus</button></a>
                             </div>
                         </form>
                     </div>

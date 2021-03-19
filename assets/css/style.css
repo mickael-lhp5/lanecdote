@@ -260,12 +260,35 @@ h3 {
 
 .imgGestionPlatMenu {
   height: 350px;
-  width: 350px;
+  width: 100%;
+  max-width: 350px;
   border-radius: 2%;
   object-fit: cover;
-  margin-top: 150px;
   /* border: 1px solid black; */
 }
+
+@media (max-width: 900px) {
+  .imgGestionPlatMenu {
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+
+  .navPlatetMenu {
+    max-width: 450;
+  }
+
+  .mealmenudrinkchoice {
+    display: none;
+    flex-direction: column;
+  }
+}
+
+.gestionPlatetMenuButton.focus,
+.gestionPlatetMenuButton:focus {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
 
 .updateDeleteButtons {
   background-color: #D4514A;
@@ -312,7 +335,6 @@ h3 {
 
 .formSize {
   height: 300px;
-
 }
 
 .infoButtonEdit {
@@ -411,6 +433,17 @@ p.drinkCardBody {
   text-align: center;
 }
 
+@media (max-width: 900px) {
+  .textChef {
+    width: 375px;
+  }
+
+  .lanecdoteprez {
+    font-size: 0.8em;
+    margin: 2em !important;
+  }
+}
+
 .imgTextChef {
   width: fit-content;
   margin: 0 auto;
@@ -455,11 +488,12 @@ p.drinkCardBody {
   color: whitesmoke;
 }
 
-.imgBgLacarteModifForm {
-  height: 100vh;
-  background-image: url(../img/maintest.jpg);
-  background-size: cover;
-}
+/* 
+  .imgBgLacarteModifForm {
+    height: 100vh;
+    background-image: url(../img/maintest.jpg);
+    background-size: cover;
+  } */
 
 .informationsTable {
   color: whitesmoke;
@@ -483,12 +517,6 @@ p.drinkCardBody {
   font-size: 26px;
 }
 
-.gestionPlatetMenuButton.focus,
-.gestionPlatetMenuButton:focus {
-  -webkit-box-shadow: none !important;
-  box-shadow: none !important;
-}
-
 .newMealForm {
   margin-top: 100px;
   background-color: black;
@@ -508,7 +536,7 @@ p.drinkCardBody {
   border-radius: 1%;
 }
 
-.addMenu{
+.addMenu {
   background-color: #D4514A;
   font-weight: bold;
 }
@@ -522,6 +550,60 @@ p.drinkCardBody {
   font-family: 'Open Sans', sans-serif;
 }
 
-.mydisconnectButton{
-margin-left: 50px ;
+.mydisconnectButton {
+  background-color: #D4514A;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.mydisconnectButton:hover {
+  font-weight: bold;
+  box-shadow: 0 2px #666;
+  transform: translateY(1px);
+}
+
+.mydisconnectButton .focus,
+.mydisconnectButton :focus {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.modifyMealForm {
+  margin-top: 100px;
+  background-color: black;
+  border-radius: 1%;
+}
+
+.menuimages{
+
+  height: 20rem;
+  width: auto;
+  transition: 0.7s;
+
+}
+
+.menuimages:hover{
+  transform: scale(2);
+}
+
+.menuTitle{
+font-weight: bold;
+align-items: center;
+
+}
+
+.menuModifyForm{
+  margin-top: 100px;
+  background-color: black;
+  border-radius: 1%;
+}
+
+.imgModifyAdmin{
+  height: 10rem;
+  width: 10rem;
+}
+
+.imgModifyAdminPosition{
+  display: flex;
+  flex-direction: column;
 }

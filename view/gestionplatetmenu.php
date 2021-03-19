@@ -24,26 +24,35 @@ session_start();
 
 <body>
 
-    <div id="contentFullHomePage" class="adminPage">
+    <div id="contentFullHomePage" class="adminPage navPlatetMenu">
         <?php require_once "nav.php" ?>
 
-        <div>
-            <a href="deconnexion.php"><button type="submit" class="btn mydisconnectButton mt-2" name="deconnection">déconnexion</button></a>
+        <div class="text-center">
+            <a href="deconnexion.php"><button type="submit" class="btn mydisconnectButton mt-2 text-dark" name="deconnection">déconnexion</button></a>
         </div>
-       
+
         <?php if ($_SESSION['isconnected']) { ?>
             <div class="flex-grow-1">
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="d-flex col-lg-6 col-sm-3 align-items-center justify-content-center">
+                        <div class="d-flex mealmenudrinkchoice">
                             <form action="lacarte-admin.php" method="POST">
-                                <button type="submit" class="btn justify-content-center gestionPlatetMenuButton" name="plats"><img class="imgGestionPlatMenu mb-3" src="../assets/img/carousel1.jpg"><b class="platEtMenuTitle">La carte</b></button>
+                                <div class="justify-content-center d-flex gestionPlatetMenuButton">
+                                    <button type="submit" class="btn" name="plats"><img class="imgGestionPlatMenu mb-3" src="../assets/img/carousel1.jpg">
+                                    <legend class="platEtMenuTitle"><b>La carte</b></button></legend>
+                                </div>
                             </form>
                             <form action="lesmenus-admin.php" method="POST">
-                                <button type="submit" class="btn justify-content-center ml-5 gestionPlatetMenuButton" name="menus"><img class="imgGestionPlatMenu mb-3" src="../assets/img/carousel2.jpg"><b class="platEtMenuTitle">Menus</b> </button>
+                                <div class="justify-content-center d-flex gestionPlatetMenuButton">
+                                    <button type="submit" class="btn" name="menus"><img class="imgGestionPlatMenu mb-3" src="../assets/img/carousel2.jpg">
+                                    <legend class="platEtMenuTitle"><b>Menus</b></button></legend>
+                                </div>
                             </form>
                             <form action="lesboissons-admin.php" method="POST">
-                                <button type="submit" class="btn justify-content-center ml-5 gestionPlatetMenuButton" name="menus"><img class="imgGestionPlatMenu mb-3" src="../assets/img/drinks.jpg"><b class="platEtMenuTitle">Boissons</b></button>
+                                <div class="justify-content-center d-flex gestionPlatetMenuButton">
+                                    <button type="submit" class="btn" name="menus"><img class="imgGestionPlatMenu mb-3" src="../assets/img/drinks.jpg">
+                                    <legend class="platEtMenuTitle"><b>Les boissons</b></button></legend>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -51,7 +60,6 @@ session_start();
             </div>
         <?php  } else { ?>
             <p>Vous n'etes pas connecté</p>
-
         <?php } ?>
     </div>
 

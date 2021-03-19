@@ -1,6 +1,5 @@
 <?php 
 
-
 class Category_menucomponent extends Database{
 
         public function readCategory(){
@@ -11,8 +10,5 @@ class Category_menucomponent extends Database{
             $result = $readCategoryQuery->fetchAll();
             return $result;
 
-
-
         }
-
 }

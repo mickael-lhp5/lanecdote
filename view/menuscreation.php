@@ -49,7 +49,7 @@
                             </div>
 
                             <div class="d-flex mb-3">
-                                <button type="submit" class="btn updateDeleteButtons justify-content-center mb-3 mt-3" name="valider">Ajouter menu</button>
+                                <button type="submit" class="btn updateDeleteButtons justify-content-center mb-3 mt-3" name="addNewMenuBtn">Ajouter menu</button>
                                 <a class="btn updateDeleteButtons justify-content-center mb-3 mt-3 ml-3" href="../view/lesmenus-admin.php" name="backMealBtn">Les menus</button></a>
                             </div>
                         </form>

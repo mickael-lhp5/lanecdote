@@ -89,9 +89,6 @@ if (isset($_POST['modifier'])) {
         ];
 
 
-       
-         
-
         // on injecte la variable du tableau $mealDetails dans la fonction
 
         if ($mealObj->updateMeal($mealDetails)) {

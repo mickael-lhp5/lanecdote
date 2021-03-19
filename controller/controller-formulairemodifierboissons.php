@@ -49,9 +49,9 @@ if (isset($_POST['modifier'])) {
 
     if (empty($errorMessages)) {
 
-        // var_dump($_POST);
-
-        // création du tableau $drinkDetails dans la fonction
+        //var_dump($_POST);
+       
+        //array key exist permet de verifier si la clé existe dans le tableau, not visible = nom de la clé et $post=le nom du tableau
         if (array_key_exists('notVisible', $_POST)) {
             $visible = $_POST['notVisible'];
         } else {

@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once '../controller/controller-admin.php';
-var_dump($_SESSION['isconnected']);
+
 ?>
 <!doctype html>
 <html lang="fr">
@@ -25,7 +25,8 @@ var_dump($_SESSION['isconnected']);
 
 <body>
     <div id="contentFullHomePage">
-        <?php require_once "nav.php" ?>
+        <?php require_once "nav.php"
+        ?>
 
         <div class="flex-grow-1">
             <div class="container-fluid">
@@ -49,7 +50,7 @@ var_dump($_SESSION['isconnected']);
                                         <span><?= isset($errorMessages['password']) ? $errorMessages['password'] : '' ?></span>
                                     </div>
                                 </div>
-                                <button  type="submit" class="btn myAdminButton mt-2" name="connection">connexion</button>
+                                <button type="submit" class="btn myAdminButton mt-2" name="connection">connexion</button>
                             </form>
                         </div>
 

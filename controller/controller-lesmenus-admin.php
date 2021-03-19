@@ -1,10 +1,14 @@
 <?php
 session_start();
 
+var_dump($_SESSION);
+
 require_once '../model/database.php';
 require_once '../model/model_lesmenus.php';
 
-// $readMealObj = new Meal;
+$showMenuObj = new Menus;
+
+
 
 
 
@@ -15,4 +19,4 @@ require_once '../model/model_lesmenus.php';
 //     $deleteMealObj->deleteMeal($id);
 // } 
 
-// $mealDetails = $readMealObj->readMeal();
+$imageDetails = $showMenuObj->showMenu();

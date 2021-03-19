@@ -28,47 +28,10 @@ session_start();
 <body>
 
   <div id="contentFullHomePage">
-    <nav class="navbar navbar-expand-lg" style="font-size: 16px">
-      <a href="../view/lanecdote.php"><img class="logo" src="../assets/img/logoresto.png" alt="logoblanc"></a>
-
-      <div class="d-flex align-items-center">
-        <a class="d-block d-lg-none mr-3" href="admin.php"><span class="" style="color: white;"><i class="fa fa-user-circle"></i></span></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="text-white"><i class="fa fa-bars"></i></span>
-        </button>
-      </div>
-
-      <div class="navbarMenu collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="view/lanecdote.php">LE RESTAURANT</a>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"> CARTE & MENUS</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="view/lacarte.php">La carte</a>
-              <a class="dropdown-item" href="view/lesmenus.php">Les menus</a>
-              <a class="dropdown-item" href="view/lesboissons.php">Les boissons</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="view/horaires_et_informations.php">HORAIRES & INFORMATIONS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="view/nouscontacter.php">NOUS CONTACTER</a>
-          </li>
-        </ul>
-      </div>
-      <a class="d-none d-lg-block" href="view/admin.php"><i class="connectionIcon fa fa-user-circle mr-3"></i></a>
-    </nav>
-
+    <?php require_once "./view/nav.php" ?>
     <div id="bgHomePage">
       <div class="container ">
         <div class="row">
-
-
-
           <header class="bandeauImg"></header>
           <section class="col-12 sectionLanecdote">
             <legend class="lanecdoteTitle mt-4"><b>L'Anecdote</legend>
@@ -76,7 +39,6 @@ session_start();
             <p class="lanecdoteprez mb-5 ml-5 mr-5">L’Anecdote, plus qu’un restaurant, c’est le projet d’une vie, Jérôme et Greg en décembre 2019 se lance dans une folle aventure reprendre le Bistrot d’Antan, une adresse très réputée sur le Havre.
               Malgré de nombreuses péripéties, le projet à vue le jour le 12 aout 2020, nous sommes fière de vous accueillir dans un établissement complétement rénové, décoré dans un style industriel sobre et épuré. Vous pouvez profiter d’une partie Lounge bar, avec des fauteuils et canapés pour prendre un verre autour d’une planche apéro ou bien déguster autour d’une table nos mets, tous fait maison bien sûr.
               Notre philosophie, le partage, nous tenons à partager avec chacun de nos clients notre savoir-faire et notre passion pour notre métier, notre but est que vous passiez un agréable moment dans notre établissement. Toute notre équipe partage les mêmes ambition et la même détermination.</p>
-
             <section class="col-12 mt-4 mb-4 sectionLanecdote">
               <div class="d-flex flex-wrap justify-content-center imgTextChef">
                 <img class="chefFoto" src="../assets/img/cuisiniertest2.jpg" srcset="../assets/img/cuisiniertest2.jpg">
@@ -90,116 +52,10 @@ session_start();
                 </div>
               </div>
             </section>
-
-            <!-- <section class="col-12 mt-4 sectionLanecdote">
-                <div id="bgHomePage">
-                    <div class="container d-flex justify-content-center" id="presentationLanecdote">
-                        <div class="row" id="descriptif">
-                            <section class="d-flex col-12 mt-4 mb-5 flex-wrap" id="restaurantPrez">
-                                <div class="d-flex col-12 col-sm-3">
-                                    <div class="m-2">
-                                        <img class="w-100 homeImg" data-aos="fade-up" data-aos-duration="3000" src="../assets/img/devanture1.jpg">
-                                    </div>
-                                </div>
-
-                                <div class="d-flex col-12 col-sm-3">
-                                    <div class="m-2">
-                                        <img class="w-100 homeImg" data-aos="fade-up" data-aos-duration="3000" src="../assets/img/salle3.jpg">
-                                    </div>
-                                </div>
-                                <div class="d-flex col-12 col-sm-3">
-                                    <div class="m-2">
-                                        <img class="w-100 homeImg" data-aos="fade-up" data-aos-duration="3000" src="../assets/img/salle4.jpg">
-                                    </div>
-                                </div>
-                                <div class="d-flex col-12 col-sm-3">
-                                    <div class="m-2">
-                                        <img class="w-100  homeImg" data-aos="fade-up" data-aos-duration="3000" src="../assets/img/devanture2.jpg">
-                                    </div>
-                                </div>
-                            </section> -->
-
-
-
-            <!-- <section class="d-flex col-12 mt-2 flex-wrap justify-content-center mb-2" id="teamPrez">
-                                <legend class="mt-3" style="text-align: center;font-size:30px;color:white;"><b>L'équipe</b></legend>
-
-                                <div class="d-flex col-12 col-sm-4  mb-3" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="1000">
-                                    <div class="m-2">
-                                        <img class="w-100  homeImg" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" src="../assets/img/cuisiniertest.jpg">
-                                    </div>
-                                </div>
-                                <div class="d-flex col-12 col-sm-4">
-                                    <div class="m-2">
-                                        <img class="w-100  homeImg" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" src="../assets/img/serveur2test.jpg">
-                                    </div>
-                                </div>
-                                <div class="d-flex col-12 col-sm-4">
-                                    <div class="m-2">
-                                        <img class="w-100  homeImg" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" src="../assets/img/serveur4test.jpg">
-                                    </div>
-                                </div>
-                                <div class="d-flex col-12 col-sm-4">
-                                    <div class="m-2">
-                                        <img class="w-100  homeImg" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" src="../assets/img/serveur3test.jpg">
-                                    </div>
-                                </div>
-                                <div class="d-flex col-12 col-sm-4">
-                                    <div class="m-2">
-                                        <img class="w-100  homeImg" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" src="../assets/img/serveur3test.jpg">
-                                    </div>
-                                </div>
-                            </section> -->
         </div>
       </div>
     </div>
-
-    <!-- <div class="d-flex justify-content-center col-12 col-sm-4">
-
-            <div id="carouselExampleControls" class="carousel slide " data-ride="carousel">
-              <div class="carousel-inner  myCarousel">
-                <div class="carousel-item active">
-                  <img class="d-block w-100" src="assets/img/carouseltest1.jpg" alt="First slide">
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100" src="assets/img/carouseltest1.jpg" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100" src="assets/img/carouseltest1.jpg" alt="Third slide">
-                </div>
-              </div>
-              <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div> -->
-
-
-    <!-- <div class="m-2" data-aos="zoom-in" data-aos-duration="1500">
-                <img class="w-100 homeImg" src="assets/img/carousel1.jpg">
-              </div>
-            </div>
-            <div class="d-flex col-12 col-sm-4">
-              <div class="m-2" data-aos="zoom-in" data-aos-duration="1500">
-                <img class="w-100  homeImg" src="assets/img/carousel2.jpg">
-              </div>
-            </div>
-            <div class="d-flex col-12 col-sm-4">
-              <div class="m-2" data-aos="zoom-in" data-aos-duration="1500">
-                <img class="w-100 homeImg" src="assets/img/IMG_20200723_215527.jpg">
-              </div>
-            </div> -->
-  </div>
-  </div>
-  </div>
-  </div>
-
-  <?php require_once "view/footer.php" ?>
-
+    <?php require_once "view/footer.php" ?>
   </div>
 
 
