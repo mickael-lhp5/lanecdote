@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
     }
 
 
-    if (isset($_POST["email"])) {
+    if (isset($_POST['email'])) {
         // if (!preg_match($regexMail, $_POST['email'])) {
         //     $errorMessages['email'] = 'veuillez saisir un email valide.';
         // }
@@ -47,11 +47,11 @@ if (isset($_POST['submit'])) {
         }
     }
 
-    if (isset($_POST["myMessage"])) {
+    if (isset($_POST['myMessage'])) {
         // if (!preg_match($myMessage, $_POST['myMessage'])) {
         //     $errorMessages['myMessage'] = 'veuillez saisir un message valide.';
         // }
-        if (empty($_POST["myMessage"])) {
+        if (empty($_POST['myMessage'])) {
             $errorMessages['myMessage'] = 'veuillez saisir votre message';
         }
     }

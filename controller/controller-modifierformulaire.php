@@ -33,20 +33,20 @@ if (isset($_POST['modifier'])) {
 
     if (isset($_POST['mealName'])) {
         if (empty($_POST['mealName'])) {
-            $errorMessages['mealName'] = "Veuillez entrer un nom de plat";
+            $errorMessages['mealName'] = 'Veuillez entrer un nom de plat';
         }
     }
 
     if (isset($_POST['mealComposition'])) {
         if (empty($_POST['mealComposition'])) {
-            $errorMessages['mealComposition'] = "Veuillez entrer une composition";
+            $errorMessages['mealComposition'] = 'Veuillez entrer une composition';
         }
     }
 
     if (isset($_POST['mealPrice'])) {
 
         if (empty($_POST['mealPrice'])) {
-            $errorMessages['mealPrice'] = "Veuillez entrer un prix";
+            $errorMessages['mealPrice'] = 'Veuillez entrer un prix';
         }
         if (!preg_match($regexPrice, $_POST['mealPrice'])) {
             $errorMessages['mealPrice'] = 'veuillez saisir un prix valide';
@@ -92,10 +92,10 @@ if (isset($_POST['modifier'])) {
         // on injecte la variable du tableau $mealDetails dans la fonction
 
         if ($mealObj->updateMeal($mealDetails)) {
-            $errorMessages['updateMeal'] = "Plat modifié";
+            $errorMessages['updateMeal'] = 'Plat modifié';
          
         } else {
-            $errorMessages['updateMeal'] = "erreur de connexion lors de la modification";
+            $errorMessages['updateMeal'] = 'erreur de connexion lors de la modification';
         }
     }
 
@@ -103,8 +103,3 @@ if (isset($_POST['modifier'])) {
 
 
 $getMeal = $mealObj->readMealModify($_SESSION['id']);
-
-
-?>
-
-

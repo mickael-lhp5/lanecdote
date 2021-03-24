@@ -29,7 +29,7 @@
                 <div class="row justify-content-center">
                     <div class="col-10 align-items-center newMealForm">
                         <form novalidate class="mx-auto" name="newMenu" method="post" action="menuscreation.php">
-                            <p class="mt-2"><span style="color: #D4514A; font-style:italic"><?= $errorMessages['addMeal'] ?? '' ?></span></p>
+                            <p class="mt-2"><span style="color: #D4514A; font-style:italic"><?= $messages['addNewMenu'] ?? '' ?></span></p>
                             <legend class="text-white text-center font-weight-bold"><b>Nouveau Menu</b></legend>
                             <div class="form-group w-75 mb-4">
                                 <label for="menuName"></label>

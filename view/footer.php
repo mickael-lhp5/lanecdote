@@ -14,7 +14,7 @@
           </div>         
           <div class="col-12 col-sm-6 col-md-3">
             <div class="">
-              <a class="mentionsFooter" href="#!" class="text-white">Mentions légales</a>
+              <a class="mentionsFooter" href="../view/mentions.php" class="text-white">Mentions légales</a>
             </div>
           </div>    
           <div class="col-12 col-sm-6 col-md-3">

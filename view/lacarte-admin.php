@@ -87,7 +87,7 @@ require_once '../controller/controller-lacarte-admin.php';
         </div>
 
         <!-- ------------------------------------- -->
-        <!-- ICI NOTRE MODAL DE SUPPRESSION DE RDV -->
+        <!-- ICI NOTRE MODAL DE SUPPRESSION -->
         <!-- ------------------------------------- -->
 
         <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
@@ -106,7 +106,7 @@ require_once '../controller/controller-lacarte-admin.php';
             </div>
         </div>
         <!-- ------------------------------------- -->
-        <!-- ICI NOTRE MODAL DE SUPPRESSION DE RDV -->
+        <!-- ICI NOTRE MODAL DE SUPPRESSION -->
         <!-- ------------------------------------- -->
 
 

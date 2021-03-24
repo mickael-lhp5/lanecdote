@@ -61,7 +61,6 @@ public function showMenuClientSide()
 }
 
 
-
 //UPDATE
 public function readMenuModify($id){
     $query = "SELECT 
@@ -105,7 +104,14 @@ public function updateMenu(array $menuDetails){
 }
 
 
+//DELETE
 
+public function deleteMenu($id)
+{        
+    $query = "DELETE FROM `mf_menuimage` WHERE `menu_image_id` = '$id' ";
+    $this->dataBase->query($query);
+    
+}
 
 
 

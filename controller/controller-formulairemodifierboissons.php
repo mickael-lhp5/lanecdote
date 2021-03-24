@@ -69,7 +69,7 @@ if (isset($_POST['modifier'])) {
         // on injecte la variable du tableau $drinkDetails dans la fonction
 
         if ($drinkObj->updateDrink($drinkDetails)) {
-            $errorMessages['updateDrink'] = "Boisson modifiée";
+            $errorMessages['updateDrink'] = 'Boisson modifiée';
             $getDrink = $drinkObj->readDrinkModify($_SESSION['id']);
         } else {
             $errorMessages['updateDrink'] = "erreur de connexion";

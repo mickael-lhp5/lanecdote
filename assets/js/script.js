@@ -1,7 +1,5 @@
-AOS.init({
-    duration: 1200,
-})
 
+console.log('coucou');
 
 // on définit la constante regroupant tous nos boutons 
 const deleteButtons = document.querySelectorAll('.deleteButtons');

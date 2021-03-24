@@ -1,7 +1,7 @@
 <?php
 
 $identifiant = 'admin';
-$password = "gregetjerome";
+$password = 'gregetjerome';
 $errorMessage = [];
 if(isset($_SESSION['isconnected'])){
 

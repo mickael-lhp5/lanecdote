@@ -45,7 +45,7 @@ require_once '../controller/controller-lesmenus-admin.php';
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($imageDetails as $menus) { var_dump($menus); ?>
+                                <?php foreach ($menuDetails as $menus) { ?>
                                     <tr class="nthPerso">
                                         <td class="align-middle"><?= $menus['menuimage_name'] ?></td>
                                         <td class="align-middle"><?= $menus['menuimage_picture'] ?></td>
@@ -58,14 +58,14 @@ require_once '../controller/controller-lesmenus-admin.php';
                                         <td>
                                             <div class="infoButtonEdit">
                                                 <form action="menusmodifier.php" method="post">
-                                                    <button type="submit" class="btn btn updateDeleteButtons" name="enterModifyForm" value="<?=$menus['menu_image_id']?>"><i class="far fa-edit"></i></button>
+                                                    <button type="submit" class="btn updateDeleteButtons" name="enterModifyForm" value="<?=$menus['menu_image_id']?>"><i class="far fa-edit"></i></button>
                                                     <div class="infoModifier">modifier</div>
                                                 </form>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="infoButtonDelete">
-                                                <button type="button" class="btn btn updateDeleteButtons" id="deleteMeal" name="deleteMeal" data-toggle="modal" data-target="#deleteModal"><i class=" far fa-trash-alt"></i></button>
+                                                <button type="button" class="btn updateDeleteButtons deleteButtons" id="deleteMenu" name="deleteMenu" data-toggle="modal" data-target="#deleteModal" data-id="<?= $menus['menu_image_id'] ?>"><i class="far fa-trash-alt"></i></button>
                                                 <div class="infoDelete">supprimer</div>
                                             </div>
                                         </td>
@@ -80,17 +80,17 @@ require_once '../controller/controller-lesmenus-admin.php';
 
         <!-- Modal -->
 
-        <div class="modal fade" id="deleteModal<?= $meals['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Voulez vous supprimer ce plat ?</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Voulez vous supprimer ce menu ?</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                        <form name="delete" method="post" action="lacarte-admin.php">
-                            <button type="submit" class="btn btn updateDeleteButtons" id="deleteMeal" name="deleteMeal" value=""><i class="far fa-trash-alt mr-1"></i>Supprimer</button>
+                        <form name="delete" method="post" action="lesmenus-admin.php">
+                            <button type="submit" class="btn btn updateDeleteButtons" id="deleteButtonModal" name="deleteMenu" value=""><i class="far fa-trash-alt mr-1"></i>Supprimer</button>
                         </form>
                     </div>
                 </div>
@@ -107,7 +107,7 @@ require_once '../controller/controller-lesmenus-admin.php';
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-    <script src="assets/js/script.js"></script>
+    <script src="../assets/js/script.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init()

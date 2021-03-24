@@ -9,14 +9,13 @@ require_once '../model/model_lesmenus.php';
 $showMenuObj = new Menus;
 
 
+var_dump($_POST);
 
+$deleteMenuObj = new Menus;
+//On vérifie qu'une variable POST à été transmise
+if (isset($_POST['deleteMenu'])) {
+    $id = $_POST['deleteMenu'];
+    $deleteMenuObj->deleteMenu($id);
+}
 
-
-// $deleteMealObj = new Meal;
-// //On vérifie qu'une variable POST à été transmise
-// if (isset($_POST['deleteMeal'])) {
-//     $id = $_POST['deleteMeal'];
-//     $deleteMealObj->deleteMeal($id);
-// } 
-
-$imageDetails = $showMenuObj->showMenu();
+$menuDetails = $showMenuObj->showMenu();

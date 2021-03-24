@@ -30,14 +30,14 @@ if (isset($_POST['valider'])) {
 
     if (isset($_POST['drinkName'])) {
         if (empty($_POST['drinkName'])) {
-            $errorMessages['drinkName'] = "Veuillez entrer un nom de boisson";
+            $errorMessages['drinkName'] = 'Veuillez entrer un nom de boisson';
         }
     }
 
     if (isset($_POST['drinkPrice'])) {
 
         if (empty($_POST['drinkPrice'])) {
-            $errorMessages['drinkPrice'] = "Veuillez entrer un prix";
+            $errorMessages['drinkPrice'] = 'Veuillez entrer un prix';
         }
         if (!preg_match($regexPrice, $_POST['drinkPrice'])) {
             $errorMessages['drinkPrice'] = 'veuillez saisir un prix valide';
@@ -66,10 +66,10 @@ if (isset($_POST['valider'])) {
         // on injecte la variable du tableau $drinkDetails dans la fonction
 
         if ($DrinkObj->addDrink($drinkDetails)) {
-            $errorMessages['addDrink'] = "Boisson enregistrée";
+            $errorMessages['addDrink'] = 'Boisson enregistrée';
         } else {
 
-            $errorMessages['addDrink'] = "erreur de connexion";
+            $errorMessages['addDrink'] = 'erreur de connexion';
         }
     }
 }

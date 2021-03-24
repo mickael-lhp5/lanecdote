@@ -37,20 +37,20 @@ session_start();
                     <div class="row justify-content-center">
                         <div class="d-flex mealmenudrinkchoice">
                             <form action="lacarte-admin.php" method="POST">
-                                <div class="justify-content-center d-flex gestionPlatetMenuButton">
-                                    <button type="submit" class="btn" name="plats"><img class="imgGestionPlatMenu mb-3" src="../assets/img/carousel1.jpg">
+                                <div class="justify-content-center d-flex">
+                                    <button type="submit" class="btn gestionPlatetMenuButton" name="plats"><img class="imgGestionPlatMenu mb-3" src="../assets/img/carousel1.jpg">
                                     <legend class="platEtMenuTitle"><b>La carte</b></button></legend>
                                 </div>
                             </form>
                             <form action="lesmenus-admin.php" method="POST">
-                                <div class="justify-content-center d-flex gestionPlatetMenuButton">
-                                    <button type="submit" class="btn" name="menus"><img class="imgGestionPlatMenu mb-3" src="../assets/img/carousel2.jpg">
+                                <div class="justify-content-center d-flex">
+                                    <button type="submit" class="btn gestionPlatetMenuButton" name="menus"><img class="imgGestionPlatMenu mb-3" src="../assets/img/carousel2.jpg">
                                     <legend class="platEtMenuTitle"><b>Menus</b></button></legend>
                                 </div>
                             </form>
                             <form action="lesboissons-admin.php" method="POST">
-                                <div class="justify-content-center d-flex gestionPlatetMenuButton">
-                                    <button type="submit" class="btn" name="menus"><img class="imgGestionPlatMenu mb-3" src="../assets/img/drinks.jpg">
+                                <div class="justify-content-center d-flex">
+                                    <button type="submit" class="btn gestionPlatetMenuButton" name="menus"><img class="imgGestionPlatMenu mb-3" src="../assets/img/drinks.jpg">
                                     <legend class="platEtMenuTitle"><b>Les boissons</b></button></legend>
                                 </div>
                             </form>

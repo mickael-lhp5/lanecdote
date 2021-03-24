@@ -44,10 +44,10 @@ if (isset($_POST['modifier'])) {
         $menuObj = new Menus;
 
         if ($menuObj->updateMenu($menuDetails)) {
-            $errorMessages['updateMenu'] = "Menu modifié";
+            $errorMessages['updateMenu'] = 'Menu modifié';
             $_SESSION['$menuDetails'] = $menuObj->readMenuModify($menuDetails['id']);
         } else {
-            $errorMessages['updateMenu'] = "erreur de connexion";
+            $errorMessages['updateMenu'] = 'erreur de connexion';
         }
     }
 }
