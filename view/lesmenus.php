@@ -7,7 +7,7 @@ require_once '../controller/controller-lesmenus.php';
 <html lang="fr">
 
 <head>
-    <title>L'ANECDOTE</title>
+    <title>Les menus</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -31,16 +31,15 @@ require_once '../controller/controller-lesmenus.php';
         <div class="flex-grow-1" id="bgHomePage">
             <div class="container-fluid">
                 <div class="row justify-content-center">
-                    <div class="col-12 col-lg-6 align-items-center">
-
+                    <div class="col-12 col-lg-6 mt-3">
                         <?php foreach ($menusArray as $menu) { ?>
-                            <legend class="mealCardTitle d-flex justify-content-between text-dark">
+                            <div class="d-flex align-items-center">
                                 <div>
-                                    <p class="menuTitle text-center mt-3"><?= $menu['menuimage_name']?></p>
-                                    <p class="mealCardBody"><img class="menuimages" src="../assets/img/imagemenu/<?= $menu['menuimage_picture']?>"></p>
-                                </div>                                
-                            </legend>
-                            <hr>
+                                    <p class="menuTitle text-center mt-4 mb-5"><u><?= $menu['menuimage_name'] ?></u></p>
+                                    <p class="mealCardBody"><img class="menuimages" src="../assets/img/imagemenu/<?= $menu['menuimage_picture'] ?>"></p>
+                                </div>
+                                <hr>
+                            </div>
                         <?php } ?>
                     </div>
                 </div>
@@ -63,6 +62,7 @@ require_once '../controller/controller-lesmenus.php';
     <script>
         AOS.init()
     </script>
+
 </body>
 
 </html>

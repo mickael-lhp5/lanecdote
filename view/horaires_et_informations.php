@@ -7,7 +7,7 @@ session_start();
 <html lang="fr">
 
 <head>
-    <title>L'ANECDOTEtest</title>
+    <title>Horaires et informations</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -77,7 +77,7 @@ session_start();
                     </div>
                     <div class="col-12">
                         <legend class="mt-2 mb-2"><b>Informations</b></legend>
-                        <p>vente à emporter est désormais disponible uniquement le jeudi, vendredi et samedi.
+                        <p>La vente à emporter est désormais disponible uniquement le jeudi, vendredi et samedi.
                                 Vos commandes sont à passer avant midi au minimum la veille, et sont à retirer entre 17h30 et 19h.
                                 Vous pouvez commander par téléphone au 09.83.87.57.14 ou par messenger.</p>
                     </div>

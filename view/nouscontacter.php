@@ -7,7 +7,7 @@ require_once '../controller/controller-nouscontacter.php';
 <html lang="fr">
 
 <head>
-    <title>L'ANECDOTE</title>
+    <title>Nous contacter</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

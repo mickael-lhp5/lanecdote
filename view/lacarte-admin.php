@@ -7,7 +7,7 @@ require_once '../controller/controller-lacarte-admin.php';
 <html lang="fr">
 
 <head>
-    <title>L'ANECDOTE</title>
+    <title>La carte admin</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,7 +27,7 @@ require_once '../controller/controller-lacarte-admin.php';
 <body>
     <div id="contentFullHomePage" class="adminPage">
         <?php require_once "nav.php" ?>
-        <div class="flex-grow-1" id="">
+        <div class="flex-grow-1"  id="bgHomePage">
             <div class="container h-100">
                 <div class="row justify-content-center">
                     <div class="col-12 align-items-center justify-content-center">
@@ -86,10 +86,7 @@ require_once '../controller/controller-lacarte-admin.php';
             </div>
         </div>
 
-        <!-- ------------------------------------- -->
-        <!-- ICI NOTRE MODAL DE SUPPRESSION -->
-        <!-- ------------------------------------- -->
-
+        
         <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -105,13 +102,7 @@ require_once '../controller/controller-lacarte-admin.php';
                 </div>
             </div>
         </div>
-        <!-- ------------------------------------- -->
-        <!-- ICI NOTRE MODAL DE SUPPRESSION -->
-        <!-- ------------------------------------- -->
-
-
-
-
+    
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

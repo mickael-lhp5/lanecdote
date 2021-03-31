@@ -110,8 +110,8 @@ class Drinks extends Database
     public function deleteDrink($id)
     {
         $query = "DELETE FROM `mf_drinks` WHERE `drink_id` = '$id' ";
-        $deleteDrinkQuery = $this->dataBase->query($query);
-        $deleteDrinkQuery->fetch();
+        $this->dataBase->query($query);
+        
     }
     // READ LES BOISSONS COTE CLIENT
 

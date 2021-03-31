@@ -6,7 +6,7 @@ require_once '../controller/controller-lesmenus-admin.php';
 <html lang="fr">
 
 <head>
-    <title>L'ANECDOTE</title>
+    <title>les menus admin</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,7 +24,7 @@ require_once '../controller/controller-lesmenus-admin.php';
 </head>
 
 <body>
-    <div id="contentFullHomePage" class="adminPage">
+    <div id="contentFullHomePage">
         <?php require_once "nav.php" ?>
         <div class="flex-grow-1" id="bgHomePage">
             <div class="container h-100">

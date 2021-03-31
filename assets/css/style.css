@@ -18,7 +18,7 @@ footer {
 #contentFullHomePage {
   display: flex;
   flex-direction: column;
-  /* min-height: 100vh; */
+  min-height: 100vh;
 }
 
 .container {
@@ -28,21 +28,21 @@ footer {
   height: 100%;
 }
 
-.carousel-item {
+/* .carousel-item {
   height: 80vh;
 }
 
 .carousel-inner {
   height: 100%;
   width: 100%;
-}
+} */
+
 
 .logo {
   height: 3.5rem;
 }
 
 #bgHomePage {
-  /* height: 100%; */
   margin: 0px;
   padding: 0px;
   /* background-image: url(../img/IMG_20200809_135623.jpg); */
@@ -50,9 +50,9 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
   backdrop-filter: contrast(1);
-  /* flex: 1; */
   display: flex;
   align-items: center;
+  
 }
 
 .navbar {
@@ -84,7 +84,6 @@ footer {
   color: white;
 }
 
-
 .connectionIcon:hover {
   color: #D4514A;
   transform: scale(1.4);
@@ -102,7 +101,6 @@ span.navbar-toggler-icon {
   object-fit: contain;
 }
 
-
 .bandeauImg {
   width: 100%;
   /*object-fit: cover;*/
@@ -115,14 +113,12 @@ span.navbar-toggler-icon {
   background-size: cover;
 }
 
-
 .sectionLanecdote {
   background-color: black;
-  color: white;
+  color: whitesmoke;
   margin: 0px;
   padding: 0px;
 }
-
 
 .lanecdoteTitle {
   text-align: center;
@@ -131,13 +127,29 @@ span.navbar-toggler-icon {
   Font-Family: 'Cormorant Garamond', Serif;
 }
 
+.sectionLanecdoteLeRestaurant {
+  background-color: white;
+  color: black;
+}
+
+.lanecdoteTitleRestaurant {
+  font-size: 2.5em;
+  color: black;
+  Font-Family: 'Cormorant Garamond', Serif;
+}
+
+.underTitleRestaurant {
+  font-size: 2em;
+  color: black;
+  Font-Family: 'Cormorant Garamond', Serif;
+
+}
 
 h3 {
   font-size: 2em;
   text-align: center;
   color: whitesmoke;
   Font-Family: 'Cormorant Garamond', Serif;
-
 }
 
 .lanecdoteprez {
@@ -179,12 +191,6 @@ h3 {
   font-weight: bold;
   box-shadow: 0 5px #666;
   transform: translateY(2px);
-}
-
-
-.myCarousel {
-  object-fit: cover;
-  width: 100vh;
 }
 
 .footerContainer {
@@ -231,7 +237,6 @@ h3 {
 
 .mentionsFooter {
   color: white !important;
-
 }
 
 .mentionsFooter:hover {
@@ -249,8 +254,8 @@ h3 {
   transform: scale(1.2);
 }
 
-.adminPage {
-  min-height: 100vh;
+/.adminPage {
+  height: 100vh;
 }
 
 .myAdminButton {
@@ -271,10 +276,6 @@ h3 {
   .imgGestionPlatMenu {
     margin-top: 10px;
     margin-right: 10px;
-  }
-
-  .navPlatetMenu {
-    max-width: 450;
   }
 
   .mealmenudrinkchoice {
@@ -414,7 +415,6 @@ p.mealCardBody {
   background-attachment: fixed;
 }
 
-
 p.drinkCardBody {
   font-size: 1rem;
 }
@@ -465,8 +465,6 @@ p.drinkCardBody {
 }
 
 .overflow-scroll-y::-webkit-scrollbar-track {
-  /* box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
   background-color: transparent;
   border-radius: 3px;
 }
@@ -488,23 +486,10 @@ p.drinkCardBody {
   color: whitesmoke;
 }
 
-/* 
-  .imgBgLacarteModifForm {
-    height: 100vh;
-    background-image: url(../img/maintest.jpg);
-    background-size: cover;
-  } */
-
 .informationsTable {
   color: whitesmoke;
 }
 
-/* 
-.bgImgAdmin{
-  background-image: url(../img/login3.jpg);
-  background-size: cover;
-  height: 100vh;
-} */
 
 .adminForm {
   margin-top: 150px;
@@ -574,36 +559,75 @@ p.drinkCardBody {
   border-radius: 1%;
 }
 
-.menuimages{
-
-  height: 20rem;
-  width: auto;
+.menuimages {
+  width: 300px;
+  height: auto;
   transition: 0.7s;
-
 }
 
-.menuimages:hover{
-  transform: scale(2);
+.menuimages:hover {
+  transform: scale(1.6);
 }
 
-.menuTitle{
-font-weight: bold;
-align-items: center;
-
+.menuTitle {
+  font-size: 1.8rem;
+  font-weight: bold;
+  align-items: center;
+  font-style: italic;
+  Font-Family: 'Cormorant Garamond', Serif;
 }
 
-.menuModifyForm{
+.menuModifyForm {
   margin-top: 100px;
   background-color: black;
   border-radius: 1%;
 }
 
-.imgModifyAdmin{
+.imgModifyAdmin {
   height: 10rem;
   width: 10rem;
 }
 
-.imgModifyAdminPosition{
+.imgModifyAdminPosition {
   display: flex;
   flex-direction: column;
+}
+
+.restaurantFotos {
+  width: fit-content;
+  /* object-fit: cover; */
+  width: 100vh;
+  margin-bottom: 10px;
+}
+
+/* 
+@media (max-width: 900px) {
+  .restaurantFotos {
+    width: 300px;
+  }
+} */
+
+.team {
+  align-items: center;
+  width: 350px;
+  width: fit-content;
+  object-fit: cover;
+}
+
+.deconnexionSentence {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.errorTitle {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.errorSentence {
+  font-size: 1.8rem;
+}
+
+.errorImg {
+  height: 18rem;
 }

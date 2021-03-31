@@ -7,7 +7,7 @@ session_destroy();
 <html lang="fr">
 
 <head>
-    <title>L'ANECDOTE</title>
+    <title>deconnexion</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -31,7 +31,7 @@ session_destroy();
             <div class="container-fluid">
                 <div class="row justify-content-center">
                     <div class="col-lg-4 col-sm-6 align-items-center justify-content-center">
-                        <p class="mt-5">Vous avez bien été deconnecté</p>
+                        <p class="mt-5 deconnexionSentence">Vous avez bien été deconnecté</p>
                     </div>
                 </div>
             </div>

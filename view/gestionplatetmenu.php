@@ -6,7 +6,7 @@ session_start();
 <html lang="fr">
 
 <head>
-    <title>L'ANECDOTE</title>
+    <title>Gestion plat et menu</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,17 +18,15 @@ session_start();
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <!-- animation AOS.init img page d'accueil -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <div id="contentFullHomePage" class="adminPage navPlatetMenu">
+    <div id="contentFullHomePage">
         <?php require_once "nav.php" ?>
 
         <div class="text-center">
-            <a href="deconnexion.php"><button type="submit" class="btn mydisconnectButton mt-2 text-dark" name="deconnection">déconnexion</button></a>
+            <a href="deconnexion.php"><button type="submit" class="btn mydisconnectButton mt-4 mb-4 text-dark" name="deconnection">déconnexion</button></a>
         </div>
 
         <?php if ($_SESSION['isconnected']) { ?>

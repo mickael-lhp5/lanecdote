@@ -8,7 +8,7 @@ session_start();
 <html lang="fr">
 
 <head>
-    <title>L'ANECDOTE</title>
+    <title>Formulaire boissons</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -32,7 +32,7 @@ session_start();
                 <div class="row justify-content-center">
                     <div class="col-10 align-items-center newDrinkForm">
                         <form novalidate class="mx-auto" name="newDrink" method="post" action="formulaireboissons.php">
-                            <p><span style="color: #D4514A; font-style:italic"><?= $errorMessages['addDrink'] ?? '' ?></span></p>
+                            <p class="mt-2"><span style="color: #D4514A; font-style:italic"><?= $errorMessages['addDrink'] ?? '' ?></span></p>
                             <legend class="text-white text-center font-weight-bold">Nouvelle Boisson</legend>
                             <div class="form-group">
                                 <label for="categoryDrink"></label>
@@ -64,8 +64,8 @@ session_start();
                                 <div class="form-check form-check-inline">
                                     <label class="form-check-label text-light mr-2" for="notVisible">Ne pas afficher</label>
                                     <input class="form-check-input" type="checkbox" id="notVisible" value="0" name="notVisible" <?php if (isset($_POST['notVisible'])) {
-                                                                                                                                    if ($_POST['notVisible'] == 0) { ?> checked <?php }
-                                                                                                                                                                                                            } ?> required>
+                                    if ($_POST['notVisible'] == 0) { ?> checked <?php }
+                                     } ?> required>
                                 </div>
                             </div>
                             <div class="d-flex">

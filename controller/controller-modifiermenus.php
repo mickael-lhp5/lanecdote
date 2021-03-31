@@ -2,7 +2,7 @@
 
 session_start();
 
-var_dump($_SESSION);
+
 
 require_once '../model/database.php';
 require_once '../model/model_lesmenus.php';
@@ -44,7 +44,7 @@ if (isset($_POST['modifier'])) {
         $menuObj = new Menus;
 
         if ($menuObj->updateMenu($menuDetails)) {
-            $errorMessages['updateMenu'] = 'Menu modifié';
+            $errorMessages['updateMenu'] = 'Votre menu a bien été modifié';
             $_SESSION['$menuDetails'] = $menuObj->readMenuModify($menuDetails['id']);
         } else {
             $errorMessages['updateMenu'] = 'erreur de connexion';
@@ -52,5 +52,3 @@ if (isset($_POST['modifier'])) {
     }
 }
 
-// $menuObj = new Menus;
-// $getMenu = $menuObj->readMenuModify($_SESSION['id']);

@@ -5,7 +5,7 @@
 <html lang="fr">
 
 <head>
-    <title>L'ANECDOTE</title>
+    <title>Menus modifier</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -29,7 +29,7 @@
                 <div class="row justify-content-center">
                     <div class="col-10 align-items-center menuModifyForm">
                         <form novalidate class="mx-auto" name="newMenu" method="post" action="menusmodifier.php">
-                            <p><span style="color: #D4514A; font-style:italic"><?= $errorMessages['updateMenu'] ?? '' ?></span></p>
+                            <p class="mt-2"><span style="color: #D4514A; font-style:italic"><?= $errorMessages['updateMenu'] ?? '' ?></span></p>
                             <legend class="font-weight-bold text-light text-center mt-2">Modifier menu</legend>
 
                             <div class="">

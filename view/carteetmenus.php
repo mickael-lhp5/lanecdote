@@ -7,7 +7,7 @@ session_start();
 <html lang="fr">
 
 <head>
-    <title>L'ANECDOTEtest</title>
+    <title>Carteetmenus</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -28,7 +28,7 @@ session_start();
     <div id="contentFullHomePage">
         <?php require_once "nav.php"?>
         <div class="flex-grow-1">
-            blabla
+           
         </div>
 
         <?php require_once "footer.php" ?>

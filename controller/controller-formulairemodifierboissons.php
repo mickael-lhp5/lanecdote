@@ -19,7 +19,6 @@ foreach ($categoryDrinkArray as $value) {
 }
 
 
-
 $regexPrice = "/^[0-9]+.?[0-9]{0,2}$/";
 if (!empty($_POST['enterModifyDrinkForm'])) {
     $_SESSION['id'] = $_POST['enterModifyDrinkForm'];
@@ -69,7 +68,7 @@ if (isset($_POST['modifier'])) {
         // on injecte la variable du tableau $drinkDetails dans la fonction
 
         if ($drinkObj->updateDrink($drinkDetails)) {
-            $errorMessages['updateDrink'] = 'Boisson modifiée';
+            $errorMessages['updateDrink'] = 'Votre boisson a bien été modifiée';
             $getDrink = $drinkObj->readDrinkModify($_SESSION['id']);
         } else {
             $errorMessages['updateDrink'] = "erreur de connexion";

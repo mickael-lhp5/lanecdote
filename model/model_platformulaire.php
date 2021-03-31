@@ -114,8 +114,8 @@ class Meal extends Database
     public function deleteMeal($id)
     {        
         $query = "DELETE FROM `mf_menucomponents` WHERE `menucomponent_id` = '$id' ";
-        $deleteMealQuery = $this->dataBase->query($query);
-        $deleteMealQuery->fetch();
+        $this->dataBase->query($query);
+        
     }
 
 

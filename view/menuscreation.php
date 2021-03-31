@@ -4,7 +4,7 @@
 <html lang="fr">
 
 <head>
-    <title>L'ANECDOTE</title>
+    <title>Menus création</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

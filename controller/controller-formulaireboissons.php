@@ -66,7 +66,7 @@ if (isset($_POST['valider'])) {
         // on injecte la variable du tableau $drinkDetails dans la fonction
 
         if ($DrinkObj->addDrink($drinkDetails)) {
-            $errorMessages['addDrink'] = 'Boisson enregistrée';
+            $errorMessages['addDrink'] = 'Votre boisson a bien été enregistrée';
         } else {
 
             $errorMessages['addDrink'] = 'erreur de connexion';

@@ -13,6 +13,7 @@ $regexPrice = "/^[0-9]+.?[0-9]{0,2}$/";
 $categoryObj = new Category_menucomponent;
 $categoryArray =  $categoryObj->readCategory();
 
+
 $typeOfMealArray = [];
 foreach ($categoryArray as $value) {
     $typeOfMealArray[$value['category_menucomponent_id']] = $value['category_menucomponent_name'];
@@ -24,12 +25,14 @@ if (isset($_POST['valider'])) {
     if (isset($_POST['mealName'])) {
         if (empty($_POST['mealName'])) {
             $errorMessages['mealName'] = "Veuillez entrer un nom de plat";
+            
         }
     }
 
     if (isset($_POST['mealComposition'])) {
         if (empty($_POST['mealComposition'])) {
             $errorMessages['mealComposition'] = "Veuillez entrer une composition";
+        
         }
     }
 
@@ -76,7 +79,7 @@ if (isset($_POST['valider'])) {
         // on injecte la variable du tableau $mealDetails dans la fonction
 
         if ($mealObj->addMeal($mealDetails)) {
-            $errorMessages['addMeal'] = "Plat enregistré";
+            $errorMessages['addMeal'] = "Votre plat a bien été enregistré";
         } else {
 
             $errorMessages['addMeal'] = "erreur de connexion";

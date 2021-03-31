@@ -7,7 +7,7 @@
 <html lang="fr">
 
 <head>
-    <title>L'ANECDOTE</title>
+    <title>Formulaire modifier</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,12 +26,12 @@
 <body>
     <div id="contentFullHomePage">
         <?php require_once "nav.php" ?>
-        <div class="flex-grow-1" >
+        <div class="flex-grow-1">
             <div class="container-fluid h-100">
                 <div class="row justify-content-center">
                     <div class="col-10 align-items-center modifyMealForm">
                         <form novalidate class="myForm mx-auto" name="modification" method="POST" action="formulairemodifier.php">
-                            <p class="h2 text-secondary"><?= $errorMessages['updateMeal'] ?? '' ?></p>
+                            <p class="mt-2"><span style="color: #D4514A; font-style:italic"><?= $errorMessages['updateMeal'] ?? '' ?></span></p>
                             <legend class="font-weight-bold text-light">Modifiez votre plat</legend>
                             <div class="form-group d-flex ">
                                 <div class="form-group w-25">
@@ -81,7 +81,7 @@
                             <div class="mt-3">
                                 <div class="form-check form-check-inline">
                                     <label class="form-check-label mr-2  text-light" for="notVisible">Ne pas afficher</label>
-                                    <input class="form-check-input" type="checkbox" id="notVisible" value="0" name="notVisible"  <?= $getMeal['visible'] == 0 ? 'checked' : '' ?> required>
+                                    <input class="form-check-input" type="checkbox" id="notVisible" value="0" name="notVisible" <?= $getMeal['visible'] == 0 ? 'checked' : '' ?> required>
 
                                 </div>
                             </div>

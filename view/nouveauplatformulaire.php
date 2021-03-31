@@ -4,7 +4,7 @@
 <html lang="fr">
 
 <head>
-    <title>L'ANECDOTE</title>
+    <title>Nouveau Plat Formulaire</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,14 +16,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <!-- animation AOS.init img page d'accueil -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-</head>
+  </head>
 
 <body>
 
     <div id="contentFullHomePage">
         <?php require_once "nav.php" ?>
+        
         <div class="flex-grow-1">
             <div class="container h-100">
                 <div class="row justify-content-center">
@@ -43,27 +42,36 @@
                             </div>
                             <div class="form-group">
                                 <label for="mealName"></label>
-                                <input class="form-control" type="text" name="mealName" id="mealName" class="w-100" placeholder="Nom du plat" required>
+                                <input class="form-control w-100" type="text" name="mealName" id="mealName" placeholder="Nom du plat" required>
+                                <div class="text-danger">
+                                    <span><?= isset($errorMessages['mealName']) ? $errorMessages['mealName'] : '' ?></span>
+                                </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="mealComposition"></label>
-                                <input class="form-control" type="text" name="mealComposition" id="mealComposition" class="w-100" placeholder="Composition du plat " required>
+                                <input class="form-control w-100" type="text" name="mealComposition" id="mealComposition" placeholder="Composition du plat " required>
+                                <div class="text-danger">
+                                    <span><?= isset($errorMessages['mealComposition']) ? $errorMessages['mealComposition'] : '' ?></span>
+                                </div>
                             </div>
 
                             <div class="d-flex justify-content-between">
                                 <div class="form-group ml-0 pl-0">
                                     <label for="mealPrice"></label>
                                     <div class="d-flex">
-                                        <input id="test" class="form-control" type="number" min="1" name="mealPrice" id="mealPrice" class="w-100" placeholder="19.90" required>
+                                        <input class="form-control w-100" type="number" min="1" name="mealPrice" id="mealPrice" placeholder="19.90" required>
                                         <span class="m-2 text-light">€</span>
                                     </div>
+                                    <div class="text-danger">
+                                            <span><?= isset($errorMessages['mealPrice']) ? $errorMessages['mealPrice'] : '' ?></span>
+                                        </div>                                
                                 </div>
 
                                 <div class="form-group ml-0 pl-0">
                                     <label for="mealSupp"></label>
                                     <div class="d-flex">
-                                        <input class="form-control" type="number" min="1" name="mealSupp" id="mealSupp" class="w-100" placeholder="2" required>
+                                        <input class="form-control w-100" type="number" min="1" name="mealSupp" id="mealSupp" placeholder="2" required>
                                         <span class="m-2 text-light">€</span>
                                     </div>
                                 </div>

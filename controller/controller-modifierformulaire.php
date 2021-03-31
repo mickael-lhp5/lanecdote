@@ -92,7 +92,7 @@ if (isset($_POST['modifier'])) {
         // on injecte la variable du tableau $mealDetails dans la fonction
 
         if ($mealObj->updateMeal($mealDetails)) {
-            $errorMessages['updateMeal'] = 'Plat modifié';
+            $errorMessages['updateMeal'] = 'Votre plat a bien été modifié';
          
         } else {
             $errorMessages['updateMeal'] = 'erreur de connexion lors de la modification';
